@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Journey — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="Academic journey of Kashish Devnani — Clinical skills, learning, certifications including Dubai Heart Safe City CPR &amp; AED Course." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"        class="nav__link">Home</a></li>
+        <li><a href="about.html"        class="nav__link">About</a></li>
+        <li><a href="journey.html"      class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html"   class="nav__link">Experience</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       JOURNEY HERO — LARGE TYPOGRAPHIC TITLE
+       ════════════════════════════════════════════════════ -->
+  <section class="journey-hero" style="padding-bottom: var(--sp-2xl);">
+    <div class="container">
+      <div style="max-width: 900px;">
+        <span class="section-header__eyebrow" style="animation: name-reveal 0.8s ease both; display: block; margin-bottom: var(--sp-md);">Academic Portfolio</span>
+        <h1 class="journey-hero__title" style="animation: name-reveal 0.8s 0.1s ease both;">
+          <span style="display: block;">MY</span>
+          <span style="display: block;">ACADEMIC</span>
+          <span class="outline" style="display: block;">JOURNEY</span>
+        </h1>
+        <p class="journey-hero__sub" style="animation: name-reveal 0.8s 0.25s ease both;">
+          As a Graduate Entry Medicine student at Gulf Medical University, I have been dedicated to acquiring knowledge and skills that lay a strong foundation for my medical career.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       JOURNEY ITEMS
+       ════════════════════════════════════════════════════ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <!-- 01 · Learning & Growth -->
+      <div class="journey-item fade-up">
+        <div class="journey-item__content">
+          <span class="section-header__eyebrow">01 · Foundation</span>
+          <h2 class="heading-lg" style="margin: var(--sp-sm) 0 var(--sp-md);">Learning and Growth</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            My academic foundation at Gulf Medical University is built on rigorous medical science, integrated systems-based learning, and a commitment to evidence-based practice. Each module is approached with structured curiosity and analytical depth.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            I continuously engage with primary literature, clinical case discussions, and guided self-study to strengthen my understanding of pathophysiology, pharmacology, and clinical medicine — always connecting theory to real-world application.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="tag">Systems-Based Learning</span>
+            <span class="tag">Clinical Sciences</span>
+            <span class="tag">Evidence-Based Medicine</span>
+            <span class="tag">Pathophysiology</span>
+          </div>
+        </div>
+        <div class="journey-item__visual zoom-in" style="animation-delay: 0.2s;">
+          <div class="journey-item__visual-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <p class="journey-item__visual-title">Academic Rigour</p>
+          <p class="journey-item__visual-text">Structured learning across preclinical and clinical sciences with continuous self-assessment and reflective practice.</p>
+          <div style="margin-top: var(--sp-md); padding-top: var(--sp-md); border-top: 1px solid var(--c-border);">
+            <p style="font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: var(--c-muted); line-height: 1.6;">"The goal of medical education is not the acquisition of knowledge but the cultivation of wisdom."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative divider -->
+      <div style="display: flex; align-items: center; gap: var(--sp-md); margin: var(--sp-xl) 0;">
+        <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+        <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--c-secondary);"></div>
+        <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+      </div>
+
+      <!-- 02 · Clinical Skills -->
+      <div class="journey-item fade-up" style="animation-delay: 0.1s;">
+        <div class="journey-item__visual zoom-in" style="animation-delay: 0.2s;">
+          <div class="journey-item__visual-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <p class="journey-item__visual-title">Clinical Simulation</p>
+          <p class="journey-item__visual-text">Hands-on training using standardised patients and simulation labs to build procedural confidence before real clinical settings.</p>
+          <div style="margin-top: var(--sp-md);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">History-taking &amp; communication</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">Physical examination techniques</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">Basic procedural skills</span>
+            </div>
+          </div>
+        </div>
+        <div class="journey-item__content">
+          <span class="section-header__eyebrow">02 · Practice</span>
+          <h2 class="heading-lg" style="margin: var(--sp-sm) 0 var(--sp-md);">Clinical Skills</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            Clinical skills training has equipped me with essential patient interaction competencies through simulation and real-world experiences. I have developed proficiency in history-taking, systematic physical examination, and clinical documentation.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            Each session in the clinical skills laboratory is followed by structured reflection, allowing me to identify learning gaps and consolidate techniques before transitioning to patient-facing environments. This iterative approach builds both confidence and competence.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="tag">Patient History-Taking</span>
+            <span class="tag">Physical Examination</span>
+            <span class="tag">Clinical Reasoning</span>
+            <span class="tag">Documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative divider -->
+      <div style="display: flex; align-items: center; gap: var(--sp-md); margin: var(--sp-xl) 0;">
+        <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+        <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--c-secondary);"></div>
+        <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+      </div>
+
+      <!-- 03 · Hands-On Training -->
+      <div class="journey-item fade-up" style="animation-delay: 0.1s;">
+        <div class="journey-item__content">
+          <span class="section-header__eyebrow">03 · Experience</span>
+          <h2 class="heading-lg" style="margin: var(--sp-sm) 0 var(--sp-md);">Hands-On Training</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            Hands-on training in medical procedures provides practical experience under expert supervision. My observership at CKS Hospital, Jaipur allowed me to observe ward rounds, intensive care management, and four surgical procedures across different specialties.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            This real-world exposure transformed theoretical knowledge into lived clinical understanding — from reading about tympanic membrane grafting to watching a specialist perform the procedure while explaining each step in real-time.
+          </p>
+          <a href="experience.html" class="btn btn-primary">
+            View Full Experience
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="journey-item__visual zoom-in" style="animation-delay: 0.2s;">
+          <div class="journey-item__visual-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <p class="journey-item__visual-title">CKS Hospital Observership</p>
+          <p class="journey-item__visual-text">March 2026 · Dr. Prakash Chandwani, Cardiologist</p>
+          <div style="margin-top: var(--sp-md);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">Ward rounds &amp; patient review</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">ICU monitoring &amp; ABG</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+              <span style="font-size: 0.85rem; color: var(--c-muted);">4 surgical procedures observed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       PROFESSIONAL CERTIFICATIONS
+       ════════════════════════════════════════════════════ -->
+  <section class="cert-section" id="certifications">
+    <div class="container">
+
+      <div class="section-header section-header--center fade-up" style="margin-bottom: var(--sp-xl);">
+        <span class="section-header__eyebrow">Professional Development</span>
+        <h2 class="section-header__title">Professional Certifications</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-header__desc">
+          Nationally recognised certifications that demonstrate commitment to high-standards clinical readiness and community health.
+        </p>
+      </div>
+
+      <div class="cert-card fade-up" style="animation-delay: 0.15s;">
+        <!-- Header -->
+        <div class="cert-card__header">
+          <div class="cert-card__header-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <div>
+            <p class="cert-card__header-title">Dubai Heart Safe City — CPR &amp; AED Course</p>
+            <p class="cert-card__header-sub">Dubai Health Authority · Nationally Recognised Certification</p>
+          </div>
+          <div style="margin-left: auto; display: flex; align-items: center; gap: 0.5rem;">
+            <span class="badge" style="background: rgba(255,247,245,0.12); border-color: rgba(255,247,245,0.2); color: var(--c-accent); font-size: 0.75rem;">Verified</span>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="cert-card__body">
+          <!-- Text -->
+          <div class="cert-card__text">
+            <p class="heading-md" style="margin-bottom: var(--sp-md);">Certification Overview</p>
+            <p class="body-md" style="margin-bottom: var(--sp-md);">
+              I successfully completed the Dubai Health Authority's Heart Safe City CPR and AED certification — a nationally recognised and highly rigorous programme. This training elevated my emergency response capability, giving me advanced, hands-on competency in life-saving interventions.
+            </p>
+            <p class="body-md" style="margin-bottom: var(--sp-lg);">
+              Earning this certification reflects my commitment to high-standards clinical readiness and my responsibility to safeguard community health. The training offered a structured blend of theory and hands-on practice, allowing me to integrate foundational scientific knowledge with practical competencies essential for managing life-threatening situations.
+            </p>
+
+            <div class="cert-meta">
+              <div class="cert-meta__item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span><strong class="cert-meta__label">Issued:</strong> <span class="cert-meta__val">2025</span></span>
+              </div>
+              <div class="cert-meta__item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span><strong class="cert-meta__label">Location:</strong> <span class="cert-meta__val">Dubai, UAE</span></span>
+              </div>
+              <div class="cert-meta__item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span><strong class="cert-meta__label">Authority:</strong> <span class="cert-meta__val">Dubai Health Authority</span></span>
+              </div>
+              <div class="cert-meta__item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span><strong class="cert-meta__label">Competency:</strong> <span class="cert-meta__val">Medical Expert · Emergency Response</span></span>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--sp-lg);" class="btn-group">
+              <a href="assets/certificate-cpr-aed.pdf" class="btn btn-primary" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                View Certificate
+              </a>
+              <a href="experience.html" class="btn btn-secondary">Read Full Reflection</a>
+            </div>
+          </div>
+
+          <!-- Certificate embed -->
+          <div class="cert-card__embed">
+            <p class="label" style="margin-bottom: var(--sp-sm);">Certificate Document</p>
+            <iframe
+              src="assets/certificate-cpr-aed.pdf"
+              title="Dubai Heart Safe City CPR &amp; AED Certificate — Kashish Devnani"
+              allowfullscreen>
+            </iframe>
+            <p style="font-size: 0.78rem; color: var(--c-muted); margin-top: 0.5rem; text-align: center;">
+              Dubai Heart Safe City CPR &amp; AED Certificate · Dubai Health Authority
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">The White Coat Journal</p>
+          <p class="footer__tagline">A Medical Portfolio by Kashish Devnani</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html"        class="footer__link">Home</a>
+          <a href="about.html"        class="footer__link">About</a>
+          <a href="journey.html"      class="footer__link">Journey</a>
+          <a href="competencies.html" class="footer__link">Competencies</a>
+          <a href="experience.html"   class="footer__link">Experience</a>
+        </nav>
+        <p class="footer__copy">© 2026 Kashish Devnani · The White Coat Journal · Gulf Medical University</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

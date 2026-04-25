@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="About Kashish Devnani — Medical Student at Gulf Medical University committed to excellence in clinical practice, lifelong learning, and community health." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"        class="nav__link">Home</a></li>
+        <li><a href="about.html"        class="nav__link">About</a></li>
+        <li><a href="journey.html"      class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html"   class="nav__link">Experience</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       PAGE HERO
+       ════════════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__eyebrow">About Me</span>
+      <h1 class="page-hero__title">
+        <span>ABOUT</span>
+        <span class="outline">ME</span>
+      </h1>
+      <p class="page-hero__sub">
+        A dedicated medical student committed to excellence in clinical practice, lifelong learning, and community health.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       ABOUT CONTENT
+       ════════════════════════════════════════════════════ -->
+  <section class="section about-content-section">
+    <div class="container">
+      <div class="grid-2" style="align-items: start; gap: var(--sp-2xl);">
+
+        <!-- Image placeholder -->
+        <div class="about-image-placeholder fade-left">
+          <div class="about-image-placeholder__fallback" style="width: 100%; padding: var(--sp-3xl) var(--sp-xl);">
+            <div class="icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--c-accent), var(--c-highlight)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-md); border: 2px solid var(--c-border);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="heading-md" style="text-align: center; margin-bottom: 0.4rem;">Kashish Devnani</p>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--c-muted);">Graduate Entry Medicine</p>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--c-secondary); font-weight: 500; margin-bottom: var(--sp-lg);">Gulf Medical University</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+              <span class="tag">Clinical Observer</span>
+              <span class="tag">Evidence-Based</span>
+              <span class="tag">Reflective Practitioner</span>
+              <span class="tag">Future Physician</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div class="fade-right">
+          <span class="section-header__eyebrow">My Story</span>
+          <h2 class="heading-xl" style="margin-bottom: var(--sp-md);">Building a Foundation<br />for Exceptional Care</h2>
+          <div class="divider"></div>
+
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            I am a medical student driven by a deep commitment to understanding medicine beyond textbooks. My approach to learning integrates clinical exposure, academic knowledge, and reflective practice to build a strong foundation for future patient care.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-md);">
+            Through structured observerships, academic training, and continuous self-evaluation, I aim to develop competencies across clinical reasoning, communication, professionalism, and evidence-based medicine.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            I believe that true medical learning occurs when theory meets real patient scenarios. Every experience I engage in is approached with curiosity, discipline, and a focus on long-term professional growth.
+          </p>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-xl); padding: var(--sp-lg); margin-bottom: var(--sp-lg);">
+            <p class="italic-accent" style="font-size: 1.05rem; line-height: 1.65;">
+              "Every clinical encounter is an opportunity to learn — not only about disease, but about people, empathy, and the profound responsibility of medicine."
+            </p>
+          </div>
+
+          <div class="btn-group">
+            <a href="competencies.html" class="btn btn-primary">
+              View Competencies
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="experience.html" class="btn btn-secondary">Clinical Experience</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       FUTURE ASPIRATIONS
+       ════════════════════════════════════════════════════ -->
+  <section class="section aspirations-section">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="section-header__eyebrow">Looking Ahead</span>
+        <h2 class="section-header__title">Future Aspirations</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-header__desc">
+          To excel in internal medicine and specialise in patient-centered care — guided by evidence, driven by compassion, and shaped by continuous professional development.
+        </p>
+      </div>
+
+      <div class="grid-3 stagger" style="margin-top: var(--sp-xl);">
+
+        <div class="aspiration-card">
+          <div class="aspiration-card__num">01</div>
+          <h3 class="aspiration-card__title">Research Development</h3>
+          <p class="aspiration-card__text">
+            Conduct research that contributes to evidence-based medicine and quality improvement. Translate scientific findings into meaningful clinical practice that benefits patients and advances the medical community.
+          </p>
+          <div style="margin-top: var(--sp-md); display: flex; align-items: center; gap: 0.5rem; color: var(--c-secondary); font-size: 0.8rem; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            Evidence-Based Practice
+          </div>
+        </div>
+
+        <div class="aspiration-card">
+          <div class="aspiration-card__num">02</div>
+          <h3 class="aspiration-card__title">Lifelong Learning</h3>
+          <p class="aspiration-card__text">
+            Commit to continuous education through workshops, certifications, and ongoing clinical exposure. Medicine evolves — and so must the physician. Staying current is not a choice; it is an obligation.
+          </p>
+          <div style="margin-top: var(--sp-md); display: flex; align-items: center; gap: 0.5rem; color: var(--c-secondary); font-size: 0.8rem; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg>
+            Continuous Development
+          </div>
+        </div>
+
+        <div class="aspiration-card">
+          <div class="aspiration-card__num">03</div>
+          <h3 class="aspiration-card__title">Leadership Growth</h3>
+          <p class="aspiration-card__text">
+            Develop leadership skills to inspire and motivate teams within healthcare settings. Build the capacity to lead with integrity, foster collaboration, and drive positive change within health systems.
+          </p>
+          <div style="margin-top: var(--sp-md); display: flex; align-items: center; gap: 0.5rem; color: var(--c-secondary); font-size: 0.8rem; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Healthcare Leadership
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       COMPASSIONATE CARE APPROACH
+       ════════════════════════════════════════════════════ -->
+  <section class="section care-section">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="section-header__eyebrow">Philosophy</span>
+        <h2 class="section-header__title">Compassionate Care Approach</h2>
+        <div class="divider divider--center" style="background: linear-gradient(90deg, var(--c-secondary), var(--c-accent));"></div>
+      </div>
+
+      <blockquote class="care-quote fade-up" style="animation-delay: 0.1s;">
+        Treating the whole patient — not just their symptoms. Understanding the social, emotional, and cultural backgrounds to provide holistic, patient-centered care that respects dignity and promotes well-being.
+      </blockquote>
+
+      <div class="grid-3 stagger" style="gap: var(--sp-md);">
+        <div class="card" style="background: rgba(255,247,245,0.06); border-color: rgba(255,247,245,0.12); text-align: center;">
+          <div style="width: 52px; height: 52px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-sm); color: #fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4 style="font-family: var(--font-serif); color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Empathy First</h4>
+          <p style="font-size: 0.875rem; color: rgba(255,247,245,0.6); line-height: 1.65;">Every patient interaction begins with genuine empathy and active listening — the cornerstone of healing.</p>
+        </div>
+        <div class="card" style="background: rgba(255,247,245,0.06); border-color: rgba(255,247,245,0.12); text-align: center;">
+          <div style="width: 52px; height: 52px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-sm); color: #fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4 style="font-family: var(--font-serif); color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Evidence-Based</h4>
+          <p style="font-size: 0.875rem; color: rgba(255,247,245,0.6); line-height: 1.65;">Decisions grounded in the best available evidence, combined with clinical expertise and patient values.</p>
+        </div>
+        <div class="card" style="background: rgba(255,247,245,0.06); border-color: rgba(255,247,245,0.12); text-align: center;">
+          <div style="width: 52px; height: 52px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-sm); color: #fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4 style="font-family: var(--font-serif); color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Holistic View</h4>
+          <p style="font-size: 0.875rem; color: rgba(255,247,245,0.6); line-height: 1.65;">Recognising the physical, psychological, social, and spiritual dimensions of health in every patient encounter.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--sp-xl);" class="fade-up">
+        <a href="competencies.html" class="btn btn-primary">
+          Explore Competencies
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">The White Coat Journal</p>
+          <p class="footer__tagline">A Medical Portfolio by Kashish Devnani</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html"        class="footer__link">Home</a>
+          <a href="about.html"        class="footer__link">About</a>
+          <a href="journey.html"      class="footer__link">Journey</a>
+          <a href="competencies.html" class="footer__link">Competencies</a>
+          <a href="experience.html"   class="footer__link">Experience</a>
+        </nav>
+        <p class="footer__copy">© 2026 Kashish Devnani · The White Coat Journal · Gulf Medical University</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

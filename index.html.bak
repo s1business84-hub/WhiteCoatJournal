@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kashish Devnani — The White Coat Journal</title>
+  <meta name="description" content="Medical Student Portfolio — Building Clinical Insight Through Experience, Reflection, and Precision. Gulf Medical University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── SCROLL PROGRESS ──────────────────────────────── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="journey.html" class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html" class="nav__link">Experience</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       HERO SECTION
+       ════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__blobs">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__blob hero__blob--3"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="badge">
+          <svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+          Medical Student Portfolio · Gulf Medical University
+        </span>
+      </div>
+
+      <h1 class="hero__name">
+        <span class="hero__name-line">KASHISH</span>
+        <span class="hero__name-line hero__name-line--accent">DEVNANI</span>
+      </h1>
+
+      <p class="hero__headline">
+        Building Clinical Insight Through Experience,<br class="br-hide" />
+        Reflection, and Precision
+      </p>
+
+      <p class="hero__sub">
+        Medical Student &nbsp;·&nbsp; Clinical Observer &nbsp;·&nbsp; Future Physician<br />
+        Focused on Evidence-Based Care and Patient-Centered Learning
+      </p>
+
+      <div class="hero__actions btn-group">
+        <a href="about.html" class="btn btn-primary">
+          View My Portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="experience.html" class="btn btn-secondary">Clinical Experience</a>
+        <a href="https://www.linkedin.com/in/kashish-devnani-49a4501b6" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <p class="hero__micro">
+        Documenting growth across clinical exposure, academic learning, and professional development
+      </p>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       ABOUT PREVIEW
+       ════════════════════════════════════════════════════ -->
+  <section class="section" id="about-preview" style="background: var(--c-bg);">
+    <div class="container">
+      <div class="grid-2">
+
+        <div class="fade-left">
+          <span class="section-header__eyebrow">Who I Am</span>
+          <h2 class="heading-xl" style="margin-bottom: var(--sp-md);">A Dedication<br />to the Art of Medicine</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            I am a medical student driven by a deep commitment to understanding medicine beyond textbooks. My approach integrates clinical exposure, academic knowledge, and reflective practice to build a strong foundation for future patient care.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            I believe that true medical learning occurs when theory meets real patient scenarios. Every experience is approached with curiosity, discipline, and a focus on long-term professional growth.
+          </p>
+          <a href="about.html" class="btn btn-primary">
+            Learn More About Me
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="fade-right">
+          <div class="about-preview__image-card">
+            <div style="margin-bottom: var(--sp-md); padding-bottom: var(--sp-md); border-bottom: 1px solid var(--c-border);">
+              <p class="label" style="margin-bottom: 0.4rem;">Graduate Entry Medicine</p>
+              <p class="heading-md" style="color: var(--c-text);">Gulf Medical University</p>
+
+              <p class="body-md" style="font-size: 0.85rem; margin-top: 0.2rem;">Ajman, United Arab Emirates</p>
+            </div>
+            <div class="about-preview__stats">
+              <div class="about-preview__stat">
+                <span class="about-preview__stat-num" data-count="1" data-suffix="+">1+</span>
+                <span class="about-preview__stat-label">Clinical Observerships</span>
+              </div>
+              <div class="about-preview__stat">
+                <span class="about-preview__stat-num" data-count="4" data-suffix="+">4+</span>
+                <span class="about-preview__stat-label">Surgical Procedures Observed</span>
+              </div>
+              <div class="about-preview__stat">
+                <span class="about-preview__stat-num" data-count="9">9</span>
+                <span class="about-preview__stat-label">Core Competencies</span>
+              </div>
+              <div class="about-preview__stat">
+                <span class="about-preview__stat-num" data-count="1" data-suffix="+">1+</span>
+                <span class="about-preview__stat-label">Certifications Earned</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       PORTFOLIO PURPOSE
+       ════════════════════════════════════════════════════ -->
+  <section class="section purpose-section" id="purpose">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="section-header__eyebrow">Portfolio Purpose</span>
+        <h2 class="section-header__title">Purpose of This Portfolio</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-header__desc">
+          A structured record of academic and clinical development reflecting progression across key medical competencies — aligned with the GMU e-portfolio framework.
+        </p>
+      </div>
+
+      <div class="purpose-grid stagger">
+        <div class="purpose-card">
+          <div class="purpose-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="purpose-card__title">Document Clinical Exposure</h3>
+          <p class="purpose-card__text">Record clinical experiences and learning encounters through structured, reflective documentation of real patient care environments.</p>
+        </div>
+        <div class="purpose-card">
+          <div class="purpose-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="purpose-card__title">Demonstrate Growth</h3>
+          <p class="purpose-card__text">Show measurable development in medical knowledge and patient care skills across all nine competency domains defined by medical education standards.</p>
+        </div>
+        <div class="purpose-card">
+          <div class="purpose-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="purpose-card__title">Reflect &amp; Reason</h3>
+          <p class="purpose-card__text">Apply structured clinical reasoning to real-world scenarios through reflective practice, identifying strengths and areas for continuous improvement.</p>
+        </div>
+        <div class="purpose-card">
+          <div class="purpose-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="purpose-card__title">Support CPD</h3>
+          <p class="purpose-card__text">Enable continuous professional development through systematic self-assessment, evidence-based documentation, and goal-setting aligned with future practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       MY MEDICAL JOURNEY — CTA BANNER
+       ════════════════════════════════════════════════════ -->
+  <section class="section--sm" id="journey-cta">
+    <div class="container">
+      <div class="journey-cta-card fade-up">
+        <div class="journey-cta-card__text">
+          <span class="section-header__eyebrow">Explore</span>
+          <h2 class="heading-lg">My Medical Journey</h2>
+          <p class="body-lg">
+            Explore this comprehensive portfolio showcasing academic achievements and clinical experiences — from structured observerships to evidence-based certifications evaluated against international standards.
+          </p>
+        </div>
+        <div class="journey-cta-card__actions">
+          <a href="competencies.html" class="btn btn-primary">Competencies</a>
+          <a href="experience.html" class="btn btn-secondary">Experiences</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       CONTACT / STAY IN TOUCH
+       ════════════════════════════════════════════════════ -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="grid-2">
+
+        <div class="fade-left">
+          <span class="section-header__eyebrow">Stay In Touch</span>
+          <h2 class="heading-lg" style="margin-bottom: var(--sp-md);">Let's Connect</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-lg);">
+            You can connect with me on LinkedIn via the link below, and contact me for any inquiries. I'm always happy to network and engage with new opportunities in the medical field.
+          </p>
+          <div class="btn-group">
+            <a href="assets/cv-kashish-devnani.pdf" class="btn btn-primary" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download CV
+            </a>
+            <a href="https://www.linkedin.com/in/kashish-devnani-49a4501b6" class="btn btn-secondary" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:kashishdevnani@gmail.com" class="btn btn-ghost">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email Me
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card fade-right">
+          <div class="contact-card__inner">
+            <div style="width: 72px; height: 72px; background: linear-gradient(135deg, var(--c-accent), var(--c-highlight)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-md); border: 2px solid var(--c-border);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="heading-md" style="margin-bottom: var(--sp-xs); text-align: center;">Kashish Devnani</h3>
+            <p class="body-md" style="margin-bottom: var(--sp-md); text-align: center; font-size: 0.88rem;">
+              Graduate Entry Medicine Student<br />
+              <span style="color: var(--c-secondary); font-weight: 500;">Gulf Medical University</span>
+            </p>
+            <div class="contact-card__divider"></div>
+            <p class="italic-accent" style="font-size: 0.95rem; margin-top: var(--sp-md); text-align: center; line-height: 1.6;">
+              "Medicine is not only a science; it is also an art."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">The White Coat Journal</p>
+          <p class="footer__tagline">A Medical Portfolio by Kashish Devnani</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html"        class="footer__link">Home</a>
+          <a href="about.html"        class="footer__link">About</a>
+          <a href="journey.html"      class="footer__link">Journey</a>
+          <a href="competencies.html" class="footer__link">Competencies</a>
+          <a href="experience.html"   class="footer__link">Experience</a>
+        </nav>
+        <p class="footer__copy">© 2026 Kashish Devnani · The White Coat Journal · Gulf Medical University</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

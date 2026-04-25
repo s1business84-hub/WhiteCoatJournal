@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Experience — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="Clinical observership at CKS Hospital, Jaipur and Dubai CPR/AED certification — detailed reflection by Kashish Devnani, medical student at Gulf Medical University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"        class="nav__link">Home</a></li>
+        <li><a href="about.html"        class="nav__link">About</a></li>
+        <li><a href="journey.html"      class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html"   class="nav__link">Experience</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       PARALLAX HERO — OBSERVERSHIP
+       ════════════════════════════════════════════════════ -->
+  <section class="obs-hero parallax-section">
+    <!-- Hospital corridor background with parallax -->
+    <div class="obs-hero__bg" data-parallax="0.3"></div>
+    <div class="obs-hero__overlay"></div>
+
+    <div class="obs-hero__content">
+      <div class="container" style="padding: 0;">
+        <span class="badge" style="margin-bottom: var(--sp-md); display: inline-flex;">
+          <svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+          Medical Expert Competency · Evidence-Based
+        </span>
+        <h1 class="heading-xl" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: var(--sp-md); max-width: 700px;">
+          Cardiology &amp; Surgical<br />
+          <span style="color: var(--c-secondary);">Clinical Observership</span>
+        </h1>
+        <div class="divider"></div>
+        <p class="body-lg" style="max-width: 580px; margin-bottom: var(--sp-xl);">
+          My clinical exposure has allowed me to bridge theoretical learning with real patient care environments. Through active observation, participation, and reflection, I have developed a deeper understanding of clinical workflows and decision-making.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--sp-md);">
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span style="font-size: 0.85rem; font-weight: 500; color: var(--c-text);">CKS Hospital, Jaipur</span>
+          </div>
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span style="font-size: 0.85rem; font-weight: 500; color: var(--c-text);">Dr. Prakash Chandwani, Cardiologist</span>
+          </div>
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span style="font-size: 0.85rem; font-weight: 500; color: var(--c-text);">March 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       SCROLL STORYTELLING — OBSERVERSHIP NARRATIVE
+       ════════════════════════════════════════════════════ -->
+  <section class="story-section" id="observership">
+    <div class="container">
+      <div class="story-layout">
+
+        <!-- Sticky sidebar -->
+        <div class="story-sidebar">
+          <div class="story-sidebar__visual card">
+            <p class="label" style="margin-bottom: var(--sp-sm);">Observership Overview</p>
+            <div class="story-meta">
+              <div class="story-meta__item">
+                <span class="story-meta__label">Hospital</span>
+                <span class="story-meta__val">CKS Hospital, Jaipur</span>
+              </div>
+              <div class="story-meta__item">
+                <span class="story-meta__label">Supervisor</span>
+                <span class="story-meta__val">Dr. Prakash Chandwani</span>
+              </div>
+              <div class="story-meta__item">
+                <span class="story-meta__label">Speciality</span>
+                <span class="story-meta__val">Cardiology &amp; Surgery</span>
+              </div>
+              <div class="story-meta__item">
+                <span class="story-meta__label">Duration</span>
+                <span class="story-meta__val">March 2026</span>
+              </div>
+              <div class="story-meta__item">
+                <span class="story-meta__label">Type</span>
+                <span class="story-meta__val">Clinical Observership</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--c-accent); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: var(--sp-md);">
+            <p class="label" style="margin-bottom: var(--sp-xs);">Competency Linked</p>
+            <p style="font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: var(--c-text);">Medical Expert</p>
+            <p style="font-size: 0.82rem; color: var(--c-muted); margin-top: 0.25rem; line-height: 1.5;">Clinical reasoning · Patient care · Procedural knowledge · Reflective practice</p>
+          </div>
+        </div>
+
+        <!-- Scroll story items -->
+        <div class="story-items">
+
+          <!-- Intro -->
+          <div class="story-item" id="story-intro">
+            <div class="story-item__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              Overview
+            </div>
+            <h2 class="story-item__title">Observership at CKS Hospital</h2>
+            <p class="story-item__text">
+              During March 2026, I undertook a clinical observership under Dr. Prakash Chandwani, a renowned cardiologist at CKS Hospital, Jaipur. This experience provided direct exposure to patient management, multidisciplinary care, and operative procedures across various departments.
+            </p>
+            <p class="story-item__text" style="margin-top: var(--sp-sm);">
+              This observership improved my ability to connect classroom knowledge with real clinical practice. It also enhanced my observational skills, understanding of patient-centered care, and appreciation for teamwork within healthcare systems.
+            </p>
+          </div>
+
+          <!-- Ward Rounds -->
+          <div class="story-item" id="story-ward">
+            <div class="story-item__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              Ward Rounds
+            </div>
+            <h2 class="story-item__title">Daily Ward Rounds &amp; Patient Review</h2>
+            <p class="story-item__text">
+              My daily responsibilities involved accompanying the clinical team during ward rounds, where I observed patient evaluations, clinical discussions, and decision-making processes. I engaged in reviewing patient histories, monitoring progress, and understanding treatment plans.
+            </p>
+            <p class="story-item__text" style="margin-top: var(--sp-sm);">
+              This allowed me to appreciate the importance of structured clinical reasoning and continuity of care. Observing how the senior physicians moved fluidly between clinical assessment, patient communication, and treatment adjustment deepened my respect for the cognitive complexity of medicine.
+            </p>
+            <div style="margin-top: var(--sp-md); padding: var(--sp-md); background: var(--c-accent); border-radius: var(--r-lg); border-left: 3px solid var(--c-secondary);">
+              <p class="italic-accent" style="font-size: 0.9rem; line-height: 1.6;">"Continuity of care is not a schedule — it is a relationship between a clinician's understanding and a patient's evolving condition."</p>
+            </div>
+          </div>
+
+          <!-- ICU -->
+          <div class="story-item" id="story-icu">
+            <div class="story-item__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              ICU Exposure
+            </div>
+            <h2 class="story-item__title">Intensive Care Unit &amp; Critical Monitoring</h2>
+            <p class="story-item__text">
+              I also spent time in the intensive care unit, where I was introduced to critical care monitoring, including interpretation of arterial blood gases and patient stability parameters. This exposure enhanced my understanding of acute patient management and the importance of timely intervention.
+            </p>
+            <p class="story-item__text" style="margin-top: var(--sp-sm);">
+              The ICU environment was transformative — the pace, precision, and collaborative urgency of critical care challenged me to think more systematically about physiological parameters and the sequencing of clinical interventions. I observed how small deviations in ABG values translated into immediate changes in management plans.
+            </p>
+            <div style="margin-top: var(--sp-md); display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag">ABG Interpretation</span>
+              <span class="tag">Critical Care Monitoring</span>
+              <span class="tag">Acute Management</span>
+              <span class="tag">Haemodynamic Assessment</span>
+            </div>
+          </div>
+
+          <!-- Surgery -->
+          <div class="story-item" id="story-surgery">
+            <div class="story-item__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M1 12h6m6 0h6"/></svg>
+              Surgical Exposure
+            </div>
+            <h2 class="story-item__title">Surgical Procedures Observed</h2>
+            <p class="story-item__text">
+              Additionally, I observed multiple surgical procedures including tympanic membrane grafting, knee replacement surgery, prostate enlargement surgery, and vocal cord biopsy. During these procedures, the surgeons provided step-by-step explanations of the operative techniques, anatomical structures, and clinical rationale behind each intervention.
+            </p>
+            <p class="story-item__text" style="margin-top: var(--sp-sm);">
+              A particularly impactful experience was observing prostate surgery while simultaneously studying the same topic academically. <strong style="color: var(--c-text);">This integration of theoretical learning with real surgical exposure significantly strengthened my understanding and retention of the subject</strong> — the most important insight of the entire observership.
+            </p>
+            <div style="margin-top: var(--sp-md); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+              <div style="background: var(--c-accent); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 0.75rem; text-align: center;">
+                <p style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--c-secondary);">4</p>
+                <p style="font-size: 0.78rem; color: var(--c-muted);">Surgical Procedures</p>
+              </div>
+              <div style="background: var(--c-accent); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 0.75rem; text-align: center;">
+                <p style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--c-secondary);">3+</p>
+                <p style="font-size: 0.78rem; color: var(--c-muted);">Specialties Covered</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reflection -->
+          <div class="story-item" id="story-reflection">
+            <div class="story-item__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              Reflection
+            </div>
+            <h2 class="story-item__title">Learning &amp; Moving Forward</h2>
+            <p class="story-item__text">
+              This observership improved my ability to connect classroom knowledge with real clinical practice. It enhanced my observational skills, understanding of patient-centered care, and appreciation for teamwork within healthcare systems.
+            </p>
+            <p class="story-item__text" style="margin-top: var(--sp-sm);">
+              Moving forward, I aim to build on this experience by developing stronger clinical reasoning skills and actively engaging in patient interaction opportunities to further enhance my competencies as a future physician.
+            </p>
+            <div style="margin-top: var(--sp-lg);" class="btn-group">
+              <a href="competencies.html" class="btn btn-primary">
+                View All Competencies
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="journey.html" class="btn btn-secondary">Academic Journey</a>
+            </div>
+          </div>
+
+        </div><!-- /story-items -->
+      </div><!-- /story-layout -->
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       CPR / AED SECTION
+       ════════════════════════════════════════════════════ -->
+  <section class="section" style="background: var(--c-bg); border-top: 1px solid var(--c-border);" id="cpr-aed">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <span class="section-header__eyebrow">Medical Expert Competency</span>
+        <h2 class="section-header__title">Dubai Heart Safe City<br />CPR &amp; AED Course</h2>
+        <div class="divider"></div>
+        <p class="section-header__desc">
+          Completing the CPR and AED certification directly contributed to my development as a Medical Expert by strengthening clinical judgment, procedural skills, and evidence-based approach to emergency care.
+        </p>
+      </div>
+
+      <!-- Certificate preview card -->
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-xl); margin-bottom: var(--sp-2xl); align-items: start;" class="fade-up" id="cpr-cert-grid">
+        <div>
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card);">
+            <div style="background: var(--c-text); padding: var(--sp-md) var(--sp-lg); display: flex; align-items: center; gap: var(--sp-sm);">
+              <div style="width: 40px; height: 40px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div>
+                <p style="color: #fff; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600;">Certificate of Completion</p>
+                <p style="color: rgba(255,247,245,0.55); font-size: 0.78rem;">Dubai Health Authority · Dubai Heart Safe City Programme</p>
+              </div>
+            </div>
+            <iframe
+              src="assets/certificate-cpr-aed.pdf"
+              title="CPR AED Certificate"
+              style="width: 100%; height: 380px; border: none; display: block; background: var(--c-card);">
+            </iframe>
+          </div>
+            <a href="assets/certificate-cpr-aed.pdf" class="btn btn-primary" target="_blank" style="width: 100%; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download Certificate
+            </a>
+        </div>
+
+        <div>
+          <p class="heading-md" style="margin-bottom: var(--sp-md);">Training Overview</p>
+          <p class="body-md" style="margin-bottom: var(--sp-md);">
+            The training offered a structured blend of theory and hands-on practice, allowing me to integrate foundational scientific knowledge with practical competencies essential for managing life-threatening situations.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            Engaging with real-time simulations helped me understand the physiological basis of cardiac arrest, the importance of timely intervention, and the impact of high-quality chest compressions on patient outcomes.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--c-accent); border-radius: var(--r-md); border: 1px solid var(--c-border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span style="font-size: 0.875rem; color: var(--c-text);">Dubai Health Authority – Nationally Recognised</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--c-accent); border-radius: var(--r-md); border: 1px solid var(--c-border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span style="font-size: 0.875rem; color: var(--c-text);">Hands-on CPR &amp; AED simulation training</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--c-accent); border-radius: var(--r-md); border: 1px solid var(--c-border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span style="font-size: 0.875rem; color: var(--c-text);">Evidence-based protocol application</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--c-accent); border-radius: var(--r-md); border: 1px solid var(--c-border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-secondary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span style="font-size: 0.875rem; color: var(--c-text);">Interprofessional emergency teamwork</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       REFLECTION SECTION — 3 PARTS
+       ════════════════════════════════════════════════════ -->
+  <section class="section reflection-section" id="reflection">
+    <div class="container">
+
+      <div class="section-header section-header--center fade-up" style="margin-bottom: var(--sp-xl);">
+        <span class="section-header__eyebrow">Structured Reflection</span>
+        <h2 class="section-header__title">CPR &amp; AED — Reflective Analysis</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-header__desc">
+          A three-part reflective account of how the Dubai Heart Safe City CPR &amp; AED certification shaped my development as a Medical Expert.
+        </p>
+      </div>
+
+      <div class="reflection-steps">
+
+        <!-- 01 -->
+        <div class="reflection-step fade-left">
+          <div class="reflection-step__num">01</div>
+          <div class="reflection-step__content">
+            <h3 class="reflection-step__title">From Uncertainty to Confidence</h3>
+            <p class="reflection-step__text">
+              Initially, I felt cautious about my ability to perform resuscitative procedures with precision, especially under pressure. However, repeated supervised practice, detailed feedback, and guided correction helped transform this uncertainty into confidence. This growth highlighted a key attribute of the Medical Expert role: the ability to evolve through reflective practice, continuous learning, and deliberate skill refinement.
+            </p>
+            <p class="reflection-step__text" style="margin-top: var(--sp-sm);">
+              I learned to assess scenarios rapidly, identify priorities, and intervene effectively using standardised CPR protocols. The certification also demonstrated that technical proficiency alone cannot ensure successful resuscitation. Emergency response demands coordinated teamwork, situational awareness, clear communication, and decisive action. Understanding how to integrate these components reinforced my appreciation of the Medical Expert's responsibility to collaborate seamlessly with healthcare providers while maintaining clinical leadership during emergencies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="display: flex; align-items: center; gap: var(--sp-md);">
+          <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+          <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="reflection-step fade-right" style="animation-delay: 0.1s;">
+          <div class="reflection-step__num">02</div>
+          <div class="reflection-step__content">
+            <h3 class="reflection-step__title">Evidence Behind the Protocol</h3>
+            <p class="reflection-step__text">
+              Learning the evidence behind CPR guidelines deepened my respect for research-driven practice. Understanding why each action matters physiologically and statistically improved my adherence to best practices and enhanced my ability to make informed decisions in time-sensitive situations. This experience underscored the importance of maintaining updated clinical knowledge and continually aligning my actions with current evidence-based protocols.
+            </p>
+            <p class="reflection-step__text" style="margin-top: var(--sp-sm);">
+              Reflecting on this certification reinforced the ethical dimension of the Medical Expert role. As someone entrusted with patient care, I recognised the obligation to remain competent, proactive, and prepared for emergencies, regardless of the setting. This realization motivated me to commit to regular recertification, additional life-support training, and ongoing clinical exposure to strengthen my readiness for future responsibilities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="display: flex; align-items: center; gap: var(--sp-md);">
+          <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary);"></div>
+          <div style="flex: 1; height: 1px; background: var(--c-border);"></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="reflection-step fade-left" style="animation-delay: 0.1s;">
+          <div class="reflection-step__num">03</div>
+          <div class="reflection-step__content">
+            <h3 class="reflection-step__title">Shaping My Identity as a Medical Expert</h3>
+            <p class="reflection-step__text">
+              Overall, the CPR/AED course significantly enhanced my procedural skills, emergency communication, and clinical judgment. It has shaped my identity as a developing Medical Expert, ensuring I can respond effectively, confidently, and ethically in situations where immediate intervention may determine survival.
+            </p>
+            <p class="reflection-step__text" style="margin-top: var(--sp-sm);">
+              This certification now serves as a cornerstone of my clinical portfolio — not merely as a credential, but as a lived experience that transformed my understanding of what it means to be prepared, responsible, and competent in the face of medical emergencies. Every future clinical encounter will be approached with the same rigour and commitment that this training instilled in me.
+            </p>
+            <div style="margin-top: var(--sp-lg); padding: var(--sp-lg); background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r-xl); border-left: 4px solid var(--c-secondary);">
+              <p class="italic-accent" style="font-size: 1rem; line-height: 1.65;">
+                "The integration of theoretical learning with real surgical exposure significantly strengthened my understanding — a principle that now guides every clinical interaction I pursue."
+              </p>
+              <p style="margin-top: var(--sp-sm); font-size: 0.8rem; color: var(--c-muted);">— Kashish Devnani, Medical Student · Gulf Medical University</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /reflection-steps -->
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       SKILLS SECTION
+       ════════════════════════════════════════════════════ -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="section-header__eyebrow">Clinical Skills</span>
+        <h2 class="section-header__title">Skills Developed</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-header__desc">
+          Key clinical and professional competencies developed through observership and certification experiences.
+        </p>
+      </div>
+
+      <div class="skills-grid stagger" style="justify-content: center;">
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Clinical Observation
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Patient Case Analysis
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          ABG Interpretation
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M1 12h6m6 0h6"/></svg>
+          Surgical Exposure
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Clinical Communication
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          CPR &amp; AED Technique
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Multidisciplinary Teamwork
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Reflective Practice
+        </div>
+        <div class="skill-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Emergency Response
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       REFLECTION PHILOSOPHY
+       ════════════════════════════════════════════════════ -->
+  <section class="section" style="background: var(--c-accent);">
+    <div class="container">
+      <div class="grid-2">
+        <div class="fade-left">
+          <span class="section-header__eyebrow">Learning Approach</span>
+          <h2 class="heading-lg" style="margin: var(--sp-sm) 0 var(--sp-md);">Reflection &amp; Learning Approach</h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom: var(--sp-md);">
+            I adopt a structured reflective approach to learning, analysing each experience through observation, evaluation, and application. This allows me to identify strengths, recognise gaps, and continuously improve my clinical understanding and professional development.
+          </p>
+          <p class="body-md" style="margin-bottom: var(--sp-lg);">
+            Reflection is not retrospective — it is an active, ongoing practice that shapes how I engage with every clinical encounter, academic session, and professional interaction.
+          </p>
+          <div class="btn-group">
+            <a href="competencies.html" class="btn btn-primary">All Competencies</a>
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+          </div>
+        </div>
+
+        <div class="fade-right">
+          <div class="card card-tilt" style="background: var(--c-bg);">
+            <div style="display: flex; flex-direction: column; gap: var(--sp-md);">
+              <div style="display: flex; align-items: flex-start; gap: var(--sp-sm);">
+                <div style="width: 36px; height: 36px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; font-family: var(--font-serif); font-size: 0.85rem; font-weight: 700;">1</div>
+                <div>
+                  <p style="font-weight: 600; color: var(--c-text); margin-bottom: 0.2rem; font-size: 0.9rem;">Observe</p>
+                  <p style="font-size: 0.825rem; color: var(--c-muted); line-height: 1.6;">Engage actively with every clinical scenario, noting patterns, decisions, and outcomes without judgement.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: var(--sp-sm);">
+                <div style="width: 36px; height: 36px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; font-family: var(--font-serif); font-size: 0.85rem; font-weight: 700;">2</div>
+                <div>
+                  <p style="font-weight: 600; color: var(--c-text); margin-bottom: 0.2rem; font-size: 0.9rem;">Evaluate</p>
+                  <p style="font-size: 0.825rem; color: var(--c-muted); line-height: 1.6;">Critically analyse the experience against academic knowledge, clinical guidelines, and personal values.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: var(--sp-sm);">
+                <div style="width: 36px; height: 36px; background: var(--c-secondary); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; font-family: var(--font-serif); font-size: 0.85rem; font-weight: 700;">3</div>
+                <div>
+                  <p style="font-weight: 600; color: var(--c-text); margin-bottom: 0.2rem; font-size: 0.9rem;">Apply</p>
+                  <p style="font-size: 0.825rem; color: var(--c-muted); line-height: 1.6;">Translate insights into actionable improvements — in clinical technique, professional behaviour, or academic study.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">The White Coat Journal</p>
+          <p class="footer__tagline">A Medical Portfolio by Kashish Devnani</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html"        class="footer__link">Home</a>
+          <a href="about.html"        class="footer__link">About</a>
+          <a href="journey.html"      class="footer__link">Journey</a>
+          <a href="competencies.html" class="footer__link">Competencies</a>
+          <a href="experience.html"   class="footer__link">Experience</a>
+        </nav>
+        <p class="footer__copy">© 2026 Kashish Devnani · The White Coat Journal · Gulf Medical University</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
