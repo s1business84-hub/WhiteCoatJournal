@@ -65,18 +65,39 @@
     <div class="container">
       <div class="grid-2" style="align-items: start; gap: var(--sp-2xl);">
 
-        <!-- Photo grid -->
+        <!-- Photo / Video grid -->
         <div class="about-photo-grid fade-left">
-          <div class="about-photo-grid__main" style="aspect-ratio:3/4;">
-            <img src="assets/kashish.jpg" alt="Kashish Devnani — White Coat Ceremony, Gulf Medical University 2025" loading="lazy" style="object-position:top center;" />
+          <div class="about-photo-grid__main" style="aspect-ratio:3/4;overflow:hidden;position:relative;background:#000;">
+            <video
+              autoplay muted loop playsinline
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+              poster="assets/observo2.jpg"
+            >
+              <source src="assets/observo3.mp4" type="video/mp4" />
+            </video>
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <span style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border-radius:99px;padding:0.3rem 0.75rem;font-size:0.7rem;font-weight:600;color:#fff;letter-spacing:0.05em;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#ef4444;animation:pulse-dot 1.5s infinite;flex-shrink:0;"></span>
+                CKS Hospital · Cardiology Observership
+              </span>
+            </div>
           </div>
-          <div class="about-photo-grid__side">
-            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&q=80&fit=crop" alt="Medical notes stethoscope" loading="lazy" />
+          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;background:#000;">
+            <video
+              autoplay muted loop playsinline
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+              poster="assets/observo1.jpg"
+            >
+              <source src="assets/observo4.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="about-photo-grid__side">
-            <img src="assets/kashish.jpg" alt="Gulf Medical University campus" loading="lazy" style="object-position:center 20%;" />
+          <div class="about-photo-grid__side" style="overflow:hidden;">
+            <img src="assets/kashish.jpg" alt="Kashish Devnani — White Coat Ceremony, Gulf Medical University 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
           </div>
         </div>
+        <style>
+          @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+        </style>
 
         <!-- Text content -->
         <div class="fade-right">
