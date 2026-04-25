@@ -54,6 +54,14 @@
   <section class="hero gradient-bg" id="hero" style="position:relative;overflow:hidden;">
     <canvas id="hero-particles" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
     <span class="depth-text">MEDICINE</span>
+
+    <!-- Subtle grid overlay -->
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(216,167,160,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(216,167,160,0.07) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;"></div>
+
+    <!-- Vertical side labels -->
+    <div style="position:absolute;left:var(--sp-md);top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center;font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-muted);opacity:0.45;z-index:1;white-space:nowrap;">Gulf Medical University · 2025</div>
+    <div style="position:absolute;right:var(--sp-md);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center;font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-muted);opacity:0.45;z-index:1;white-space:nowrap;">The White Coat Journal</div>
+
     <div class="hero__blobs">
       <div class="hero__blob hero__blob--1"></div>
       <div class="hero__blob hero__blob--2"></div>
@@ -62,10 +70,14 @@
 
     <div class="hero--split" style="position:relative;z-index:1;">
     <div class="hero__content">
-      <div class="hero__eyebrow">
+      <div class="hero__eyebrow" style="display:flex;align-items:center;gap:var(--sp-sm);flex-wrap:wrap;">
         <span class="badge">
           <svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
           Medical Student Portfolio · Gulf Medical University
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;color:var(--c-teal);">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Class of 2028
         </span>
       </div>
 
@@ -73,6 +85,13 @@
         <span class="hero__name-line">KASHISH</span>
         <span class="hero__name-line hero__name-line--accent">DEVNANI</span>
       </h1>
+
+      <!-- Animated divider line -->
+      <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+        <div style="height:1.5px;width:40px;background:linear-gradient(90deg,var(--c-teal),var(--c-purple));border-radius:2px;"></div>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-teal);">MBBS · Future Physician</span>
+        <div style="height:1.5px;flex:1;max-width:80px;background:linear-gradient(90deg,var(--c-purple),transparent);border-radius:2px;"></div>
+      </div>
 
       <p class="hero__headline">
         Building Clinical Insight Through Experience,<br class="br-hide" />
@@ -96,9 +115,27 @@
         </a>
       </div>
 
-      <p class="hero__micro">
-        Documenting growth across clinical exposure, academic learning, and professional development
-      </p>
+      <!-- Micro credentials row -->
+      <div style="display:flex;align-items:center;gap:var(--sp-md);margin-top:var(--sp-md);flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <div style="width:28px;height:28px;border-radius:var(--r-sm);background:var(--c-teal-light);border:1px solid rgba(27,138,158,0.2);display:flex;align-items:center;justify-content:center;color:var(--c-teal);flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <span style="font-size:0.75rem;color:var(--c-muted);">CPR / AED Certified</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <div style="width:28px;height:28px;border-radius:var(--r-sm);background:var(--c-purple-light);border:1px solid rgba(123,79,158,0.2);display:flex;align-items:center;justify-content:center;color:var(--c-purple);flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span style="font-size:0.75rem;color:var(--c-muted);">Cardiology Observership</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <div style="width:28px;height:28px;border-radius:var(--r-sm);background:var(--c-gold-light);border:1px solid rgba(196,136,42,0.2);display:flex;align-items:center;justify-content:center;color:var(--c-gold);flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <span style="font-size:0.75rem;color:var(--c-muted);">GMU · Ajman, UAE</span>
+        </div>
+      </div>
     </div>
 
     <!-- Photo Card -->
@@ -111,9 +148,13 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         CPR / AED Certified
       </div>
+      <!-- New: year chip -->
+      <div style="position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--c-navy);color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;padding:0.4rem 1.1rem;border-radius:99px;white-space:nowrap;z-index:3;box-shadow:0 4px 20px rgba(22,37,58,0.35);">
+        WHITE COAT · 2025
+      </div>
       <div class="hero-photo-card">
         <img src="assets/kashish.jpg" alt="Kashish Devnani at Gulf Medical University White Coat Ceremony 2025" loading="eager" style="object-position:top center;" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=85&fit=crop'" />
-          <div class="hero-photo-badge">
+        <div class="hero-photo-badge">
           <div class="hero-photo-badge__dot"></div>
           <div class="hero-photo-badge__text">
             White Coat Ceremony 2025
@@ -121,7 +162,7 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
     </div><!-- end hero--split -->
 
     <div class="hero__scroll-indicator" style="position:relative;z-index:1;">
@@ -181,12 +222,12 @@
               <span class="photo-strip__caption">White Coat Ceremony 2025</span>
             </div>
             <div class="photo-strip__item">
-              <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=500&q=80&fit=crop" alt="Stethoscope" loading="lazy" />
-              <span class="photo-strip__caption">Medical Education</span>
+              <img src="assets/observo1.jpg" alt="Cardiac imaging review — CKS Hospital Jaipur" loading="lazy" style="object-position:center;" />
+              <span class="photo-strip__caption">Cardiology Observership</span>
             </div>
             <div class="photo-strip__item">
-              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80&fit=crop" alt="Hospital corridor" loading="lazy" />
-              <span class="photo-strip__caption">Observership</span>
+              <img src="assets/observo2.jpg" alt="Philips cath lab — interventional cardiology" loading="lazy" style="object-position:center;" />
+              <span class="photo-strip__caption">Cardiac Cath Lab</span>
             </div>
           </div>
         </div>
