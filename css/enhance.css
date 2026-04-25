@@ -279,7 +279,7 @@ body::before {
 .hero-photo-wrap {
   position: relative;
   flex-shrink: 0;
-  width: 400px;
+  width: 300px;
 }
 .hero-photo-card {
   position: relative;
@@ -290,7 +290,7 @@ body::before {
 }
 .hero-photo-card img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
   filter: saturate(1.05) contrast(1.02);
