@@ -284,60 +284,61 @@
       color: var(--c-text);
       text-decoration: none;
     }
-    /* Gibbs cycle accordion */
-    .gibbs-cycle {
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-xl);
+    /* Gibbs cycle — coloured card grid */
+    .gibbs-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: var(--sp-lg);
+    }
+    .gibbs-card {
+      border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 2px 14px rgba(0,0,0,.07);
     }
-    .gibbs-stage { border-bottom: 1px solid var(--c-border); }
-    .gibbs-stage:last-child { border-bottom: none; }
-    .gibbs-stage__btn {
-      width: 100%;
+    .gibbs-card__head {
+      padding: .85rem 1.1rem .75rem;
       display: flex;
-      align-items: center;
-      gap: var(--sp-md);
-      padding: .9rem var(--sp-lg);
-      background: var(--c-card);
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      transition: background .18s;
+      flex-direction: column;
+      gap: .18rem;
     }
-    .gibbs-stage__btn:hover { background: var(--c-accent); }
-    .gibbs-stage.open .gibbs-stage__btn { background: var(--c-accent); }
-    .gibbs-stage__num {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      background: var(--c-bg);
-      border: 1.5px solid var(--c-border);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-serif);
-      font-size: .78rem;
+    .gibbs-card__num {
+      font-size: .63rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .65;
+      color: #2a2a2a;
+    }
+    .gibbs-card__name {
+      font-size: .97rem;
       font-weight: 700;
-      color: var(--c-text);
-      flex-shrink: 0;
-      transition: background .2s, border-color .2s, color .2s;
+      color: #1a1a1a;
     }
-    .gibbs-stage.open .gibbs-stage__num { background: var(--c-secondary); border-color: var(--c-secondary); color: #fff; }
-    .gibbs-stage__label { font-size: .88rem; font-weight: 600; color: var(--c-text); flex: 1; }
-    .gibbs-stage__sub { font-size: .72rem; color: var(--c-muted); display: block; margin-top: .1rem; }
-    .gibbs-stage__chevron { color: var(--c-muted); transition: transform .25s; flex-shrink: 0; }
-    .gibbs-stage.open .gibbs-stage__chevron { transform: rotate(180deg); }
-    .gibbs-stage__body {
-      display: none;
-      padding: var(--sp-lg);
+    .gibbs-card__prompt {
+      font-size: .73rem;
+      font-style: italic;
+      color: #444;
+      line-height: 1.45;
+    }
+    .gibbs-card__body {
       background: #fff;
-      border-top: 1px solid var(--c-border);
-    }
-    .gibbs-stage.open .gibbs-stage__body { display: block; }
-    .gibbs-stage__body p {
-      font-size: .92rem;
-      line-height: 1.8;
+      padding: .9rem 1.1rem;
+      font-size: .87rem;
+      line-height: 1.78;
       color: var(--c-text);
-      margin-bottom: var(--sp-sm);
+      border-top: 1px solid rgba(0,0,0,.07);
     }
-    .gibbs-stage__body p:last-child { margin-bottom: 0; }
+    /* Stage colours — matching Gibbs diagram */
+    .gibbs-card--1 .gibbs-card__head { background: #c8d0dc; }
+    .gibbs-card--2 .gibbs-card__head { background: #e8b0a0; }
+    .gibbs-card--3 .gibbs-card__head { background: #f0eaa0; }
+    .gibbs-card--4 .gibbs-card__head { background: #c8d870; }
+    .gibbs-card--5 .gibbs-card__head { background: #f0a8c8; }
+    .gibbs-card--6 .gibbs-card__head { background: #a8d8ec; }
+    @media (max-width: 680px) {
+      .gibbs-cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -571,67 +572,30 @@
         <span class="gibbs-evidence-chip">🏥 CKS Cardiology Observership</span>
         <span class="gibbs-evidence-chip">🫀 Coronary Angiogram Review</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>During my cardiology observership at CKS Hospital in Dubai, I had the opportunity to observe a consultant cardiologist reviewing coronary angiogram findings with a multidisciplinary team. The session took place over a single morning in the catheterisation laboratory, where I stood alongside nurses, radiology technicians, and a senior registrar. The cardiologist walked through each patient's imaging in systematic order, identifying blockages, assessing vessel anatomy, and discussing management options ranging from conservative medication to percutaneous coronary intervention.</p>
-            <p>Earlier in the week, I had also completed my Dubai CPR and AED certification — a structured half-day course covering basic life support protocols, automated defibrillator use, and airway management. These two experiences formed the backbone of my first direct exposure to applied medical expertise in a functioning clinical environment.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where did this occur?</span></div>
+          <div class="gibbs-card__body">During my cardiology observership at CKS Hospital in Dubai, I observed a consultant cardiologist reviewing coronary angiogram findings with a multidisciplinary team in the catheterisation laboratory. The cardiologist walked through each patient's imaging systematically, identifying blockages and discussing management options. Earlier that week I also completed my Dubai CPR and AED certification — covering basic life support, defibrillator use, and airway management. These two experiences formed my first direct exposure to applied medical expertise in a clinical environment.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I felt a mixture of awe and intellectual humility. Watching the consultant navigate complex imaging data with apparent ease made me acutely aware of how much foundational knowledge underpins every clinical decision. I was not overwhelmed — instead I felt motivated, drawn into the precision and purpose of each action. The CPR certification, by contrast, made me feel immediately capable and responsible; holding the defibrillator and running through compressions gave me a tangible sense of readiness that classroom anatomy had not yet provided.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">I felt a mixture of awe and intellectual humility. Watching the consultant navigate complex imaging data with apparent ease made me acutely aware of how much foundational knowledge underpins every clinical decision. I was not overwhelmed — instead I felt motivated, drawn into the precision and purpose of each action. The CPR certification made me feel immediately capable; holding the defibrillator gave me a tangible sense of readiness that classroom anatomy had not yet provided.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>What worked well was the structured environment: both the observership and the certification had clear objectives, and I was able to follow the logic of each event even without prior clinical experience. The consultant was approachable and occasionally explained his reasoning aloud, which was invaluable. What was less effective was my own silence — I hesitated to ask questions during the angiogram review, unsure whether my curiosity would be appropriate. This self-censorship meant I missed potential learning moments.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both the positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">What worked well was the structured environment: both experiences had clear objectives and I could follow the logic of each event. The consultant occasionally explained his reasoning aloud, which was invaluable. What was less effective was my own silence — I hesitated to ask questions during the angiogram review, unsure whether my curiosity was appropriate. This self-censorship meant I missed potential learning moments.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The gap between theoretical knowledge and clinical application was wider than I had anticipated. Medical school has equipped me with anatomical concepts, but the observership revealed how physicians synthesise imaging, patient history, and pathophysiology simultaneously in real time. My hesitation to speak reflected an uncertainty about my role as a pre-clinical student — a boundary that, in retrospect, need not have been as rigid. The CPR certification demonstrated that procedural competence is achievable at any stage of training, and that structured practice rapidly builds genuine confidence.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did. Utilise literature and professional expertise.</span></div>
+          <div class="gibbs-card__body">The gap between theoretical knowledge and clinical application was wider than anticipated. Medical school had equipped me with anatomical concepts, but the observership revealed how physicians synthesise imaging, history, and pathophysiology simultaneously in real time. My hesitation to speak reflected uncertainty about my role as a pre-clinical student — a boundary that need not have been so rigid. The CPR certification demonstrated that procedural competence is achievable at any stage of training.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have prepared a list of focused clinical questions before attending the observership — a habit I have since developed. Asking even one well-formed question would have reinforced the material and signalled genuine engagement to the team. I also recognise that watching alone is insufficient; future observerships should be paired with pre-reading on the conditions I expect to encounter so that I can place observations within a theoretical framework as they unfold.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">Determine what you could have done differently and what you've learned.</span></div>
+          <div class="gibbs-card__body">I should have prepared a list of focused clinical questions before attending the observership. Asking even one well-formed question would have reinforced the material and signalled genuine engagement to the team. I also recognise that passive observation is insufficient; future placements should be paired with pre-reading on the relevant conditions so I can place observations within a theoretical framework as they unfold.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Moving forward, I will prepare two to three specific learning objectives before each clinical encounter, review basic pathophysiology of the relevant specialty the night before, and actively seek brief debriefs with supervising clinicians. I will renew my CPR certification annually and explore advanced life support training in my second year. Building this habit of intentional, structured observation will strengthen my development as a Medical Expert throughout my training and into my career as a physician.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan detailing what you'll do if a similar situation arises in the future.</span></div>
+          <div class="gibbs-card__body">Moving forward, I will prepare two to three specific learning objectives before each clinical encounter, review basic pathophysiology the night before, and actively seek brief debriefs with supervising clinicians. I will renew my CPR certification annually and explore advanced life support training in my second year, building the habit of intentional, structured observation throughout my training.</div>
         </div>
       </div>
     </div>
@@ -647,66 +611,30 @@
         <span class="gibbs-evidence-chip">🏥 Bedside Interaction — CKS Hospital</span>
         <span class="gibbs-evidence-chip">🫀 Interventional Cath Lab Observation</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>During the CKS Hospital observership, I observed a consultant cardiologist conduct a pre-procedure consultation with a patient scheduled for a cardiac catheterisation. The patient, an elderly man accompanied by his adult daughter, appeared anxious. The consultant spent time explaining the procedure in simple terms, checked the patient's understanding repeatedly, and addressed the daughter's concerns with equal care. I watched from a respectful distance as the interaction unfolded — witnessing, for the first time in a live clinical setting, what patient-centred communication looks like in practice.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where did this occur?</span></div>
+          <div class="gibbs-card__body">During the CKS Hospital observership, I observed a consultant cardiologist conduct a pre-procedure consultation with an elderly patient scheduled for cardiac catheterisation. The consultant spent time explaining the procedure in simple terms, repeatedly checked the patient's understanding, and addressed the family's concerns with equal care. It was the first time I witnessed patient-centred communication in a live clinical setting.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I felt moved by the gentleness with which the consultant approached the encounter. The patient's visible relief after the explanation highlighted just how powerful simple human reassurance can be. I also noticed a degree of vulnerability — the patient's trust was complete and unquestioning — and this left me with a deep sense of the responsibility that comes with being a physician. I felt eager to develop these same skills and to understand the ethical obligations that underpin patient care.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">I felt moved by the gentleness of the approach. The patient's visible relief highlighted how powerful simple human reassurance can be. The patient's complete trust left me with a deep sense of the responsibility that comes with being a physician, and I felt eager to develop the same communication skills.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The positive element was the consultant's consistent use of lay language and non-verbal reassurance — nodding, maintaining eye contact, and pausing to listen. These behaviours were deliberate and clearly learned through practice. A less positive aspect was that I had no opportunity to interact with the patient directly, which limited my ability to experience the dynamic personally. My role remained purely observational, which, while valuable, highlighted the distinction between witnessing patient care and actually providing it.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both the positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">Positive: the consultant's use of lay language, eye contact, and active listening were deliberate and clearly learned through practice. Less positive: I had no opportunity to interact with the patient directly, highlighting the distinction between witnessing care and actually providing it.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The consultant's effectiveness in this encounter stemmed from years of communication training and clinical experience — skills that are not developed passively. The cultural context of Dubai, where patients may have varying degrees of health literacy and may come from diverse linguistic backgrounds, seemed to amplify the need for clear, compassionate explanation. This reinforced my understanding that patient care extends far beyond clinical procedures; the emotional and informational dimensions of care are equally vital to patient safety and satisfaction.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did. Utilise literature and professional expertise.</span></div>
+          <div class="gibbs-card__body">The consultant's effectiveness stemmed from years of training. In Dubai's multicultural context — where patients come from diverse linguistic and cultural backgrounds — clear, compassionate explanation is especially critical. This reinforced that patient care extends beyond clinical procedures; the emotional and informational dimensions are equally vital to patient safety and satisfaction.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>With hindsight, I wish I had documented specific phrases and techniques the consultant used — the way he structured his explanation, his choice of analogies, his use of silence. Keeping a reflection journal from day one would have captured these granular observations. I also recognise that I should engage more actively with patients in supervised community settings, such as volunteering at health fairs, to begin building my own communication repertoire before entering full clinical training.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">Determine what you could have done differently and what you've learned.</span></div>
+          <div class="gibbs-card__body">I wish I had documented specific phrases and techniques the consultant used. A reflection journal from day one would have captured these observations. I also recognise the need to engage with patients in supervised community settings to build my own communication repertoire before clinical rotations.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will begin keeping a clinical observation journal to record specific patient interaction techniques I witness. I will seek opportunities to volunteer in patient-facing community health roles and will study patient communication frameworks — including motivational interviewing and teach-back methods — during my pre-clinical years so that I enter clinical rotations with deliberate communication tools already in my repertoire.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan detailing what you'll do if a similar situation arises in the future.</span></div>
+          <div class="gibbs-card__body">I will keep a clinical observation journal recording patient interaction techniques I witness. I will volunteer in patient-facing community health roles and study frameworks such as motivational interviewing and teach-back methods so that I enter clinical rotations with deliberate communication tools already in my repertoire.</div>
         </div>
       </div>
     </div>
@@ -722,66 +650,30 @@
         <span class="gibbs-evidence-chip">🗣️ Interprofessional Team Rounds</span>
         <span class="gibbs-evidence-chip">📋 White Coat Ceremony Address</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>At the Gulf Medical University White Coat Ceremony in 2024, I stood before faculty, peers, and family to recite the professional pledge that marks a student's formal entry into medicine. Although the moment was ceremonial, it demanded clear, composed public delivery — a form of communication I had not rehearsed in a medical context before. Separately, during my cardiology observership, I observed team morning handovers where physicians communicated patient statuses efficiently and precisely across roles, highlighting how communication changes depending on audience and urgency.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">At GMU I recited the professional pledge at the White Coat Ceremony 2024 and, during my observership, observed structured clinical handovers where physicians transferred patient information efficiently across roles.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>During the White Coat Ceremony I felt nervous initially, but once I began speaking the weight of the moment settled into calm purpose. The handover observations were humbling — the brevity and accuracy with which information was transferred revealed how much skill lies beneath what appears to be simple conversation. I felt inspired to become someone who communicates with that kind of economy and precision, and slightly daunted by the years of practice needed to achieve it.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">At the ceremony I felt nervous then purposeful. The handovers were humbling — the economy and precision of clinical communication inspired me and made me conscious of the years of practice needed to achieve it.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The ceremony offered a genuine, memorable first experience of formal professional communication in medicine. The handovers, meanwhile, exposed a gap in my current ability: I could follow the clinical content only partially, which limited my comprehension of why certain communication choices were made. This is both an honest limitation and a clear developmental target. What worked well was my attentiveness and the notes I made afterwards, which helped consolidate what I had observed.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both the positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">The ceremony provided a memorable first experience of formal professional communication. The handovers exposed a gap: I could only partially follow the clinical content, limiting my comprehension of why certain choices were made. My attentiveness and post-session notes were positives.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Clinical communication is a practiced art that develops at the intersection of knowledge and experience. The handover structure I observed — SBAR (Situation, Background, Assessment, Recommendation) — is a formal framework specifically designed to reduce errors in information transfer. My partial comprehension reflected my early stage of training rather than any failing of the communicators. The ceremony, conversely, showed that public professional communication draws on poise and conviction — qualities that can be cultivated independently of clinical knowledge.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">Clinical communication is a practiced art. The SBAR framework used in handovers is designed to reduce errors in information transfer. My partial comprehension reflected my stage of training, not a failing of the communicators. The ceremony showed that professional public communication draws on poise and conviction — qualities cultivatable independently of clinical knowledge.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have studied SBAR and other structured communication tools before the observership so that I could follow handovers more meaningfully. For future professional presentations, I will seek formal feedback from peers and mentors rather than relying solely on my own self-assessment. Building a habit of requesting structured feedback is essential for continued improvement in this domain.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I should have studied SBAR before the observership. For future professional presentations I will seek formal feedback from peers and mentors rather than relying solely on self-assessment.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will learn the SBAR and SOAP documentation frameworks during my first year and practise applying them in simulated case presentations with classmates. I will join or form a peer study group focused on clinical communication scenarios, and will volunteer for any public speaking or patient education opportunities available through GMU to build my professional communication confidence progressively.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will learn SBAR and SOAP frameworks during Year 1 and practise applying them in simulated case presentations. I will join a peer communication study group and volunteer for public speaking opportunities at GMU.</div>
         </div>
       </div>
     </div>
@@ -797,66 +689,30 @@
         <span class="gibbs-evidence-chip">🤝 Multidisciplinary Team Observation</span>
         <span class="gibbs-evidence-chip">🎓 GMU Group-Based Learning</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>During my cardiology observership, I witnessed a multidisciplinary team case conference in which a cardiologist, cardiac surgeon, radiologist, and clinical nurse specialist jointly reviewed a complex patient case. Each professional contributed knowledge from their distinct discipline, and disagreements about management approach were navigated respectfully through evidence-based discussion. Within my medical school context at GMU, I have also participated in problem-based learning groups where students collaborate to solve clinical cases — a deliberate training structure designed to mimic real interdisciplinary working.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">During my cardiology observership I witnessed an MDT conference where a cardiologist, cardiac surgeon, radiologist, and clinical nurse specialist jointly reviewed a complex patient case. At GMU I have also participated in problem-based learning groups where students collaborate to solve clinical cases.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Observing the MDT conference was energising. The collective intelligence of the group felt genuinely greater than any single expert — a realisation that shifted how I perceive individual expertise in medicine. I felt an immediate desire to contribute but recognised my knowledge base was insufficient to add clinical value at this stage. Within GMU group sessions I have occasionally felt frustrated when group dynamics slow progress, but I have come to see those moments as practice for the real collaborative challenges of medicine.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">The MDT was energising — the collective intelligence felt genuinely greater than any single expert, shifting how I perceive individual expertise in medicine. In GMU group sessions I have occasionally felt frustrated when dynamics slow progress, but now see those moments as practice for real collaborative challenges.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The MDT conference demonstrated excellent collaborative practice: each clinician was listened to, dissent was expressed constructively, and the patient remained the focal point throughout. Less effective was my own contribution — my silence was a missed opportunity to at least ask a clarifying question as a learner. In the GMU PBL sessions, my contribution has been more active, though I have noticed I sometimes over-explain during discussion rather than listening first — a pattern I am working to correct.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">The MDT demonstrated excellent collaborative practice: each clinician was heard, dissent was expressed constructively, and the patient remained the focal point. Less effective: my silence was a missed opportunity. In GMU PBL I sometimes over-explain rather than listening first — a pattern I am working to correct.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The effectiveness of the MDT I observed was the result of clear role differentiation and a shared commitment to evidence-based reasoning over individual hierarchy. My own tendency to over-explain in group settings likely reflects a desire to demonstrate competence rather than to genuinely co-construct understanding — a common early-stage learning behaviour that can undermine true collaboration. Recognising this pattern is the first step in replacing it with more effective team behaviours.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">The MDT's effectiveness resulted from clear role differentiation and a shared commitment to evidence-based reasoning over individual hierarchy. My tendency to over-explain reflects a desire to demonstrate competence rather than co-construct understanding — a common early-stage behaviour that can undermine true collaboration.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>In future observational settings, I will identify one moment in each session to ask a respectful, focused question — not to show knowledge, but to deepen my understanding. In group study contexts I will practise the listen-first principle: allowing others to fully articulate ideas before building on or redirecting them. I will also read about interprofessional education models to understand the theoretical basis of effective team-based healthcare.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">In future observational settings I will identify one moment to ask a respectful focused question. In group study I will practise the listen-first principle, allowing others to fully articulate ideas before contributing.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will seek leadership roles in student group projects at GMU specifically to develop facilitation skills, and will request feedback on my collaborative behaviours from tutors and peers. During future clinical exposures, I will engage actively with nurses, physiotherapists, and allied health staff to understand their roles and begin building the interprofessional appreciation that effective teamwork demands.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will seek leadership roles in GMU group projects to develop facilitation skills and request feedback on my collaborative behaviours. During clinical exposures I will engage actively with nurses, physiotherapists, and allied health staff to build genuine interprofessional appreciation.</div>
         </div>
       </div>
     </div>
@@ -872,66 +728,30 @@
         <span class="gibbs-evidence-chip">🌍 Multicultural Patient Exposure — Dubai</span>
         <span class="gibbs-evidence-chip">📚 Global Health Seminars — GMU</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Growing up and studying in the UAE has consistently exposed me to one of the world's most ethnically diverse patient populations. During my hospital observership I noticed patients communicating in Arabic, Urdu, Malayalam, Hindi, Tagalog, and English — often within the same ward. The clinical team navigated these linguistic differences through interpreters, family members, and visual aids. Simultaneously, GMU's curriculum explicitly addresses global health challenges including infectious disease burden, non-communicable disease trends, and health systems equity in seminars I attended during my first year.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">Growing up and studying in the UAE has consistently exposed me to one of the world's most ethnically diverse patient populations. During my observership I noticed patients communicating in Arabic, Urdu, Malayalam, Hindi, Tagalog, and English — often on the same ward. GMU's curriculum also addresses global health challenges including infectious disease, non-communicable disease trends, and health equity in seminars I attended in Year 1.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I felt a strong sense of responsibility and curiosity simultaneously. The linguistic and cultural diversity of the patient population reminded me that social accountability in medicine is not abstract — it is present in every clinical interaction where a language barrier, a cultural belief, or a socioeconomic constraint shapes health outcomes. The global health seminars made me feel more informed and more concerned: more informed about the scale of inequity, and more concerned about whether I was doing enough to prepare myself to address it meaningfully.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">I felt a strong sense of responsibility and curiosity. The patient diversity reminded me that social accountability in medicine is present in every clinical interaction where a language barrier, cultural belief, or socioeconomic constraint shapes health outcomes. The seminars made me more informed — and more concerned about whether I was doing enough.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Positive: my early exposure to a multicultural clinical environment is an asset that many medical students in less diverse settings do not have. It has given me a lived appreciation of health equity challenges that no textbook can fully convey. Less positive: I have not yet channelled this awareness into active community engagement or advocacy. I remain a learner of social accountability rather than a practitioner of it — a gap I am conscious of and motivated to close.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">Positive: early exposure to a multicultural environment is an asset. Less positive: I have not yet channelled this awareness into active community engagement. I remain a learner of social accountability rather than a practitioner of it — a gap I am motivated to close.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The UAE's health system is built to handle diversity by design — interpreter services, multicultural staffing, and culturally sensitive protocols are embedded in major hospitals. My awareness of health equity has deepened through both formal education and lived experience, but translating awareness into action requires structural opportunity. As a pre-clinical student, my avenues for meaningful community contribution are limited but not non-existent. The key insight is that social accountability is a posture, not just a skill — it must be cultivated from the very beginning of training.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">The UAE's health system is built for diversity — interpreter services and culturally sensitive protocols are embedded in major hospitals. Translating awareness into action requires structural opportunity. The key insight is that social accountability is a posture, not just a skill — it must be cultivated from the very beginning of training.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have engaged with GMU's community outreach activities earlier in my first year. Volunteering at public health screening camps, blood donation drives, or health awareness events would have converted my conceptual understanding of social accountability into lived practice. I intend to prioritise these opportunities in the coming academic year and to document my engagement systematically as part of my portfolio.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I should have engaged with GMU's community outreach activities earlier in first year. Volunteering at health screening camps or blood donation drives would have converted my conceptual understanding into lived practice.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will sign up for at least two community health initiatives through GMU in the next semester, focusing on areas where I can contribute most meaningfully given my current skill level — such as health literacy campaigns or diabetes screening awareness. I will also pursue a deeper understanding of the UAE's national health agenda and how the medical curriculum aligns with public health priorities at the national level.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will sign up for at least two community health initiatives through GMU next semester — health literacy campaigns or diabetes screening awareness — and pursue a deeper understanding of the UAE's national health agenda.</div>
         </div>
       </div>
     </div>
@@ -947,66 +767,30 @@
         <span class="gibbs-evidence-chip">📓 Reflective Portfolio Practice</span>
         <span class="gibbs-evidence-chip">🎓 GMU Professional Development Seminars</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The act of constructing this e-portfolio — including writing these reflections using the Gibbs Reflective Cycle — represents my most sustained engagement with the Self and Profession Enhancer competency to date. In GMU's professional development sessions during Year 1, I was introduced to reflective practice as a formal educational tool: the idea that structured self-examination is not a supplementary activity but a core clinical skill. I was asked to maintain a learning diary and to revisit it periodically, identifying patterns in my own development.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">Constructing this e-portfolio — including writing these Gibbs reflections — represents my most sustained engagement with this competency. In GMU's Year 1 professional development sessions, I was introduced to reflective practice as a formal tool and asked to maintain a learning diary, revisiting it to identify patterns in my own development.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Initially, structured reflection felt artificial — writing about my feelings in a formal framework seemed forced compared to the spontaneous way one usually processes experience. Over time, and particularly through the process of compiling this portfolio, I have come to appreciate that this discomfort is productive. Committing to articulate what I have learned, what I found difficult, and what I will do differently creates a concrete record of growth that informal reflection cannot match.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">Initially, structured reflection felt artificial. Over time, and through compiling this portfolio, I came to appreciate that the discomfort is productive — articulating what I have learned creates a concrete record of growth that informal reflection cannot match.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The Gibbs Cycle is a practical and genuinely useful framework. Its six stages enforce completeness — it is easy to skip over feelings, or to jump straight to an action plan without analysing why an event unfolded as it did. The structure prevents that intellectual shortcutting. On the less positive side, early reflections I wrote were surface-level, describing events rather than interrogating them. The improvement over subsequent reflections is visible, but the early habit of shallow reflection meant several formative experiences were under-captured.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">The Gibbs Cycle is genuinely useful — its six stages enforce completeness and prevent intellectual shortcutting. Less positive: my early reflections were surface-level, describing events rather than interrogating them, meaning several formative experiences were under-captured.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Shallow early reflections are a normal feature of developing reflective practice. The literature on medical education notes that students typically progress through descriptive reflection toward critical reflection over time, with guided feedback accelerating the process. The GMU curriculum's introduction of reflective frameworks provides the scaffold, but the depth of reflection ultimately depends on the individual's willingness to be honest about uncertainty and error — a psychological openness that itself requires cultivation.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">Shallow early reflections are normal in developing reflective practice. Medical education literature notes that students progress from descriptive to critical reflection over time, with guided feedback accelerating the process. The depth of reflection ultimately depends on willingness to be honest about uncertainty and error.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have started this portfolio — and this reflective practice — from my first week at GMU rather than retrospectively. The experiences I had during orientation week, my first anatomy session, and the White Coat Ceremony were rich with material for reflection that I did not capture systematically. In future, I will write a brief Gibbs-structured reflection within 48 hours of any significant learning event to preserve the immediacy and emotional honesty of the experience.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I should have started this portfolio from my first week at GMU. The White Coat Ceremony, first anatomy session, and orientation week were all rich with reflection material I didn't capture systematically.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will maintain a digital reflection log — separate from this portfolio — updated after each clinical contact, significant study session, or professional interaction. I will share selected entries with my academic supervisor for feedback and will review the log termly to identify recurring patterns in my development. This portfolio will be updated at the end of each academic year with new evidence and revised reflections as my competence deepens.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will maintain a digital reflection log updated after each clinical contact, share selected entries with my academic supervisor, and review it termly. This portfolio will be updated at the end of each academic year with new evidence and revised reflections.</div>
         </div>
       </div>
     </div>
@@ -1022,66 +806,30 @@
         <span class="gibbs-evidence-chip">🏛️ UAE Health System Orientation</span>
         <span class="gibbs-evidence-chip">📊 Hospital Administration Observation</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>During my observership at CKS Hospital, I became aware of how the hospital navigated resource allocation between the catheterisation laboratory and general cardiology wards — a practical health systems challenge playing out in real time. The consultant briefly explained the Dubai Health Authority's regulatory framework governing cardiac procedures, and I observed how insurance authorisations affected the speed of treatment decisions. GMU's orientation modules also introduced us to the UAE's Vision 2031 health objectives and the role of healthcare professionals as stakeholders within a national system.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">During my CKS Hospital observership I became aware of how the hospital navigated resource allocation between the catheterisation lab and general wards. The consultant explained the Dubai Health Authority's regulatory framework and I observed how insurance authorisations affected the speed of treatment decisions. GMU's orientation also introduced the UAE's Vision 2031 health objectives.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I felt surprised by how directly administrative and systemic factors shaped bedside clinical decisions. I had not fully considered before the observership that a physician's clinical autonomy is always operating within institutional, regulatory, and economic constraints. This was not discouraging — rather, it sharpened my sense that becoming an effective physician requires understanding the system within which one practices, not just the medicine.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">I felt surprised by how directly administrative and systemic factors shaped bedside clinical decisions. A physician's autonomy always operates within institutional, regulatory, and economic constraints. This sharpened my sense that becoming an effective physician requires understanding the system, not just the medicine.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The observership provided authentic exposure to health systems realities that classroom teaching often sanitises. Seeing real insurance authorisation delays and resource allocation decisions made the system tangible rather than theoretical — a significant positive. The limitation was the brevity of the exposure: a few days is insufficient to understand the full systemic picture. I also lacked the background knowledge to ask informed questions about quality improvement processes or patient safety systems in that setting.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">Positive: seeing real insurance delays and resource allocation decisions made the system tangible. The limitation was brevity — a few days is insufficient to understand the full systemic picture. I also lacked background knowledge to ask informed questions about quality improvement or patient safety.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Healthcare systems are complex adaptive systems — they cannot be understood through brief observation alone. The UAE's hybrid public-private insurance model creates specific pressures that differ from universal healthcare models, and these structural factors directly shape clinical workflows. Understanding these dynamics is a long-term educational project. My current task is to build sufficient health systems literacy to engage intelligently with these questions when I enter clinical training, and to remain curious about systemic improvement rather than accepting existing workflows as inevitable.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">Healthcare systems are complex adaptive systems. The UAE's hybrid public-private insurance model creates specific pressures that differ from universal healthcare models, directly shaping clinical workflows. My task is to build sufficient health systems literacy to engage intelligently when I enter clinical training.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have reviewed the DHA regulatory framework and the UAE National Health Strategy before my observership so that I could contextualise what I was seeing. Reading even a brief policy overview would have allowed me to ask more substantive questions and to make more meaningful connections between observable hospital behaviours and their systemic drivers.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I should have reviewed the DHA regulatory framework and UAE National Health Strategy before the observership. A brief policy overview would have allowed more substantive questions and more meaningful connections between hospital behaviours and their systemic drivers.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will dedicate time each semester to reading one health policy document or quality improvement case study from the UAE or global health context. I will engage with any GMU electives or seminars that address health systems, healthcare economics, or patient safety, and will seek to understand the quality improvement frameworks used at any hospital I visit during future clinical placements.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will read one health policy document or quality improvement case study per semester. I will engage with any GMU electives addressing health systems or patient safety, and seek to understand the quality improvement frameworks used at every hospital I visit.</div>
         </div>
       </div>
     </div>
@@ -1097,66 +845,30 @@
         <span class="gibbs-evidence-chip">🥼 White Coat Ceremony — GMU 2024</span>
         <span class="gibbs-evidence-chip">📜 Professional Pledge</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The GMU White Coat Ceremony of 2024 was the most symbolically significant event of my medical education to date. Standing before faculty, family, and peers to receive my white coat and recite the professional pledge made the abstract concept of medical professionalism suddenly concrete. The ceremony was not merely ceremonial — it was an explicit articulation of the ethical contract between a physician-in-training and the profession, and by extension, society. The formal nature of the occasion and the weight placed on it by the institution reinforced for me that professionalism is not an optional attribute but a foundational one.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">The GMU White Coat Ceremony of 2024 was the most symbolically significant event of my medical education to date. Standing before faculty, family, and peers to receive my white coat and recite the professional pledge made the abstract concept of medical professionalism suddenly concrete — an explicit articulation of the ethical contract between a physician-in-training and society.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I felt proud and sobered simultaneously. Pride in having reached this milestone; sobriety in recognising what the commitment entails. The white coat — a symbol I had associated with medicine since childhood — felt heavier when I actually wore it than I had imagined. I was aware of my family watching and of the personal sacrifices and encouragement that had brought me to that room. The experience grounded my motivation in something more durable than ambition: a sense of duty.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">I felt proud and sobered simultaneously. The white coat felt heavier than I had imagined. The experience grounded my motivation in something more durable than ambition: a sense of duty.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>The ceremony was effective in establishing professionalism as a core identity, not merely a behavioural standard. The institutional investment in making the event meaningful — the careful choreography, the speeches from senior clinicians, the presence of patients' representatives — all reinforced its importance. A constructive critique is that such ceremonies can feel like a conclusion rather than a beginning: a risk that the professionalism message fades once the immediate emotion subsides. The challenge is sustaining that commitment in the ordinary, less ceremonial moments of daily study and clinical interaction.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">The ceremony effectively established professionalism as a core identity. A constructive critique: such ceremonies can feel like a conclusion rather than a beginning — the challenge is sustaining commitment in the ordinary, less ceremonial moments of daily study and clinical interaction.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Medical professionalism encompasses a wide and sometimes contested set of values: altruism, accountability, excellence, duty, honour, integrity, and respect for others. The white coat ceremony is a rite of passage that serves an important socialisation function — it marks a transition in identity from student to physician-in-training. Research in medical education suggests that professional identity formation is a long-term, iterative process, and that formal ceremonies such as this serve as anchor points in that process. The sustained expression of professionalism comes through consistent small choices — how I treat a struggling classmate, how I respond to critical feedback, how I handle uncertainty.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">Medical professionalism encompasses altruism, accountability, excellence, duty, and integrity. Research suggests professional identity formation is a long-term iterative process, with formal ceremonies serving as anchor points. The sustained expression of professionalism comes through consistent small choices in everyday interactions.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I could have made a more explicit personal commitment on the day — beyond the shared pledge — by writing a private letter to myself articulating what professionalism means to me specifically, and what I would consider a personal failure of that standard. Such an artefact would serve as a more durable reminder than memory alone. I intend to do this now, retrospectively, and to revisit it at the end of each academic year as a form of professional accountability.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I could have written a private letter to myself articulating what professionalism means to me personally — a more durable reminder than the shared pledge alone. I intend to do this retrospectively and revisit it at the end of each academic year.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will write a personal professional values statement this month and attach it to my portfolio as an evidence artefact. I will also engage with any GMU ethics modules, case-based discussions, or professionalism seminars with the explicit goal of testing my values against complex scenarios — recognising that professionalism is often most meaningful under pressure. I will seek role models among senior students and clinicians whose professional conduct I wish to emulate and will reflect on why their behaviour resonates with me.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will write a personal professional values statement and attach it to this portfolio. I will engage with GMU ethics modules and professionalism seminars, and seek role models among senior students and clinicians whose conduct I wish to emulate.</div>
         </div>
       </div>
     </div>
@@ -1172,66 +884,30 @@
         <span class="gibbs-evidence-chip">📖 Clinical Literature Reviews — GMU</span>
         <span class="gibbs-evidence-chip">🔬 Research Methodology Module</span>
       </div>
-      <div class="gibbs-cycle">
-        <div class="gibbs-stage open">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">1</span>
-            <span class="gibbs-stage__label">Description<span class="gibbs-stage__sub">What happened?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>In GMU's first-year research methodology module, I was introduced to the hierarchy of evidence — from expert opinion through systematic reviews and randomised controlled trials — and tasked with critically appraising a published clinical paper using a structured checklist. The paper focused on the efficacy of a pharmacological intervention in acute coronary syndrome management, directly relevant to what I had observed during the cardiology observership. The exercise required me to evaluate study design, sample size, outcome measures, bias, and clinical applicability — skills I had not previously applied in a medical context.</p>
-          </div>
+      <div class="gibbs-cards">
+        <div class="gibbs-card gibbs-card--1">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 1</span><span class="gibbs-card__name">Description</span><span class="gibbs-card__prompt">What happened? Who was involved? When and where?</span></div>
+          <div class="gibbs-card__body">In GMU's first-year research methodology module I was introduced to the hierarchy of evidence and tasked with critically appraising a published paper on pharmacological management of acute coronary syndrome — directly relevant to my observership experience. The exercise required evaluating study design, sample size, bias, and clinical applicability.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">2</span>
-            <span class="gibbs-stage__label">Feelings<span class="gibbs-stage__sub">How did you feel?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I found the process intellectually stimulating but initially overwhelming. Research terminology — p-values, confidence intervals, number needed to treat — required significant background reading before the paper became navigable. Once I established a foundation, the critical appraisal task became genuinely engaging: I began to see clinical decisions not as handed-down wisdom but as provisional conclusions drawn from fallible evidence. This epistemological shift was one of the most significant of my first year, and it felt intellectually liberating.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--2">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 2</span><span class="gibbs-card__name">Feelings</span><span class="gibbs-card__prompt">Capture your emotional response to the experience.</span></div>
+          <div class="gibbs-card__body">The process was initially overwhelming — research terminology required significant background reading. Once I established a foundation, the appraisal became genuinely engaging: I began to see clinical decisions not as handed-down wisdom but as provisional conclusions from fallible evidence. This epistemological shift felt intellectually liberating.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">3</span>
-            <span class="gibbs-stage__label">Evaluation<span class="gibbs-stage__sub">What was good or bad?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>What worked well was the connection between the paper's clinical subject and my direct observership experience — the contextualisation made the evidence personally relevant and easier to engage with critically. What was challenging was the speed at which the module progressed: there was insufficient time to develop statistical literacy at the depth the task demanded. My final appraisal was competent but thin in its statistical analysis, which I recognise as a current gap in my evidence-based practice skill set.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--3">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 3</span><span class="gibbs-card__name">Evaluation</span><span class="gibbs-card__prompt">Evaluate both positive and negative facets of the experience.</span></div>
+          <div class="gibbs-card__body">Positive: the connection between the paper's subject and my observership made the evidence personally relevant. Challenging: the module progressed too quickly to develop statistical literacy in depth. My final appraisal was competent but thin in statistical analysis — a recognised gap in my current skill set.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">4</span>
-            <span class="gibbs-stage__label">Analysis<span class="gibbs-stage__sub">Why did things happen this way?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>Evidence-based practice is a discipline that requires both statistical literacy and clinical contextual knowledge — and I am still in the early stages of acquiring both. The gap between encountering a clinical situation (the observership) and being able to critically evaluate the evidence base behind it (the paper appraisal) illustrated the lag inherent in training: clinical exposure often precedes the knowledge needed to fully interrogate it. This is not a flaw in the curriculum — it is the productive tension that drives learning. Recognising this lag helps me direct my self-directed study more intentionally.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--4">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 4</span><span class="gibbs-card__name">Analysis</span><span class="gibbs-card__prompt">Dig deeper into why things unfolded as they did.</span></div>
+          <div class="gibbs-card__body">Evidence-based practice requires both statistical literacy and clinical contextual knowledge — I am still in the early stages of acquiring both. Clinical exposure often precedes the knowledge needed to fully interrogate it. This is the productive tension that drives learning, and recognising the lag helps me direct self-directed study more intentionally.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">5</span>
-            <span class="gibbs-stage__label">Conclusion<span class="gibbs-stage__sub">What could you have done differently?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I should have invested more time in building statistical literacy independently — using resources such as BMJ's Statistics Notes series or free biostatistics courses — rather than relying solely on the module's pace. For future paper appraisals I will use both a structured checklist and a separate statistical interpretation guide, and I will practise identifying the single most important limitation of each paper rather than listing limitations superficially.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--5">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 5</span><span class="gibbs-card__name">Conclusion</span><span class="gibbs-card__prompt">What could you have done differently?</span></div>
+          <div class="gibbs-card__body">I should have built statistical literacy independently — using resources such as BMJ's Statistics Notes or free biostatistics courses — rather than relying solely on the module's pace. For future appraisals I will practise identifying the single most important limitation of each paper rather than listing them superficially.</div>
         </div>
-        <div class="gibbs-stage">
-          <button class="gibbs-stage__btn" onclick="toggleStage(this)">
-            <span class="gibbs-stage__num">6</span>
-            <span class="gibbs-stage__label">Action Plan<span class="gibbs-stage__sub">How will you apply this learning?</span></span>
-            <svg class="gibbs-stage__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="gibbs-stage__body">
-            <p>I will complete a self-directed biostatistics primer course before the start of Year 2 and will read and briefly appraise one clinical paper per month in a specialty relevant to my current study or upcoming observerships. I will subscribe to a clinical research journal alert in cardiology and one in general medicine to cultivate the habit of engaging with the primary literature, and will begin to identify potential student research opportunities at GMU to contribute — at however modest a level — to the evidence base myself.</p>
-          </div>
+        <div class="gibbs-card gibbs-card--6">
+          <div class="gibbs-card__head"><span class="gibbs-card__num">Stage 6</span><span class="gibbs-card__name">Action Plan</span><span class="gibbs-card__prompt">Develop a plan for future similar situations.</span></div>
+          <div class="gibbs-card__body">I will complete a biostatistics primer before Year 2 and appraise one clinical paper per month in a relevant specialty. I will subscribe to journal alerts in cardiology and general medicine, and identify student research opportunities at GMU to contribute to the evidence base.</div>
         </div>
       </div>
     </div>
@@ -1311,13 +987,6 @@
   <script src="js/main.js"></script>
   <script src="js/enhance.js"></script>
   <script>
-    function toggleStage(btn) {
-      const stage = btn.closest('.gibbs-stage');
-      const isOpen = stage.classList.contains('open');
-      // close all siblings
-      stage.closest('.gibbs-cycle').querySelectorAll('.gibbs-stage').forEach(s => s.classList.remove('open'));
-      if (!isOpen) stage.classList.add('open');
-    }
     // keyboard accessibility for onclick tiles
     document.querySelectorAll('.comp-tile[onclick]').forEach(t => {
       t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); } });
