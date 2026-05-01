@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Guidelines — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="Portfolio Guidelines for GMU E-Portfolio submission — Requirements, rubric, assessment criteria, and templates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/enhance.css" />
+  <link rel="stylesheet" href="css/ai-chat.css" />
+  <style>
+    /* ══════════════════════════════════════════════════
+       PORTFOLIO GUIDELINES PAGE
+       ══════════════════════════════════════════════════ */
+
+    .guide-hero {
+      background: linear-gradient(135deg, #1b8a9e 0%, #2c4563 50%, #7b4f9e 100%);
+      padding: calc(var(--nav-h) + var(--sp-2xl)) 0 var(--sp-2xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .guide-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .guide-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+    .guide-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--sp-sm);
+    }
+    .guide-hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: rgba(255,255,255,0.5);
+    }
+    .guide-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: var(--sp-md);
+    }
+    .guide-hero__sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* Quick stats */
+    .guide-quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--sp-lg);
+      margin-top: var(--sp-xl);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      backdrop-filter: blur(10px);
+    }
+    .guide-stat {
+      display: flex;
+      gap: 1rem;
+    }
+    .guide-stat__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7ee8f4;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+    }
+    .guide-stat__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .guide-stat__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .guide-stat__value {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Main content */
+    .guide-content {
+      padding: var(--sp-2xl) 0;
+    }
+
+    /* Section blocks */
+    .guide-section {
+      margin-bottom: var(--sp-2xl);
+      scroll-margin-top: calc(var(--nav-h) + 2rem);
+    }
+    .guide-section__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-teal);
+      margin-bottom: var(--sp-sm);
+    }
+    .guide-section__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: 0.5rem;
+    }
+    .guide-section__line {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c-teal), var(--c-purple));
+      border-radius: 2px;
+      margin-bottom: var(--sp-lg);
+    }
+
+    /* Info boxes */
+    .guide-box {
+      background: var(--c-accent);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      margin-bottom: var(--sp-lg);
+    }
+    .guide-box--warning {
+      background: #fff8f0;
+      border-color: #fdd9bb;
+    }
+    .guide-box--success {
+      background: #f0faf8;
+      border-color: #b8e4e0;
+    }
+    .guide-box__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: var(--sp-md);
+    }
+    .guide-box__icon {
+      width: 40px;
+      height: 40px;
+      background: var(--c-bg);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-teal);
+      flex-shrink: 0;
+      font-size: 1.3rem;
+    }
+    .guide-box--warning .guide-box__icon {
+      background: #fdd9bb;
+      color: #d97706;
+    }
+    .guide-box--success .guide-box__icon {
+      background: #b8e4e0;
+      color: #059669;
+    }
+    .guide-box__title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--c-text);
+    }
+    .guide-box__body {
+      font-size: 0.95rem;
+      color: var(--c-muted);
+      line-height: 1.75;
+    }
+    .guide-box__body p {
+      margin: 0;
+    }
+    .guide-box__body p + p {
+      margin-top: 0.75rem;
+    }
+
+    /* Lists */
+    .guide-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+    }
+    .guide-list__item {
+      display: flex;
+      gap: 1rem;
+      padding: var(--sp-md);
+      background: var(--c-bg);
+      border-radius: var(--r-md);
+      border: 1px solid var(--c-border);
+      transition: var(--t-base);
+    }
+    .guide-list__item:hover {
+      border-color: var(--c-teal);
+      background: #fff;
+    }
+    .guide-list__item::before {
+      content: attr(data-num);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--c-teal), var(--c-purple));
+      color: #fff;
+      border-radius: var(--r-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .guide-list__content {
+      flex: 1;
+    }
+    .guide-list__title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: 0.25rem;
+    }
+    .guide-list__desc {
+      font-size: 0.9rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* Rubric table */
+    .guide-rubric {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--sp-md);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      background: var(--c-card);
+    }
+    .guide-rubric th {
+      background: linear-gradient(135deg, var(--c-teal), var(--c-purple));
+      color: #fff;
+      padding: var(--sp-md);
+      text-align: left;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .guide-rubric td {
+      padding: var(--sp-md);
+      border-top: 1px solid var(--c-border);
+    }
+    .guide-rubric tr:hover td {
+      background: var(--c-accent);
+    }
+    .guide-rubric__level {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--c-teal);
+    }
+
+    /* Button group */
+    .guide-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-md);
+      margin-top: var(--sp-xl);
+    }
+    .guide-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--r-lg);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--t-base);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .guide-btn--primary {
+      background: linear-gradient(135deg, var(--c-teal), #17a8c4);
+      color: #fff;
+    }
+    .guide-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(27, 138, 158, 0.3);
+    }
+    .guide-btn--secondary {
+      background: var(--c-accent);
+      color: var(--c-teal);
+      border: 1.5px solid var(--c-teal);
+    }
+    .guide-btn--secondary:hover {
+      background: var(--c-teal);
+      color: #fff;
+    }
+
+    /* Timeline */
+    .guide-timeline {
+      position: relative;
+      padding: var(--sp-lg) 0;
+    }
+    .guide-timeline::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--c-teal), var(--c-purple), transparent);
+    }
+    .guide-timeline__item {
+      margin-bottom: var(--sp-lg);
+      padding-left: 60px;
+      position: relative;
+    }
+    .guide-timeline__dot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border: 2px solid var(--c-teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--c-teal);
+    }
+    .guide-timeline__content {
+      background: var(--c-accent);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-md);
+    }
+    .guide-timeline__title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: 0.25rem;
+    }
+    .guide-timeline__desc {
+      font-size: 0.9rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* Competency preview grid */
+    .guide-comp-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--sp-lg);
+      margin-top: var(--sp-lg);
+    }
+    .guide-comp-card {
+      background: var(--c-card);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--t-base);
+    }
+    .guide-comp-card:hover {
+      border-color: var(--c-teal);
+      transform: translateY(-4px);
+    }
+    .guide-comp-card__num {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-teal);
+    }
+    .guide-comp-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-text);
+    }
+    .guide-comp-card__desc {
+      font-size: 0.85rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .guide-quick-stats {
+        grid-template-columns: 1fr;
+      }
+      .guide-rubric {
+        font-size: 0.85rem;
+      }
+      .guide-rubric th,
+      .guide-rubric td {
+        padding: var(--sp-md) var(--sp-sm);
+      }
+      .guide-buttons {
+        flex-direction: column;
+      }
+      .guide-btn {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page-loader">
+    <div class="loader__name"><span>G</span><span>U</span><span>I</span><span>D</span><span>E</span><span>L</span><span>I</span><span>N</span><span>E</span><span>S</span></div>
+    <div class="loader__bar"><div class="loader__bar-fill"></div></div>
+    <p class="loader__sub">The White Coat Journal</p>
+  </div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="journey.html" class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html" class="nav__link">Experience</a></li>
+        <li><a href="guidelines.html" class="nav__link">Guidelines</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════ -->
+  <section class="guide-hero">
+    <div class="container">
+      <div class="guide-hero__inner">
+        <div class="guide-hero__eyebrow">
+          📋 Portfolio Framework
+        </div>
+        <h1 class="guide-hero__title">
+          Portfolio Guidelines &amp;<br />
+          Assessment Framework
+        </h1>
+        <p class="guide-hero__sub">
+          Complete requirements, rubric, and checklist for successful GMU e-portfolio submission. Understand assessment criteria and track your progress.
+        </p>
+
+        <div class="guide-quick-stats">
+          <div class="guide-stat">
+            <div class="guide-stat__icon">14</div>
+            <div class="guide-stat__content">
+              <div class="guide-stat__label">Weeks</div>
+              <div class="guide-stat__value">Portfolio Duration</div>
+            </div>
+          </div>
+          <div class="guide-stat">
+            <div class="guide-stat__icon">9</div>
+            <div class="guide-stat__content">
+              <div class="guide-stat__label">Competencies</div>
+              <div class="guide-stat__value">To Demonstrate</div>
+            </div>
+          </div>
+          <div class="guide-stat">
+            <div class="guide-stat__icon">1</div>
+            <div class="guide-stat__content">
+              <div class="guide-stat__label">Submit</div>
+              <div class="guide-stat__value">For Evaluation</div>
+            </div>
+          </div>
+          <div class="guide-stat">
+            <div class="guide-stat__icon">300-500</div>
+            <div class="guide-stat__content">
+              <div class="guide-stat__label">Word Count</div>
+              <div class="guide-stat__value">Per Reflection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════════════════════════ -->
+  <section class="guide-content">
+    <div class="container">
+
+      <!-- 1. CRITICAL REQUIREMENTS ─────────────────────────── -->
+      <div class="guide-section" id="requirements">
+        <div class="guide-section__eyebrow">⚠️ Critical Requirements</div>
+        <h2 class="guide-section__title">Mandatory Submission Criteria</h2>
+        <div class="guide-section__line"></div>
+
+        <div class="guide-box guide-box--warning">
+          <div class="guide-box__header">
+            <div class="guide-box__icon">⚡</div>
+            <div class="guide-box__title">Mark Deduction Warning</div>
+          </div>
+          <div class="guide-box__body">
+            <p><strong>Failure to adhere to word count limits (300-500 words per reflection) will result in mark deduction.</strong></p>
+            <p>Your portfolio submission must include complete evidence and reflection structured using the Gibbs Reflective Cycle with all 6 stages clearly documented.</p>
+          </div>
+        </div>
+
+        <ul class="guide-list">
+          <li class="guide-list__item" data-num="1">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Portfolio Duration</div>
+              <div class="guide-list__desc">14-week collection period (entire semester). Collect evidence continuously throughout the semester—do not leave it to the last minute.</div>
+            </div>
+          </li>
+          <li class="guide-list__item" data-num="2">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Minimum Competencies</div>
+              <div class="guide-list__desc">Collect evidence for AT LEAST 2 competencies across the semester. Show breadth of learning across multiple domains.</div>
+            </div>
+          </li>
+          <li class="guide-list__item" data-num="3">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Single Submission</div>
+              <div class="guide-list__desc">Submit ONLY 1 competency for formal evaluation and grading. Choose your strongest, most comprehensive work.</div>
+            </div>
+          </li>
+          <li class="guide-list__item" data-num="4">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Word Count Enforcement</div>
+              <div class="guide-list__desc">Reflection: 300-500 words minimum. Exceeding or falling short results in mark penalties per rubric.</div>
+            </div>
+          </li>
+          <li class="guide-list__item" data-num="5">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Gibbs Reflective Cycle</div>
+              <div class="guide-list__desc">All 6 stages must be visibly documented: Description → Feelings → Evaluation → Analysis → Conclusion → Action Plan</div>
+            </div>
+          </li>
+          <li class="guide-list__item" data-num="6">
+            <div class="guide-list__content">
+              <div class="guide-list__title">Supporting Evidence</div>
+              <div class="guide-list__desc">Include exam scores, certificates, supervisor comments, concept maps, community participation records, or peer feedback as applicable.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. 9 CORE COMPETENCIES ─────────────────────────── -->
+      <div class="guide-section" id="competencies">
+        <div class="guide-section__eyebrow">🎯 Core Competencies</div>
+        <h2 class="guide-section__title">The 9 GMU Competency Domains</h2>
+        <div class="guide-section__line"></div>
+
+        <div class="guide-comp-preview">
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">1 - Medical Expert</div>
+            <div class="guide-comp-card__title">Medical Expert</div>
+            <div class="guide-comp-card__desc">Clinical reasoning, knowledge application, patient care, procedural competency, evidence-based decision-making.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">2 - Communicator</div>
+            <div class="guide-comp-card__title">Communicator</div>
+            <div class="guide-comp-card__desc">Patient interactions, family communication, multidisciplinary team collaboration, documentation skills.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">3 - Collaborator</div>
+            <div class="guide-comp-card__title">Collaborator</div>
+            <div class="guide-comp-card__desc">Teamwork, leadership, peer support, interprofessional collaboration, conflict resolution.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">4 - Evidence-Based Practitioner</div>
+            <div class="guide-comp-card__title">Evidence-Based Practitioner &amp; Scholar</div>
+            <div class="guide-comp-card__desc">Research participation, literature appraisal, quality improvement, scholarly activities, debate participation.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">5 - Health Advocate</div>
+            <div class="guide-comp-card__title">Health System Proponent</div>
+            <div class="guide-comp-card__desc">Healthcare system advocacy, policy awareness, resource utilization, systems thinking.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">6 - Professional</div>
+            <div class="guide-comp-card__title">Professional</div>
+            <div class="guide-comp-card__desc">Professionalism, ethics, accountability, integrity, adherence to codes of conduct.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">7 - Innovator & Leader</div>
+            <div class="guide-comp-card__title">Innovator &amp; Leader</div>
+            <div class="guide-comp-card__desc">Initiative, innovation, leadership skills, problem-solving, changemaking.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">8 - Self-Enhancer</div>
+            <div class="guide-comp-card__title">Self &amp; Profession Enhancer</div>
+            <div class="guide-comp-card__desc">Self-reflection, continuous learning, professional development, feedback integration.</div>
+          </div>
+          <div class="guide-comp-card">
+            <div class="guide-comp-card__num">9 - Socially Accountable</div>
+            <div class="guide-comp-card__title">Socially Accountable</div>
+            <div class="guide-comp-card__desc">Community engagement, cultural competence, social responsibility, underserved population care.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. GIBBS REFLECTIVE CYCLE ─────────────────────────────────── -->
+      <div class="guide-section" id="gibbs">
+        <div class="guide-section__eyebrow">🔄 Reflection Structure</div>
+        <h2 class="guide-section__title">The Gibbs Reflective Cycle</h2>
+        <div class="guide-section__line"></div>
+
+        <p style="font-size: 0.98rem; color: var(--c-muted); line-height: 1.75; margin-bottom: var(--sp-lg);">
+          Every reflection must follow the 6-stage Gibbs Reflective Cycle. This structured approach ensures deep, meaningful reflection on your clinical experiences.
+        </p>
+
+        <div class="guide-timeline">
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">1</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Description</div>
+              <div class="guide-timeline__desc">
+                <strong>What happened?</strong> Provide objective facts about the experience. Include WHAT, WHERE, WHEN, and CIRCUMSTANCES. What was your role? Who was involved? What was the context?
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">2</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Feelings</div>
+              <div class="guide-timeline__desc">
+                <strong>What did you feel?</strong> Describe your emotional responses. Did you feel confident, anxious, excited, uncertain? What aspects triggered these feelings?
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">3</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Evaluation</div>
+              <div class="guide-timeline__desc">
+                <strong>What was good or bad?</strong> Analyze what went well and what didn't. Did you meet learning objectives? Were outcomes positive? What surprised you?
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">4</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Analysis</div>
+              <div class="guide-timeline__desc">
+                <strong>Why did it happen?</strong> Deep dive into causes and contributing factors. Connect to theory, competencies, and your learning. What did you learn? What skills were demonstrated?
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">5</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Conclusion</div>
+              <div class="guide-timeline__desc">
+                <strong>What now?</strong> Summarize key learning points. Link to competency frameworks. What do you now understand differently about clinical practice?
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-timeline__item">
+            <div class="guide-timeline__dot">6</div>
+            <div class="guide-timeline__content">
+              <div class="guide-timeline__title">Action Plan</div>
+              <div class="guide-timeline__desc">
+                <strong>How will you apply this?</strong> Identify specific actions to take forward. What will you do differently next time? How will you continue to develop this competency?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-box guide-box--success" style="margin-top: var(--sp-lg);">
+          <div class="guide-box__header">
+            <div class="guide-box__icon">✓</div>
+            <div class="guide-box__title">All 6 Stages Required</div>
+          </div>
+          <div class="guide-box__body">
+            <p>Each stage must be visibly labeled and clearly documented. Use headings, color coding, or visual separators to make the structure obvious to assessors. Incomplete cycles will result in lower marks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ASSESSMENT RUBRIC ─────────────────────────────────── -->
+      <div class="guide-section" id="rubric">
+        <div class="guide-section__eyebrow">📊 Grading Criteria</div>
+        <h2 class="guide-section__title">Assessment Rubric (Out of 15 points)</h2>
+        <div class="guide-section__line"></div>
+
+        <table class="guide-rubric">
+          <thead>
+            <tr>
+              <th style="width: 20%;">Criterion</th>
+              <th style="width: 20%;">Novice (1)</th>
+              <th style="width: 20%;">Developing (2)</th>
+              <th style="width: 20%;">Competent (3)</th>
+              <th style="width: 20%;">Advanced (4-5)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="guide-rubric__level">Organization & Structure (0-5)</span></td>
+              <td>Lacks clear organization; Gibbs cycle incomplete or unclear</td>
+              <td>Some structure present; 3-4 Gibbs stages visible</td>
+              <td>All 6 Gibbs stages present; well-organized; minor gaps</td>
+              <td>Exceptionally organized; all stages clear with excellent flow; professional presentation</td>
+            </tr>
+            <tr>
+              <td><span class="guide-rubric__level">Quality of Evidence (0-5)</span></td>
+              <td>Minimal or irrelevant evidence; lacks supporting materials</td>
+              <td>Some evidence provided; incomplete documentation</td>
+              <td>Good evidence; includes exam scores, supervisor comments, or certificates</td>
+              <td>Comprehensive, well-documented evidence; multiple evidence types; clear competency links</td>
+            </tr>
+            <tr>
+              <td><span class="guide-rubric__level">Quality of Reflection (0-5)</span></td>
+              <td>Surface-level reflection; no connection to learning; generic observations</td>
+              <td>Basic reflection; some analysis; limited depth</td>
+              <td>Good reflection; connects experience to theory; identifies learning; mostly meets word count</td>
+              <td>Deep, insightful reflection; strong theory connections; clear competency demonstration; 300-500 words exactly</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="guide-box" style="margin-top: var(--sp-lg);">
+          <div class="guide-box__title">Scoring Scale</div>
+          <div class="guide-box__body">
+            <p><strong>0-5 points:</strong> Below expectations — Significant gaps, incomplete reflection, minimal evidence</p>
+            <p><strong>6-10 points:</strong> Meets expectations — Adequate structure, decent reflection, supporting evidence present</p>
+            <p><strong>11-15 points:</strong> Exceeds expectations — Excellent organization, insightful reflection, comprehensive evidence, perfect word count compliance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. SUBMISSION CHECKLIST ─────────────────────────────────── -->
+      <div class="guide-section" id="checklist">
+        <div class="guide-section__eyebrow">✓ Before You Submit</div>
+        <h2 class="guide-section__title">Pre-Submission Checklist</h2>
+        <div class="guide-section__line"></div>
+
+        <div style="background: var(--c-accent); border: 1.5px solid var(--c-border); border-radius: var(--r-lg); padding: var(--sp-lg); margin-bottom: var(--sp-lg);">
+          <div style="display: flex; flex-direction: column; gap: var(--sp-md);">
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Evidence collected for AT LEAST 2 competencies</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Reflection includes all 6 Gibbs cycle stages</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Word count: 300-500 words (verified)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Supporting evidence documented (exam scores, supervisor comments, certificates)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Competency clearly linked and labeled</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Activity/Event details documented (WHAT, WHERE, WHEN, CIRCUMSTANCES)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Professional formatting and grammar checked</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem;">
+              <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-teal);" />
+              <span>Ready to submit (chosen strongest competency)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. RESOURCES ─────────────────────────────────────── -->
+      <div class="guide-section" id="resources">
+        <div class="guide-section__eyebrow">📥 Download Resources</div>
+        <h2 class="guide-section__title">Templates &amp; Supporting Materials</h2>
+        <div class="guide-section__line"></div>
+
+        <div class="guide-buttons">
+          <a href="assets/portfolio-template.docx" class="guide-btn guide-btn--primary" target="_blank" download>
+            📄 Download Portfolio Template
+          </a>
+          <a href="assets/portfolio-declaration-form.pdf" class="guide-btn guide-btn--primary" target="_blank" download>
+            📋 Download Declaration Form
+          </a>
+          <a href="dashboard.html" class="guide-btn guide-btn--secondary">
+            📊 View Status Dashboard
+          </a>
+          <a href="competencies.html" class="guide-btn guide-btn--secondary">
+            🎯 Browse All Competencies
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. CONTACT & SUPPORT ─────────────────────────────────── -->
+      <div class="guide-section" id="support">
+        <div class="guide-section__eyebrow">💬 Questions?</div>
+        <h2 class="guide-section__title">Getting Help &amp; Support</h2>
+        <div class="guide-section__line"></div>
+
+        <div class="guide-box">
+          <div class="guide-box__title">Portfolio Assessment Support</div>
+          <div class="guide-box__body">
+            <p>For questions about competencies, evidence requirements, or the reflection process, contact your course coordinator or department advisor.</p>
+            <p>Review your institution's e-portfolio guidelines and assessment standards for additional context.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER & SCRIPTS
+       ════════════════════════════════════════════════════ -->
+  <footer style="background: var(--c-navy); color: #fff; padding: var(--sp-lg) 0; text-align: center; margin-top: var(--sp-2xl);">
+    <div class="container">
+      <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">© 2026 Kashish Devnani · Gulf Medical University</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

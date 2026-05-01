@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Status Dashboard — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="Real-time portfolio submission tracker — evidence collection status, reflection completion, and readiness indicators for all 9 competencies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/enhance.css" />
+  <link rel="stylesheet" href="css/ai-chat.css" />
+  <style>
+    /* ══════════════════════════════════════════════════
+       PORTFOLIO DASHBOARD
+       ══════════════════════════════════════════════════ */
+
+    .dash-hero {
+      background: linear-gradient(135deg, #1b8a9e 0%, #2c4563 50%, #7b4f9e 100%);
+      padding: calc(var(--nav-h) + var(--sp-2xl)) 0 var(--sp-2xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .dash-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dash-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+    .dash-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--sp-sm);
+    }
+    .dash-hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: rgba(255,255,255,0.5);
+    }
+    .dash-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: var(--sp-md);
+    }
+    .dash-hero__sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* Quick stats */
+    .dash-quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--sp-lg);
+      margin-top: var(--sp-xl);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      backdrop-filter: blur(10px);
+    }
+    .dash-stat {
+      display: flex;
+      gap: 1rem;
+    }
+    .dash-stat__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7ee8f4;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+    }
+    .dash-stat__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .dash-stat__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .dash-stat__value {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Main content */
+    .dash-content {
+      padding: var(--sp-2xl) 0;
+    }
+
+    /* Status grid */
+    .dash-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--sp-lg);
+      margin-bottom: var(--sp-2xl);
+    }
+
+    /* Status card */
+    .dash-card {
+      background: var(--c-card);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--t-base);
+      position: relative;
+      overflow: hidden;
+    }
+    .dash-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--dash-accent, var(--c-teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t-base);
+    }
+    .dash-card:hover {
+      border-color: var(--dash-accent, var(--c-teal));
+      transform: translateY(-4px);
+    }
+    .dash-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .dash-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .dash-card__num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--dash-accent, var(--c-teal)), var(--dash-accent-dark, #17a8c4));
+      color: #fff;
+      border-radius: var(--r-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .dash-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-text);
+    }
+    .dash-card__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      background: rgba(126, 232, 244, 0.12);
+      border: 1px solid rgba(126, 232, 244, 0.3);
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--c-teal);
+    }
+    .dash-card__status--ready {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+    .dash-card__status--incomplete {
+      background: rgba(249, 115, 22, 0.12);
+      border-color: rgba(249, 115, 22, 0.3);
+      color: #f97316;
+    }
+
+    /* Progress bars */
+    .dash-progress-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .dash-progress-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .dash-progress-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--c-text);
+      min-width: 140px;
+    }
+    .dash-progress-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--c-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+    }
+    .dash-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--dash-accent, var(--c-teal)), var(--dash-accent-dark, #17a8c4));
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .dash-progress-percent {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--dash-accent, var(--c-teal));
+      min-width: 45px;
+      text-align: right;
+    }
+
+    /* Checkmarks */
+    .dash-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .dash-check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--c-muted);
+    }
+    .dash-check-item.done {
+      color: var(--c-text);
+      font-weight: 500;
+    }
+    .dash-check-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--c-border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--c-teal);
+      background: transparent;
+      transition: var(--t-base);
+    }
+    .dash-check-item.done .dash-check-icon {
+      background: var(--c-teal);
+      border-color: var(--c-teal);
+      color: #fff;
+    }
+
+    /* Card accent colors */
+    .dash-card--1 { --dash-accent: #1b8a9e; --dash-accent-dark: #17a8c4; }
+    .dash-card--2 { --dash-accent: #B85C5C; --dash-accent-dark: #a84d4d; }
+    .dash-card--3 { --dash-accent: #7b4f9e; --dash-accent-dark: #6b4290; }
+    .dash-card--4 { --dash-accent: #c89850; --dash-accent-dark: #b88840; }
+    .dash-card--5 { --dash-accent: #1a7a5e; --dash-accent-dark: #156b50; }
+    .dash-card--6 { --dash-accent: #0d8b8b; --dash-accent-dark: #0a7a7a; }
+    .dash-card--7 { --dash-accent: #5C7AB8; --dash-accent-dark: #4d6ba8; }
+    .dash-card--8 { --dash-accent: #16213e; --dash-accent-dark: #0f1824; }
+    .dash-card--9 { --dash-accent: #6b4fa1; --dash-accent-dark: #5a4090; }
+
+    /* Summary section */
+    .dash-summary {
+      background: linear-gradient(135deg, rgba(27,138,158,0.1) 0%, rgba(123,79,158,0.1) 100%);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      margin-top: var(--sp-2xl);
+    }
+    .dash-summary__title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: 1rem;
+    }
+    .dash-summary-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--sp-lg);
+    }
+    .dash-summary-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .dash-summary-stat__label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+    }
+    .dash-summary-stat__value {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--c-teal), var(--c-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Next steps */
+    .dash-next-steps {
+      background: var(--c-accent);
+      border: 1.5px solid var(--c-teal);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      margin-top: var(--sp-lg);
+    }
+    .dash-next-steps__title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dash-next-steps__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .dash-next-steps__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--c-muted);
+    }
+    .dash-next-steps__item::before {
+      content: '→';
+      color: var(--c-teal);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dash-grid {
+        grid-template-columns: 1fr;
+      }
+      .dash-quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dash-summary-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page-loader">
+    <div class="loader__name"><span>D</span><span>A</span><span>S</span><span>H</span><span>B</span><span>O</span><span>A</span><span>R</span><span>D</span></div>
+    <div class="loader__bar"><div class="loader__bar-fill"></div></div>
+    <p class="loader__sub">The White Coat Journal</p>
+  </div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="journey.html" class="nav__link">Journey</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="experience.html" class="nav__link">Experience</a></li>
+        <li><a href="dashboard.html" class="nav__link">Dashboard</a></li>
+        <li><a href="guidelines.html" class="nav__link">Guidelines</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════ -->
+  <section class="dash-hero">
+    <div class="container">
+      <div class="dash-hero__inner">
+        <div class="dash-hero__eyebrow">
+          📊 Real-Time Tracker
+        </div>
+        <h1 class="dash-hero__title">
+          Portfolio Status<br />
+          Dashboard
+        </h1>
+        <p class="dash-hero__sub">
+          Track evidence collection, reflection completion, and submission readiness across all 9 competencies. Monitor your progress toward a complete, high-quality portfolio.
+        </p>
+
+        <div class="dash-quick-stats">
+          <div class="dash-stat">
+            <div class="dash-stat__icon">9/9</div>
+            <div class="dash-stat__content">
+              <div class="dash-stat__label">Competencies</div>
+              <div class="dash-stat__value">Documented</div>
+            </div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat__icon">5</div>
+            <div class="dash-stat__content">
+              <div class="dash-stat__label">Ready to</div>
+              <div class="dash-stat__value">Submit</div>
+            </div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat__icon">100%</div>
+            <div class="dash-stat__content">
+              <div class="dash-stat__label">Gibbs</div>
+              <div class="dash-stat__value">Structured</div>
+            </div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat__icon">✓</div>
+            <div class="dash-stat__content">
+              <div class="dash-stat__label">Word Count</div>
+              <div class="dash-stat__value">Compliant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════════════════════════ -->
+  <section class="dash-content">
+    <div class="container">
+
+      <div style="margin-bottom: var(--sp-2xl);">
+        <p style="font-size: 0.98rem; color: var(--c-muted); line-height: 1.75;">
+          This dashboard provides a real-time overview of your portfolio submission status. Track evidence collection, reflection completion, word count compliance, and readiness indicators for each competency. Use this to strategically plan which competency to submit for formal evaluation.
+        </p>
+      </div>
+
+      <!-- Competency Status Grid -->
+      <div class="dash-grid">
+
+        <!-- 1 · Medical Expert -->
+        <div class="dash-card dash-card--1">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">1</div>
+              <div class="dash-card__title">Medical Expert</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">380</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> CPR & AED Certificate</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Cardiology Observership</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Supervisor Feedback</div>
+          </div>
+        </div>
+
+        <!-- 2 · Patient Care -->
+        <div class="dash-card dash-card--2">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">2</div>
+              <div class="dash-card__title">Patient Care</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 90%;"></div></div>
+              <span class="dash-progress-percent">90%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 95%;"></div></div>
+              <span class="dash-progress-percent">340</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Bedside Interaction Notes</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Patient Communication Log</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Ethics Mentor Comment</div>
+          </div>
+        </div>
+
+        <!-- 3 · Communication -->
+        <div class="dash-card dash-card--3">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">3</div>
+              <div class="dash-card__title">Communication</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 85%;"></div></div>
+              <span class="dash-progress-percent">85%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 88%;"></div></div>
+              <span class="dash-progress-percent">310</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> White Coat Ceremony Address</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Handover Observations</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Communication Coach Feedback</div>
+          </div>
+        </div>
+
+        <!-- 4 · Collaborator -->
+        <div class="dash-card dash-card--4">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">4</div>
+              <div class="dash-card__title">Collaborator</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 80%;"></div></div>
+              <span class="dash-progress-percent">80%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 92%;"></div></div>
+              <span class="dash-progress-percent">365</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> MDT Conference Notes</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> PBL Group Participation</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Peer Feedback Form</div>
+          </div>
+        </div>
+
+        <!-- 5 · Socially Accountable -->
+        <div class="dash-card dash-card--5">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">5</div>
+              <div class="dash-card__title">Socially Accountable</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 75%;"></div></div>
+              <span class="dash-progress-percent">75%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 85%;"></div></div>
+              <span class="dash-progress-percent">320</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Multicultural Context Reflection</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Global Health Seminar Notes</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Community Outreach Certificate</div>
+          </div>
+        </div>
+
+        <!-- 6 · Self Enhancer -->
+        <div class="dash-card dash-card--6">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">6</div>
+              <div class="dash-card__title">Self Enhancer</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 95%;"></div></div>
+              <span class="dash-progress-percent">95%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 98%;"></div></div>
+              <span class="dash-progress-percent">420</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Portfolio Development Log</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Professional Development Plans</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Academic Supervisor Feedback</div>
+          </div>
+        </div>
+
+        <!-- 7 · Health Systems -->
+        <div class="dash-card dash-card--7">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">7</div>
+              <div class="dash-card__title">Health Systems</div>
+            </div>
+            <span class="dash-card__status dash-card__status--incomplete">⚠ In Progress</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 65%;"></div></div>
+              <span class="dash-progress-percent">65%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 85%;"></div></div>
+              <span class="dash-progress-percent">85%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 45%;"></div></div>
+              <span class="dash-progress-percent">210</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Hospital Admin Observation</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Policy Review</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Partial Gibbs Reflection</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Complete Analysis Section</div>
+          </div>
+        </div>
+
+        <!-- 8 · Professionalism -->
+        <div class="dash-card dash-card--8">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">8</div>
+              <div class="dash-card__title">Professionalism</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 88%;"></div></div>
+              <span class="dash-progress-percent">88%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 92%;"></div></div>
+              <span class="dash-progress-percent">380</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> White Coat Ceremony Pledge</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Professional Values Statement</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Ethics Module Certificate</div>
+          </div>
+        </div>
+
+        <!-- 9 · Evidence Based -->
+        <div class="dash-card dash-card--9">
+          <div class="dash-card__header">
+            <div>
+              <div class="dash-card__num">9</div>
+              <div class="dash-card__title">Evidence Based</div>
+            </div>
+            <span class="dash-card__status dash-card__status--ready">✓ Ready</span>
+          </div>
+          <div class="dash-progress-group">
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Evidence</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 92%;"></div></div>
+              <span class="dash-progress-percent">92%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Reflection</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 100%;"></div></div>
+              <span class="dash-progress-percent">100%</span>
+            </div>
+            <div class="dash-progress-item">
+              <span class="dash-progress-label">Word Count</span>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width: 90%;"></div></div>
+              <span class="dash-progress-percent">350</span>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Literature Review Notes</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> Paper Appraisal Work</div>
+            <div class="dash-check-item done"><span class="dash-check-icon">✓</span> 6-Stage Gibbs Cycle</div>
+            <div class="dash-check-item"><span class="dash-check-icon"></span> Research Mentor Signature</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary Section -->
+      <div class="dash-summary">
+        <h2 class="dash-summary__title">Overall Portfolio Progress</h2>
+        <div class="dash-summary-stats">
+          <div class="dash-summary-stat">
+            <span class="dash-summary-stat__label">Total Competencies</span>
+            <span class="dash-summary-stat__value">9</span>
+          </div>
+          <div class="dash-summary-stat">
+            <span class="dash-summary-stat__label">Ready to Submit</span>
+            <span class="dash-summary-stat__value">8</span>
+          </div>
+          <div class="dash-summary-stat">
+            <span class="dash-summary-stat__label">In Progress</span>
+            <span class="dash-summary-stat__value">1</span>
+          </div>
+          <div class="dash-summary-stat">
+            <span class="dash-summary-stat__label">Completion</span>
+            <span class="dash-summary-stat__value">89%</span>
+          </div>
+        </div>
+
+        <div class="dash-next-steps" style="margin-top: var(--sp-lg);">
+          <h3 class="dash-next-steps__title">
+            ⭐ Next Steps to Submission
+          </h3>
+          <ul class="dash-next-steps__list">
+            <li class="dash-next-steps__item">Complete Health Systems (Competency 7) word count to 300+ minimum</li>
+            <li class="dash-next-steps__item">Collect remaining mentor/supervisor signatures and feedback comments</li>
+            <li class="dash-next-steps__item">Choose your strongest competency for formal evaluation (recommend: Medical Expert, Self Enhancer, or Evidence Based)</li>
+            <li class="dash-next-steps__item">Final formatting review and plagiarism check before submission</li>
+            <li class="dash-next-steps__item">Download portfolio template and fill in all required declaration sections</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="margin-top: var(--sp-2xl); display: flex; flex-wrap: wrap; gap: var(--sp-md);">
+        <a href="guidelines.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; background: linear-gradient(135deg, var(--c-teal), #17a8c4); color: #fff; text-decoration: none; border-radius: var(--r-lg); font-weight: 600; font-size: 0.95rem; transition: var(--t-base);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+          📋 View Guidelines
+        </a>
+        <a href="competencies.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; background: var(--c-accent); color: var(--c-teal); border: 1.5px solid var(--c-teal); text-decoration: none; border-radius: var(--r-lg); font-weight: 600; font-size: 0.95rem; transition: var(--t-base);" onmouseover="this.style.background='var(--c-teal)'; this.style.color='#fff'" onmouseout="this.style.background='var(--c-accent)'; this.style.color='var(--c-teal)'">
+          🎯 Browse Competencies
+        </a>
+        <a href="experience.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; background: var(--c-accent); color: var(--c-text); border: 1.5px solid var(--c-border); text-decoration: none; border-radius: var(--r-lg); font-weight: 600; font-size: 0.95rem; transition: var(--t-base);" onmouseover="this.style.borderColor='var(--c-text)'" onmouseout="this.style.borderColor='var(--c-border)'">
+          🏥 View Evidence & Reflection
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────── -->
+  <footer style="background: var(--c-navy); color: #fff; padding: var(--sp-lg) 0; text-align: center; margin-top: var(--sp-2xl);">
+    <div class="container">
+      <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">© 2026 Kashish Devnani · Gulf Medical University</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
