@@ -583,24 +583,27 @@ input, textarea, button { font-family: inherit; }
   opacity: 0.55;
 }
 .hero__blob--1 {
-  width: 600px; height: 600px;
-  background: var(--c-primary);
+  width: 650px; height: 650px;
+  background: linear-gradient(135deg, #F6D5CF 0%, #E8CFCB 50%, #D8A7A0 100%);
   top: -150px; right: -120px;
   animation: blob-float 8s ease-in-out infinite;
+  opacity: 0.75;
 }
 .hero__blob--2 {
-  width: 350px; height: 350px;
-  background: rgba(27,138,158,0.15);
+  width: 400px; height: 400px;
+  background: linear-gradient(135deg, rgba(216,167,160,0.4) 0%, rgba(232,207,203,0.3) 100%);
   bottom: 10%; left: -60px;
   animation: blob-float 10s ease-in-out infinite reverse;
   animation-delay: 2s;
+  opacity: 0.65;
 }
 .hero__blob--3 {
-  width: 240px; height: 240px;
-  background: rgba(123,79,158,0.10);
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(246,213,207,0.5) 0%, rgba(232,207,203,0.25) 100%);
   top: 40%; right: 28%;
   animation: blob-float 12s ease-in-out infinite;
   animation-delay: 4s;
+  opacity: 0.7;
 }
 @keyframes blob-float {
   0%, 100% { transform: translateY(0)   scale(1);    }

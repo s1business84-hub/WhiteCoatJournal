@@ -23,37 +23,22 @@
   align-self: center;
 }
 
-/* ── CUSTOM CURSOR ──────────────────────────────────────── */
-*, *::before, *::after { cursor: none !important; }
+/* ── CUSTOM CURSOR REMOVED FOR BETTER UX ────────────────── */
 
-#cursor-dot, #cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-  transition: opacity 0.3s;
+/* ── ANIMATION KEYFRAMES ────────────────────────────────── */
+@keyframes gentle-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 16px rgba(232, 207, 203, 0.4); }
+  50% { transform: scale(1.02); box-shadow: 0 6px 24px rgba(232, 207, 203, 0.6); }
 }
-#cursor-dot {
-  width: 8px; height: 8px;
-  background: var(--c-teal);
-  border-radius: 50%;
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-#cursor-ring {
-  width: 40px; height: 40px;
-  border: 1.5px solid rgba(27, 138, 158, 0.55);
-  border-radius: 50%;
-  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-#cursor-ring.hover {
-  width: 56px; height: 56px;
-  background: rgba(27, 138, 158, 0.12);
-  border-color: var(--c-teal);
-}
-#cursor-ring.click {
-  width: 28px; height: 28px;
-  background: rgba(27, 138, 158, 0.25);
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* ── PAGE LOADER ────────────────────────────────────────── */
@@ -668,8 +653,7 @@ body::before {
   .hero-float-chip--2 { left: 0; }
   .photo-strip { grid-template-columns: 1fr 1fr; height: 300px; }
   .photo-strip__item:last-child { display: none; }
-  #cursor-dot, #cursor-ring { display: none; }
-  *, *::before, *::after { cursor: auto !important; }
+  /* Cursor styles removed */
 }
 @media (max-width: 600px) {
   .photo-strip { grid-template-columns: 1fr; height: 260px; }
