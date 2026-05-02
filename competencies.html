@@ -440,7 +440,7 @@
       <div class="comp-elegant-grid stagger">
 
         <!-- I · Medical Expert — FEATURED -->
-        <a href="#comp-1" class="comp-tile comp-tile--featured" style="--tile-accent: var(--c-teal); text-decoration:none;">
+        <div class="comp-tile comp-tile--featured" data-target="comp-1" style="--tile-accent: var(--c-teal); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">I · Medical Expert</p>
           <div class="comp-tile__icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -457,10 +457,10 @@
             View Evidence &amp; Reflection
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
-        </a>
+        </div>
 
         <!-- II · Patient Care -->
-        <div class="comp-tile" style="--tile-accent: #B85C5C;" onclick="document.getElementById('comp-2').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-2" style="--tile-accent: #B85C5C; cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">II · Patient Care</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -471,7 +471,7 @@
         </div>
 
         <!-- III · Communication -->
-        <div class="comp-tile" style="--tile-accent: var(--c-purple);" onclick="document.getElementById('comp-3').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-3" style="--tile-accent: var(--c-purple); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">III · Communication</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -482,7 +482,7 @@
         </div>
 
         <!-- IV · Collaborator -->
-        <div class="comp-tile" style="--tile-accent: var(--c-gold);" onclick="document.getElementById('comp-4').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-4" style="--tile-accent: var(--c-gold); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">IV · Collaborator</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -493,7 +493,7 @@
         </div>
 
         <!-- V · Socially Accountable -->
-        <div class="comp-tile" style="--tile-accent: var(--c-emerald);" onclick="document.getElementById('comp-5').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-5" style="--tile-accent: var(--c-emerald); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">V · Socially Accountable</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -504,7 +504,7 @@
         </div>
 
         <!-- VI · Self Enhancer -->
-        <div class="comp-tile" style="--tile-accent: var(--c-teal-dark);" onclick="document.getElementById('comp-6').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-6" style="--tile-accent: var(--c-teal-dark); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">VI · Self Enhancer</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
@@ -515,7 +515,7 @@
         </div>
 
         <!-- VII · Health Systems -->
-        <div class="comp-tile" style="--tile-accent: #5C7AB8;" onclick="document.getElementById('comp-7').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-7" style="--tile-accent: #5C7AB8; cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">VII · Health Systems</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -526,7 +526,7 @@
         </div>
 
         <!-- VIII · Professionalism -->
-        <div class="comp-tile" style="--tile-accent: var(--c-navy);" onclick="document.getElementById('comp-8').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-8" style="--tile-accent: var(--c-navy); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">VIII · Professionalism</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -537,7 +537,7 @@
         </div>
 
         <!-- IX · Evidence Based -->
-        <div class="comp-tile" style="--tile-accent: var(--c-purple);" onclick="document.getElementById('comp-9').scrollIntoView({behavior:'smooth'})" role="link" tabindex="0">
+        <div class="comp-tile" data-target="comp-9" style="--tile-accent: var(--c-purple); cursor: pointer;" role="button" tabindex="0">
           <p class="comp-tile__num">IX · Evidence Based</p>
           <div class="comp-tile__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -557,7 +557,7 @@
        ════════════════════════════════════════════════════ -->
 
   <!-- I · Medical Expert -->
-  <section class="gibbs-section" id="comp-1">
+  <section class="gibbs-section competency-section" id="comp-1" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary">I · Medical Expert</span>
       <h2 class="gibbs-title">Medical Expert</h2>
@@ -684,7 +684,7 @@
   </section>
 
   <!-- II · Patient Care -->
-  <section class="gibbs-section" id="comp-2">
+  <section class="gibbs-section competency-section" id="comp-2" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--secondary">II · Patient Care</span>
       <h2 class="gibbs-title">Patient Care Provider</h2>
@@ -735,7 +735,7 @@
   </section>
 
   <!-- III · Communication -->
-  <section class="gibbs-section" id="comp-3">
+  <section class="gibbs-section competency-section" id="comp-3" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(123,79,158,.12);color:var(--c-purple);border-color:rgba(123,79,158,.28);">III · Communication</span>
       <h2 class="gibbs-title">Communication Skills</h2>
@@ -782,7 +782,7 @@
   </section>
 
   <!-- IV · Collaborator -->
-  <section class="gibbs-section" id="comp-4">
+  <section class="gibbs-section competency-section" id="comp-4" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(196,136,42,.12);color:var(--c-gold);border-color:rgba(196,136,42,.28);">IV · Collaborator</span>
       <h2 class="gibbs-title">Collaborator &amp; Innovator</h2>
@@ -863,107 +863,11 @@
         </div>
       </div>
 
-      <hr style="margin: var(--sp-2xl) 0; border: none; border-top: 2px solid var(--c-border);" />
-
-      <!-- NEW REFLECTION: CKS Hospital Clinical Observership -->
-      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(27,138,158,0.08), rgba(196,136,42,0.08)); border: 2px solid rgba(27,138,158,0.2); border-radius: var(--r-xl);">
-        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
-          Clinical Observership Reflection: CKS Hospital Cardiology Department
-        </h3>
-        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
-          Cardiology & Internal Medicine Observership · March 20-27, 2026 · Jaipur, India
-        </p>
-
-        <!-- Certificate Image -->
-        <div style="margin-bottom: var(--sp-xl); text-align: center;">
-          <img src="assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital Clinical Observership Certificate" style="max-width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 3px solid rgba(27,138,158,0.2);" />
-          <p style="margin-top: var(--sp-sm); font-size: 0.8rem; color: var(--c-muted); font-style: italic;">Certificate of Clinical Observership issued by Dr. Prakash Chandwani, Consultant Cardiologist & Founder, CKS Hospital</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg); margin-bottom: var(--sp-md);">
-          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-md); font-size: 1.1rem; letter-spacing: 0.03em; border-bottom: 2px solid rgba(27,138,158,0.2); padding-bottom: var(--sp-sm);">A. Description of the Activity</h4>
-          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
-            I successfully completed a clinical observership at <strong>CKS Hospital</strong> from March 20th to 27th, 2026, under the supervision of <strong>Dr. Prakash Chandwani</strong>, Consultant Cardiologist and Founder of CKS Hospital in Jaipur, India. This was a structured, week-long immersion in the Department of Cardiology and Internal Medicine.
-          </p>
-          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
-            During the observership, I was attached to multidisciplinary clinical teams and observed ward rounds, patient case discussions, ICU exposure, clinical assessment procedures, and multidisciplinary patient care coordination. I gained direct exposure to the interpretation of clinical investigations, patient monitoring protocols, hospital workflow systems, professional communication practices, and the ethical aspects of clinical practice in a real-world healthcare setting.
-          </p>
-          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
-            The observership was strictly observational and did not involve independent patient care, procedures, prescribing, or clinical decision-making. Throughout the period, I demonstrated <strong>professionalism, punctuality, enthusiasm, and sincere dedication to learning</strong>, as formally recognized in the certificate issued by Dr. Chandwani.
-          </p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg); margin-bottom: var(--sp-md);">
-          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-md); font-size: 1.1rem; letter-spacing: 0.03em; border-bottom: 2px solid rgba(27,138,158,0.2); padding-bottom: var(--sp-sm);">B. Self-Reflection (Gibbs Reflective Cycle)</h4>
-          
-          <div style="margin-bottom: var(--sp-lg);">
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 1 · Description</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              This semester, I co-founded Electivio with a small group of peers to build a platform connecting medical students with hospitals for clinical electives. I was also appointed MedConf Regional Leader for the Middle East, where I help expand the network's presence across the region. Both roles involved leading peers, communicating with external stakeholders, and coordinating across institutions.
-            </p>
-          </div>
-
-          <div style="margin-bottom: var(--sp-lg);">
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 2 · Feelings</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              I felt energized by both opportunities. Taking ownership of a project based on a real frustration I experienced as a student was empowering. Although I felt uncertain at times, especially with platform development and hospital outreach, leading a team toward a shared vision gave me a strong sense of purpose beyond traditional coursework.
-            </p>
-          </div>
-
-          <div style="margin-bottom: var(--sp-lg);">
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 3 · Evaluation</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              Positive aspects included the team's motivation, early traction with the Electivio concept, and formal recognition of my leadership role at MedConf. The main challenge was balancing these responsibilities with academic demands, which required prioritization and time management. Coordinating with team members who had different schedules also highlighted the need for structured communication.
-            </p>
-          </div>
-
-          <div style="margin-bottom: var(--sp-lg);">
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 4 · Analysis</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              Through the lens of Theme 5, both experiences connect strongly to collaboration, innovation, and leadership. Medical education research emphasizes that innovation in healthcare systems, including education infrastructure, is an important form of health leadership. Electivio addresses a gap that affects the quality of future clinicians' training and, indirectly, patient care. This experience showed me that healthcare leadership extends beyond clinical settings.
-            </p>
-          </div>
-
-          <div style="margin-bottom: var(--sp-lg);">
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 5 · Conclusion</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              This experience taught me that innovation in healthcare is not limited to clinical practice. I strengthened my ability to lead without formal authority, manage team dynamics, and support a shared vision. I also realized that seeking faculty mentorship earlier would have improved our progress and helped align the platform with academic and institutional standards.
-            </p>
-          </div>
-
-          <div>
-            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 6 · Action Plan</h5>
-            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
-              Going forward, I will present Electivio to more faculty supervisors this semester to seek formal mentorship and feedback. For my MedConf role, I aim to recruit at least three regional student ambassadors and establish one institutional partnership before the end of the academic year. I will also continue developing my leadership and collaboration skills through peer advising and interprofessional activities at GMU.
-            </p>
-          </div>
-        </div>
-
-        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(196,136,42,0.08); border-left: 4px solid var(--c-gold); border-radius: var(--r-sm);">
-          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
-            <strong style="color: var(--c-gold);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 4 (Collaborator & Innovator) through co-founding Electivio, leading as MedConf Regional Leader, coordinating multidisciplinary teams, and driving innovation in medical education infrastructure that enhances healthcare system accessibility for future clinicians.
-          </p>
-        </div>
-
-        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg);">
-          <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-sm); font-weight: 600;">📎 Supporting Evidence</p>
-          <div style="display: flex; flex-wrap: wrap; gap: var(--sp-sm);">
-            <a href="https://electivio.space" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; background: var(--c-teal-light); color: var(--c-teal-dark); border-radius: var(--r-sm); font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all var(--t-fast);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              Visit Electivio.space Platform
-            </a>
-            <span style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; background: var(--c-purple-light); color: var(--c-purple); border-radius: var(--r-sm); font-size: 0.82rem; font-weight: 600;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              MedConf Appointment Letter
-            </span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- V · Socially Accountable -->
-  <section class="gibbs-section" id="comp-5">
+  <section class="gibbs-section competency-section" id="comp-5" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(26,122,94,.12);color:var(--c-emerald);border-color:rgba(26,122,94,.28);">V · Socially Accountable</span>
       <h2 class="gibbs-title">Socially Accountable</h2>
@@ -1013,7 +917,7 @@
   </section>
 
   <!-- VI · Self Enhancer -->
-  <section class="gibbs-section" id="comp-6">
+  <section class="gibbs-section competency-section" id="comp-6" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--secondary">VI · Self &amp; Profession Enhancer</span>
       <h2 class="gibbs-title">Self &amp; Profession Enhancer</h2>
@@ -1060,7 +964,7 @@
   </section>
 
   <!-- VII · Health Systems -->
-  <section class="gibbs-section" id="comp-7">
+  <section class="gibbs-section competency-section" id="comp-7" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(92,122,184,.12);color:#5C7AB8;border-color:rgba(92,122,184,.28);">VII · Health Systems</span>
       <h2 class="gibbs-title">Health Systems Proponent</h2>
@@ -1110,7 +1014,7 @@
   </section>
 
   <!-- VIII · Professionalism -->
-  <section class="gibbs-section" id="comp-8">
+  <section class="gibbs-section competency-section" id="comp-8" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(22,37,58,.1);color:var(--c-navy);border-color:rgba(22,37,58,.25);">VIII · Professionalism</span>
       <h2 class="gibbs-title">Professionalism</h2>
@@ -1160,7 +1064,7 @@
   </section>
 
   <!-- IX · Evidence Based Practitioner -->
-  <section class="gibbs-section" id="comp-9">
+  <section class="gibbs-section competency-section" id="comp-9" style="display: none;">
     <div class="container">
       <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(123,79,158,.12);color:var(--c-purple);border-color:rgba(123,79,158,.28);">IX · Evidence Based</span>
       <h2 class="gibbs-title">Evidence Based Practitioner &amp; Lifelong Scholar</h2>
@@ -1323,9 +1227,46 @@
   <script src="js/main.js"></script>
   <script src="js/enhance.js"></script>
   <script>
-    // keyboard accessibility for onclick tiles
-    document.querySelectorAll('.comp-tile[onclick]').forEach(t => {
-      t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); } });
+    // Competency tile click functionality - toggle visibility
+    document.querySelectorAll('.comp-tile').forEach(tile => {
+      tile.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the target competency ID from data-target attribute
+        const targetId = this.getAttribute('data-target');
+        
+        if (!targetId) return;
+        
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+        
+        // Check if this section is already open
+        const isOpen = targetSection.style.display === 'block';
+        
+        // Close all competency sections
+        document.querySelectorAll('.competency-section').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // If section was closed, open it and scroll to it
+        if (!isOpen) {
+          targetSection.style.display = 'block';
+          setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        } else {
+          // If it was open, scroll back to tiles grid
+          document.getElementById('competencies').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+      
+      // Keyboard accessibility
+      tile.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          tile.click();
+        }
+      });
     });
   </script>
 </body>
