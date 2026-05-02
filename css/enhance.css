@@ -23,7 +23,53 @@
   align-self: center;
 }
 
-/* ── CUSTOM CURSOR REMOVED FOR BETTER UX ────────────────── */
+/* ── CUSTOM CURSOR ────────────────────────────────────────── */
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--c-secondary);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+#cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--c-secondary);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease;
+}
+
+#cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--c-teal);
+}
+
+#cursor-ring.click {
+  width: 28px;
+  height: 28px;
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 900px) {
+  #cursor-dot,
+  #cursor-ring {
+    display: none !important;
+  }
+}
 
 /* ── ANIMATION KEYFRAMES ────────────────────────────── */
 @keyframes gentle-pulse {
