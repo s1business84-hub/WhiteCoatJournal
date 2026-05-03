@@ -714,9 +714,10 @@
   max-width: 560px;
   border-radius: var(--r-lg);
   border: 1px solid var(--c-border);
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   aspect-ratio: 16/7;
+  background: #f8f5f3;
 }
 .timeline-item__img-placeholder {
   width: 100%;
