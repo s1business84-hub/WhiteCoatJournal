@@ -761,6 +761,77 @@ body::after {
   aspect-ratio: 4/3;
 }
 
+/* ── COMPETENCY PREVIEW CARDS ──────────────────────────── */
+.competency-preview-card {
+  position: relative;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.competency-preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--c-teal) 0%, var(--c-purple) 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.competency-preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: var(--c-teal);
+}
+.competency-preview-card:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+.competency-preview-card__number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(27,138,158,0.12);
+  line-height: 1;
+  margin-bottom: var(--sp-sm);
+  transition: color 0.3s ease;
+}
+.competency-preview-card:hover .competency-preview-card__number {
+  color: rgba(27,138,158,0.25);
+}
+.competency-preview-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-sm);
+}
+.competency-preview-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--c-muted);
+  margin-bottom: var(--sp-md);
+}
+.competency-preview-card__arrow {
+  font-size: 1.5rem;
+  color: var(--c-teal);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+.competency-preview-card:hover .competency-preview-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ── RESPONSIVE OVERRIDES ────────────────────────────────── */
 @media (max-width: 900px) {
   .hero--split { flex-direction: column; }
