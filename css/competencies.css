@@ -587,17 +587,16 @@
   padding-top: 3px;
 }
 .gibbs-step__tag {
-  display: inline-block;
-  font-size: 0.64rem;
+  display: none;
+}
+.personal-reflection-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--c-secondary);
-  background: rgba(180,100,70,0.08);
-  border: 1px solid rgba(180,100,70,0.2);
-  border-radius: var(--r-full);
-  padding: 0.25rem 0.75rem;
-  width: fit-content;
+  color: var(--c-text);
+  padding: 0 0 var(--sp-lg);
+  border-bottom: 2px solid var(--c-border);
+  margin-bottom: var(--sp-xl);
 }
 .gibbs-step__name {
   font-family: var(--font-serif);
