@@ -716,8 +716,10 @@
   border: 1px solid var(--c-border);
   object-fit: contain;
   display: block;
-  aspect-ratio: 16/7;
+  aspect-ratio: 16/9;
   background: #f8f5f3;
+  padding: var(--sp-md);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 .timeline-item__img-placeholder {
   width: 100%;
