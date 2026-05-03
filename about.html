@@ -62,31 +62,46 @@
 
         <!-- Photo / Video grid -->
         <div class="about-photo-grid fade-left">
-          <!-- Side slot 1 — clinical video -->
-          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;background:#000;">
-            <video
-              autoplay muted loop playsinline
-              style="width:100%;height:100%;object-fit:cover;display:block;"
-              poster="assets/observo2.jpg"
-            >
-              <source src="assets/observo3.mp4" type="video/mp4" />
-            </video>
-            <div style="position:absolute;bottom:0.5rem;left:0.6rem;">
-              <span style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);border-radius:99px;padding:0.25rem 0.65rem;font-size:0.65rem;font-weight:600;color:#fff;">
-                <span style="width:5px;height:5px;border-radius:50%;background:#ef4444;animation:pulse-dot 1.5s infinite;flex-shrink:0;"></span>
-                Cath Lab
-              </span>
+          <!-- Main tall slot — White Coat portrait, prominent -->
+          <div class="about-photo-grid__main" style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+            <img
+              src="assets/kashish.jpg"
+              alt="Kashish Devnani — White Coat Ceremony, Gulf Medical University 2026"
+              loading="eager"
+              style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''"
+            />
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,37,58,0.55) 0%,transparent 45%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <p style="font-family:var(--font-serif);font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.2rem;">White Coat Ceremony</p>
+              <p style="font-size:0.72rem;color:rgba(255,255,255,0.72);font-weight:500;">Gulf Medical University · 2026</p>
             </div>
           </div>
-          <!-- Side slot 2 — clinical video -->
-          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;background:#000;">
-            <video
-              autoplay muted loop playsinline
+          <!-- Side slot 1 — lab microscope -->
+          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;">
+            <img
+              src="assets/lab-microscope.jpg"
+              alt="Biomedical Research — Laboratory Work"
+              loading="lazy"
               style="width:100%;height:100%;object-fit:cover;display:block;"
-              poster="assets/observo1.jpg"
-            >
-              <source src="assets/observo4.mp4" type="video/mp4" />
-            </video>
+            />
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <p style="font-family:var(--font-serif);font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.1rem;">Biomedical Research</p>
+              <p style="font-size:0.65rem;color:rgba(255,255,255,0.8);font-weight:500;">Laboratory & Microscopy</p>
+            </div>
+          </div>
+          <!-- Side slot 2 — clinical exposure -->
+          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;">
+            <img
+              src="assets/observo1.jpg"
+              alt="Clinical Observership — CKS Hospital"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <p style="font-family:var(--font-serif);font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.1rem;">Clinical Exposure</p>
+              <p style="font-size:0.65rem;color:rgba(255,255,255,0.8);font-weight:500;">CKS Hospital, Jaipur</p>
+            </div>
           </div>
         </div>
         <style>
@@ -99,7 +114,7 @@
           <div class="divider"></div>
 
           <p class="body-lg" style="margin-bottom: var(--sp-md);">
-            I am a medical student at <strong>Gulf Medical University (GMU), Ajman, UAE</strong>, graduating in <strong>2029</strong>. My journey has been shaped by early clinical exposure, structured reflection, and a commitment to excellence across all dimensions of medical practice. I am driven by a deep dedication to understanding medicine beyond textbooks and building a career that combines clinical excellence, innovation, and patient-centered care.
+            I am a medical student at <strong>Gulf Medical University (GMU), Ajman, UAE</strong>, with a <strong>Degree in Biomedical Science</strong>, graduating in <strong>2029</strong>. My journey has been shaped by early clinical exposure, structured reflection, and a commitment to excellence across all dimensions of medical practice. I am driven by a deep dedication to understanding medicine beyond textbooks and building a career that combines clinical excellence, innovation, and patient-centered care.
           </p>
           <p class="body-md" style="margin-bottom: var(--sp-sm);">
             <strong>Clinical Interests:</strong> My passion centers on <strong>neurosurgery and acute care medicine</strong>, driven by fascination with neurological pathology and the ability to make rapid, life-saving clinical decisions. I have completed structured observerships at <strong>CKS Hospital, Jaipur</strong> (Cardiology, March 2026), gaining exposure to ward rounds, ICU management, and surgical theatre environments under expert supervision.
