@@ -809,9 +809,11 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto;
 }
-.media-collage--5 > *:nth-child(4),
+.media-collage--5 > *:nth-child(4) {
+  grid-column: 1 / 2;
+}
 .media-collage--5 > *:nth-child(5) {
-  grid-column: span 1;
+  grid-column: 2 / 4;
 }
 .media-collage__item {
   position: relative;

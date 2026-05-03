@@ -55,15 +55,32 @@
 
     <div class="reflection-card">
 
-      <!-- 3-image evidence grid -->
-      <div class="reflection-card__img-grid">
-        <img src="/assets/observo1.jpg" alt="CKS Hospital ward and ICU observership" />
-        <img src="/assets/observo2.jpg" alt="CKS Hospital operating theatre observership" />
-        <img src="/assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital observership certificate" />
+      <!-- 5-item evidence collage: 2 photos + 2 videos + certificate -->
+      <div class="media-collage media-collage--5">
+        <div class="media-collage__item">
+          <img src="/assets/observo1.jpg" alt="CKS Hospital ward observership" />
+          <span class="media-collage__badge">Ward</span>
+        </div>
+        <div class="media-collage__item">
+          <img src="/assets/observo2.jpg" alt="CKS Hospital ICU observership" />
+          <span class="media-collage__badge">ICU</span>
+        </div>
+        <div class="media-collage__item">
+          <video src="/assets/observo3.mp4" playsinline muted loop autoplay></video>
+          <span class="media-collage__badge">Theatre — clip 1</span>
+        </div>
+        <div class="media-collage__item">
+          <video src="/assets/observo4.mp4" playsinline muted loop autoplay></video>
+          <span class="media-collage__badge">Theatre — clip 2</span>
+        </div>
+        <div class="media-collage__item">
+          <img src="/assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital observership certificate" style="object-fit: contain; background:#f8f5f3;" />
+          <span class="media-collage__badge">Certificate</span>
+        </div>
       </div>
 
       <!-- Certificate link -->
-      <div style="padding: 0 var(--sp-xl) var(--sp-lg);">
+      <div style="padding: var(--sp-md) var(--sp-xl) var(--sp-lg);">
         <a href="/assets/certificates/cks-hospital-certificate.jpg" target="_blank" rel="noopener" class="cert-open-btn">View certificate ↗</a>
       </div>
 
