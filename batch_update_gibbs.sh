@@ -1,0 +1,25 @@
+#!/bin/bash
+# This script documents the Gibbs cycle updates needed for all reflections
+# Due to file complexity, these are being applied manually via str_replace_editor
+
+echo "✅ COMPLETED UPDATES:"
+echo "  - Competency I (Medical Expert) - CKS Hospital Observership - DONE"
+echo "  - Competency IV (Collaborator) - Electivio & MedConf - DONE"
+echo ""
+echo "⏳ REMAINING TO UPDATE (same pattern for all):"
+echo "  - Competency I - CPR & AED Certification"
+echo "  - Competency II (Patient Care)"
+echo "  - Competency III (Communication)"
+echo "  - Competency V (Socially Accountable)"
+echo "  - Competency VI (Self Enhancer)"
+echo "  - Competency VII (Health Systems)"
+echo "  - Competency VIII (Professionalism)"
+echo "  - Competency IX (Evidence Based)"
+echo ""
+echo "Each needs explicit stage headers:"
+echo "  - Description"
+echo "  - Feelings"
+echo "  - Evaluation"
+echo "  - Analysis"
+echo "  - Conclusion"
+echo "  - Action Plan"
