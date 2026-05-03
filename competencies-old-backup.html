@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Competencies — Kashish Devnani · The White Coat Journal</title>
+  <meta name="description" content="Core Competencies of Kashish Devnani — Medical Expert, Patient Care, Communication, Collaborator, Evidence-Based Practice, Professionalism, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/enhance.css" />
+  <link rel="stylesheet" href="css/ai-chat.css" />
+  <style>
+    /* ══════════════════════════════════════════════════
+       GMU E-PORTFOLIO — COMPETENCIES PAGE
+       ══════════════════════════════════════════════════ */
+
+    /* ── Hero ───────────────────────────────────────── */
+    .comp-hero {
+      background: #f8f5f3;
+      padding: calc(var(--nav-h) + var(--sp-2xl)) 0 var(--sp-2xl);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .comp-hero__inner { position: relative; z-index: 1; max-width: 760px; }
+    .comp-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-bottom: var(--sp-sm);
+    }
+    .comp-hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: var(--c-muted);
+    }
+    .comp-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.06;
+      color: var(--c-text);
+      margin-bottom: var(--sp-md);
+    }
+    .comp-hero__title em { font-style: italic; color: var(--c-secondary); }
+    .comp-hero__sub {
+      font-size: 1.05rem;
+      color: var(--c-muted);
+      line-height: 1.8;
+      max-width: 580px;
+    }
+
+    /* Stats strip */
+    .comp-stats { display: none; }
+    .comp-stats__inner { display: flex; align-items: stretch; flex-wrap: wrap; }
+    .comp-stat {
+      flex: 1 1 200px;
+      padding: var(--sp-md) var(--sp-lg);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .comp-stat:last-child { border-right: none; }
+    .comp-stat__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .comp-stat__value { font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700; color: #fff; line-height: 1.15; }
+    .comp-stat__value small { font-size: 0.78rem; font-family: var(--font-sans); font-weight: 400; color: rgba(255,255,255,0.38); display: block; margin-top: 0.15rem; }
+
+    /* Intro */
+    .comp-intro { text-align: left; padding: var(--sp-2xl) 0 var(--sp-lg); }
+    .comp-intro__eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: var(--sp-sm); }
+    .comp-intro__title { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--c-text); margin-bottom: 0.4rem; }
+    .comp-intro__title em { font-style: italic; color: var(--c-secondary); }
+    .comp-intro__line { display: none; }
+    .comp-intro__body { font-size: 1rem; color: var(--c-muted); line-height: 1.75; max-width: 720px; margin: 0; }
+
+    /* Elegant tiled grid */
+    .comp-elegant-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--sp-lg);
+      margin-bottom: var(--sp-2xl);
+    }
+    .comp-tile {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      position: relative;
+      transition: box-shadow var(--t-base), transform var(--t-base), border-color var(--t-base);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .comp-tile:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); transform: translateY(-3px); border-color: rgba(0,0,0,0.08); }
+    .comp-tile__num {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--c-muted);
+      text-transform: uppercase;
+      opacity: 1;
+    }
+    .comp-tile__entries {
+      font-weight: 600;
+      color: var(--c-muted);
+    }
+    .comp-tile__icon { display: none; }
+    .comp-tile__evidence { display: none; }
+    .comp-tile__title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--c-text); line-height: 1.25; }
+    .comp-tile__desc { font-size: 0.92rem; color: var(--c-muted); line-height: 1.7; flex: 1; }
+    .comp-tile__arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--c-text);
+      opacity: 1;
+      transform: none;
+      margin-top: auto;
+    }
+
+    /* CTA */
+    .comp-cta { background: var(--c-navy); padding: var(--sp-2xl) 0; position: relative; overflow: hidden; }
+    .comp-cta::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(27,138,158,0.15) 0%, transparent 65%); pointer-events: none; }
+    .comp-cta__inner { position: relative; z-index: 1; text-align: center; }
+    .comp-cta__eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-teal); margin-bottom: var(--sp-sm); }
+    .comp-cta__title { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+    .comp-cta__body { font-size: 0.95rem; color: rgba(255,255,255,0.48); max-width: 520px; margin: 0 auto var(--sp-xl); line-height: 1.78; }
+
+    @media (max-width: 900px) {
+      .comp-elegant-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .comp-elegant-grid { grid-template-columns: 1fr; }
+      .comp-stat { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    }
+
+    /* ── Tile pointer ───────────────────────── */
+    .comp-tile { cursor: pointer; }
+
+    /* ── Sticky Quick-Nav ───────────────────── */
+    .comp-quicknav { display: none; }
+    .comp-quicknav::-webkit-scrollbar { display: none; }
+    .comp-quicknav__inner {
+      display: flex;
+      align-items: stretch;
+      white-space: nowrap;
+      padding: 0 var(--sp-lg);
+    }
+    .comp-quicknav__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--c-muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .comp-quicknav__link:hover { color: var(--c-teal); border-bottom-color: var(--c-teal); }
+    .comp-quicknav__dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .5; flex-shrink: 0; }
+
+    /* ── Gibbs Sections ─────────────────────── */
+    .gibbs-section {
+      padding: var(--sp-2xl) 0;
+      border-bottom: 1px solid var(--c-border);
+      scroll-margin-top: calc(var(--nav-h) + 48px);
+    }
+    .gibbs-section:nth-child(odd) { background: var(--c-bg); }
+    .gibbs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 99px;
+      margin-bottom: var(--sp-sm);
+    }
+    .gibbs-badge--primary  { background: rgba(27,138,158,.12); color: var(--c-teal);   border: 1px solid rgba(27,138,158,.28); }
+    .gibbs-badge--secondary{ background: var(--c-bg);           color: var(--c-muted);  border: 1px solid var(--c-border); }
+    .gibbs-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.7rem,3.5vw,2.4rem);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: var(--sp-xs);
+    }
+    .gibbs-desc { font-size: .92rem; color: var(--c-muted); line-height: 1.75; max-width: 620px; margin-bottom: var(--sp-md); }
+    .gibbs-evidence-bar { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: var(--sp-lg); }
+    .gibbs-evidence-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .28rem .75rem;
+      border-radius: 99px;
+      background: var(--c-card);
+      border: 1px solid var(--c-border);
+      color: var(--c-text);
+      text-decoration: none;
+    }
+    div[style*="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);"] {
+      background: rgba(255, 235, 242, 0.72) !important;
+      border: 1px solid rgba(232, 207, 203, 0.65) !important;
+    }
+    /* Gibbs cycle — coloured card grid */
+    .gibbs-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: var(--sp-lg);
+    }
+    .gibbs-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(0,0,0,.07);
+    }
+    .gibbs-card__head {
+      padding: .85rem 1.1rem .75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .18rem;
+    }
+    .gibbs-card__num {
+      font-size: .63rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .65;
+      color: #2a2a2a;
+    }
+    .gibbs-card__name {
+      font-size: .97rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .gibbs-card__prompt {
+      font-size: .73rem;
+      font-style: italic;
+      color: #444;
+      line-height: 1.45;
+    }
+    .gibbs-card__body {
+      background: #fff;
+      padding: .9rem 1.1rem;
+      font-size: .87rem;
+      line-height: 1.78;
+      color: var(--c-text);
+      border-top: 1px solid rgba(0,0,0,.07);
+    }
+    /* Stage colours — matching Gibbs diagram */
+    .gibbs-card--1 .gibbs-card__head { background: #c8d0dc; }
+    .gibbs-card--2 .gibbs-card__head { background: #e8b0a0; }
+    .gibbs-card--3 .gibbs-card__head { background: #f0eaa0; }
+    .gibbs-card--4 .gibbs-card__head { background: #c8d870; }
+    .gibbs-card--5 .gibbs-card__head { background: #f0a8c8; }
+    .gibbs-card--6 .gibbs-card__head { background: #a8d8ec; }
+    @media (max-width: 680px) {
+      .gibbs-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page-loader">
+    <div class="loader__name"><span>C</span><span>O</span><span>M</span><span>P</span><span>E</span><span>T</span><span>E</span><span>N</span><span>C</span><span>I</span><span>E</span><span>S</span></div>
+    <div class="loader__bar"><div class="loader__bar-fill"></div></div>
+    <p class="loader__sub">The White Coat Journal</p>
+  </div>
+  <div id="scroll-progress"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"        class="nav__link">Home</a></li>
+        <li><a href="about.html"        class="nav__link">About</a></li>
+        <li><a href="competencies.html" class="nav__link">Competencies</a></li>
+        <li><a href="assets/cv-kashish-devnani.pdf" class="nav__link nav__cta" target="_blank">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════ -->
+  <section class="comp-hero">
+    <div class="container">
+      <div class="comp-hero__inner fade-up">
+        <p class="comp-hero__eyebrow">Core Competencies</p>
+        <h1 class="comp-hero__title">Nine pillars of<br><em>practice</em>.</h1>
+        <p class="comp-hero__sub">
+          The framework I return to as I grow into the physician I want to become. Click any competency to explore the experiences shaping it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       STATS STRIP
+       ════════════════════════════════════════════════════ -->
+  <div class="comp-stats">
+    <div class="container" style="padding-left:0;padding-right:0;max-width:100%;">
+      <div class="comp-stats__inner">
+        <div class="comp-stat">
+          <p class="comp-stat__label">Domains</p>
+          <p class="comp-stat__value">9<small>Core Competencies</small></p>
+        </div>
+        <div class="comp-stat">
+          <p class="comp-stat__label">Framework</p>
+          <p class="comp-stat__value" style="font-size:1.1rem;">GMU<small>e-Portfolio Standard</small></p>
+        </div>
+        <div class="comp-stat">
+          <p class="comp-stat__label">Evidence Documented</p>
+          <p class="comp-stat__value" style="font-size:1rem;">CPR · IV Cannulation · Lab Visit · Observership<small>Certified &amp; Verified</small></p>
+        </div>
+        <div class="comp-stat">
+          <p class="comp-stat__label">Institution</p>
+          <p class="comp-stat__value" style="font-size:1rem;">Gulf Medical<small>University, Ajman, UAE</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY QUICK-NAV -->
+  <div class="comp-quicknav" id="comp-quicknav">
+    <div class="comp-quicknav__inner">
+      <a href="#comp-1" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>I · Medical Expert</a>
+      <a href="#comp-2" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>II · Patient Care</a>
+      <a href="#comp-3" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>III · Communication</a>
+      <a href="#comp-4" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>IV · Collaborator</a>
+      <a href="#comp-5" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>V · Socially Accountable</a>
+      <a href="#comp-6" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>VI · Self Enhancer</a>
+      <a href="#comp-7" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>VII · Health Systems</a>
+      <a href="#comp-8" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>VIII · Professionalism</a>
+      <a href="#comp-9" class="comp-quicknav__link"><span class="comp-quicknav__dot"></span>IX · Evidence Based</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════
+       COMPETENCIES GRID
+       ════════════════════════════════════════════════════ -->
+  <section class="section" id="competencies" style="padding-top: var(--sp-2xl);">
+    <div class="container">
+
+      <div class="comp-intro fade-up">
+        <p class="comp-intro__eyebrow">Core Competencies</p>
+        <h2 class="comp-intro__title">Nine pillars of <em>practice</em>.</h2>
+        <p class="comp-intro__body">
+          The framework I return to as I grow into the physician I want to become. Click any competency to explore the experiences shaping it.
+        </p>
+      </div>
+
+      <div class="comp-elegant-grid stagger">
+
+        <!-- I · Medical Expert — FEATURED -->
+        <div class="comp-tile comp-tile--featured" data-target="comp-1" style="--tile-accent: var(--c-teal); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">I · Medical Expert</p>
+          <div class="comp-tile__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Medical Expert</h3>
+          <p class="comp-tile__desc">
+            Completed CPR &amp; AED certification, practiced peripheral IV cannulation, and attended a structured Thumbay lab visit to strengthen diagnostic reasoning and procedural competence.
+          </p>
+          <div class="comp-tile__evidence">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            CPR &amp; AED · IV Cannulation · Thumbay Lab Visit
+          </div>
+          <div class="comp-tile__arrow">
+            Click to know more
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- II · Patient Care -->
+        <div class="comp-tile" data-target="comp-2" style="--tile-accent: #B85C5C; cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">II · Patient Care</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Patient Care</h3>
+          <p class="comp-tile__desc">Observed patient-centered bedside consultation, informed consent conversations, and compassionate communication during clinical exposure at CKS Hospital.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- III · Communication -->
+        <div class="comp-tile" data-target="comp-3" style="--tile-accent: var(--c-purple); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">III · Communication</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Communication Skills</h3>
+          <p class="comp-tile__desc">Practiced professional communication through White Coat pledge delivery and by observing structured SBAR-style clinical handovers during observership rounds.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- IV · Collaborator -->
+        <div class="comp-tile" data-target="comp-4" style="--tile-accent: var(--c-gold); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">IV · Collaborator</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Collaborator &amp; Innovator</h3>
+          <p class="comp-tile__desc">Co-founded Electivio, led regional MedConf initiatives, and collaborated with peers and institutions to expand medical learning opportunities.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- V · Socially Accountable -->
+        <div class="comp-tile" data-target="comp-5" style="--tile-accent: var(--c-emerald); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">V · Socially Accountable</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Socially Accountable</h3>
+          <p class="comp-tile__desc">Engaged in outreach and service-oriented activities focused on community health awareness, equity, and responsible healthcare advocacy.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- VI · Self Enhancer -->
+        <div class="comp-tile" data-target="comp-6" style="--tile-accent: var(--c-teal-dark); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">VI · Self Enhancer</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Self &amp; Profession Enhancer</h3>
+          <p class="comp-tile__desc">Used structured reflection, feedback, and goal-based action plans to improve clinical confidence, skills, and long-term professional growth.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- VII · Health Systems -->
+        <div class="comp-tile" data-target="comp-7" style="--tile-accent: #5C7AB8; cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">VII · Health Systems</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Health Systems Proponent</h3>
+          <p class="comp-tile__desc">Observed clinical workflows across wards, ICU, theatre, and laboratory services to understand coordination, turnaround time, and safe care delivery systems.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- VIII · Professionalism -->
+        <div class="comp-tile" data-target="comp-8" style="--tile-accent: var(--c-navy); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">VIII · Professionalism</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Professionalism</h3>
+          <p class="comp-tile__desc">Demonstrated professional conduct through ethical reflection, respectful clinical behavior, and commitment to accountability in every learning setting.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <!-- IX · Evidence Based -->
+        <div class="comp-tile" data-target="comp-9" style="--tile-accent: var(--c-purple); cursor: pointer;" role="button" tabindex="0">
+          <p class="comp-tile__num">IX · Evidence Based</p>
+          <div class="comp-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h3 class="comp-tile__title">Evidence Based Practitioner</h3>
+          <p class="comp-tile__desc">Applied guideline-based learning and case reflection to connect clinical observations with current evidence and safer decision-making practices.</p>
+          <span class="comp-tile__arrow">Click to know more <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+      </div><!-- /comp-elegant-grid -->
+
+      <!-- Closing Note -->
+      <div style="margin-top: var(--sp-2xl); padding: var(--sp-lg) var(--sp-xl); background: rgba(27, 138, 158, 0.04); border: 1px solid rgba(27, 138, 158, 0.15); border-radius: var(--r-lg); text-align: center;">
+        <p style="font-size: 0.95rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+          More experiences are being added as I gain them through clinical rotations and beyond. Each reflection deepens my understanding of these nine pillars and my evolving identity as a physician.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       GIBBS REFLECTIVE SECTIONS
+       ════════════════════════════════════════════════════ -->
+
+  <!-- I · Medical Expert -->
+  <section class="gibbs-section competency-section" id="comp-1" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary">I · Medical Expert</span>
+      <h2 class="gibbs-title">Medical Expert</h2>
+      <p class="gibbs-desc">Applies medical knowledge, clinical skills, and professional values to deliver high-quality, patient-centred care — from initial assessment through diagnosis and management.</p>
+      <div class="gibbs-evidence-bar">
+        <a href="assets/certificate-cpr-aed.pdf" class="gibbs-evidence-chip" target="_blank">📄 CPR &amp; AED Certificate</a>
+        <span class="gibbs-evidence-chip">💉 Peripheral IV Cannulation Training</span>
+        <span class="gibbs-evidence-chip">🏥 CKS Hospital Clinical Observership</span>
+        <span class="gibbs-evidence-chip">🔬 Thumbay Hospital Laboratory Visit</span>
+        <span class="gibbs-evidence-chip">🫀 Cardiology &amp; Surgery Exposure</span>
+        <span class="gibbs-evidence-chip">⚕️ ICU &amp; Ward Rounds</span>
+      </div>
+
+      <!-- REFLECTION 1: Clinical Observership at CKS Hospital -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(232,207,203,0.12), rgba(27,138,158,0.08)); border: 2px solid rgba(27,138,158,0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Clinical Observership in Cardiology &amp; Surgery
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          CKS Hospital, Jaipur · Dr. Prakash Chandwani, Cardiologist · March 2026
+        </p>
+
+        <!-- Certificate Image -->
+        <div style="margin-bottom: var(--sp-xl); text-align: center;">
+          <img src="assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital Clinical Observership Certificate" style="max-width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 3px solid rgba(27,138,158,0.2);" />
+          <p style="margin-top: var(--sp-sm); font-size: 0.8rem; color: var(--c-muted); font-style: italic;">Certificate of Clinical Observership — CKS Hospital, Department of Cardiology & Internal Medicine (March 20-27, 2026)</p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">OBSERVERSHIP OVERVIEW</h4>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            In March 2026, I completed a comprehensive clinical observership at <strong>CKS Hospital in Jaipur, India</strong>, under the supervision of <strong>Dr. Prakash Chandwani</strong>, a consultant cardiologist. This immersive experience spanned <strong>cardiology ward rounds, intensive care unit (ICU) rotations, and surgical theatre observations</strong>, exposing me to the full continuum of patient care — from initial admission through critical care management and operative interventions.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            During <strong>ward rounds</strong>, I observed the systematic assessment of patients with cardiovascular conditions, witnessing how clinical reasoning and continuity of care shape daily practice. In the <strong>ICU</strong>, I was exposed to critical care monitoring, arterial blood gas (ABG) interpretation, and the multidisciplinary coordination required for unstable patients. In the <strong>surgical theatre</strong>, I observed four distinct procedures: <strong>tympanic membrane grafting, total knee replacement, transurethral resection of the prostate (TURP), and vocal cord biopsy</strong> — each revealing different surgical specialties, procedural workflows, and patient safety protocols.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text);">
+            This observership marked my first sustained clinical exposure, bridging the gap between classroom anatomy and real-world medical practice, and deepening my understanding of the Medical Expert competency.
+          </p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">B. SELF-REFLECTION (GIBBS REFLECTIVE CYCLE)</h4>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              In March 2026, I undertook a clinical observership at CKS Hospital in Jaipur under Dr. Prakash Chandwani, a consultant cardiologist. The observership encompassed ward rounds where I observed patient assessments and clinical decision-making for cardiovascular conditions, ICU exposure where I witnessed critical care monitoring and ABG interpretation, and surgical theatre observations of four procedures: tympanic membrane grafting (ENT), total knee replacement (orthopaedics), transurethral resection of the prostate (urology), and vocal cord biopsy (ENT). Each setting involved multidisciplinary teams including surgeons, anaesthesiologists, nurses, and allied health professionals. This was my first immersive clinical experience outside the classroom.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Emotionally, I felt a profound sense of awe and intellectual humility. Witnessing the systematic approach during ward rounds — where history, examination, and investigation findings coalesced into management plans — made me acutely aware of the depth of clinical reasoning required. In the ICU, the urgency and precision of critical care monitoring was both intimidating and inspiring. During surgical observations, I experienced a mix of fascination and vulnerability: the choreography of the operating theatre, the anatomical precision required, and the weight of patient trust were palpable. I also felt motivated rather than overwhelmed, recognizing that these experiences represented the clinical reality I aspire to master.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Evaluating the experience, positive aspects included the structured learning environment: Dr. Chandwani frequently explained his clinical reasoning during ward rounds, surgical teams communicated procedural steps aloud, and I was able to observe the full patient journey from admission to theatre. The variety of specialties (cardiology, orthopaedics, urology, ENT) provided broad exposure. Less positive: my own passivity was a limitation. I hesitated to ask questions during ward rounds and surgical procedures, unsure whether my queries were appropriate in a busy clinical setting. This self-censorship meant I missed opportunities to deepen understanding in the moment. I also lacked sufficient pre-reading on the specific conditions, which limited my ability to follow discussions in real time.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Through analysis, the observership revealed the substantial gap between theoretical knowledge and clinical application. Medical school equipped me with anatomical and physiological foundations, but clinical practice requires simultaneous synthesis of history, examination, imaging, and pathophysiology — a skill developed through repeated exposure and deliberate practice. My hesitation to engage reflected uncertainty about my role as a pre-clinical student, a boundary rooted in perceived hierarchy rather than actual expectation. Research on medical education emphasizes that early clinical exposure is most effective when paired with active engagement and structured reflection, not passive observation. The surgical observations highlighted the procedural and teamwork dimensions of medical expertise — competencies not fully captured in textbooks. The ICU rotation underscored the importance of monitoring, interpreting dynamic data (ABG, vitals), and responding rapidly — skills central to critical care medicine.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              In conclusion, I learned that clinical expertise extends far beyond diagnostic knowledge: it encompasses clinical reasoning under uncertainty, procedural skill, teamwork, and patient communication. I should have prepared focused learning objectives before each day of the observership — specific questions about conditions, procedures, or clinical workflows. Asking even one well-formed question during ward rounds or in the theatre would have reinforced learning and demonstrated active engagement. I also recognize that passive observation is insufficient for deep learning; future placements must be paired with pre-reading on relevant pathophysiology and followed by structured reflection. The diversity of surgical procedures taught me that medical expertise is specialty-specific but grounded in universal principles: anatomical precision, patient safety, and evidence-based practice.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              My action plan for future clinical exposures is to prepare two to three specific learning objectives before each session, conduct pre-reading on the conditions or procedures I expect to encounter, and review relevant anatomy and pathophysiology the night before. I will actively seek brief debriefs with supervising clinicians at the end of each day to clarify concepts and ask focused questions. I will maintain a structured clinical observation journal documenting key cases, clinical reasoning patterns, and procedural workflows. I will also seek additional observerships across different specialties to build breadth of exposure while developing the habit of intentional, active observation rather than passive witnessing. This observership has reinforced my commitment to building clinical expertise systematically throughout medical school.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin: var(--sp-2xl) 0; border: none; border-top: 2px solid var(--c-border);" />
+
+      <!-- REFLECTION 2: Laboratory Visit - Thumbay Hospital -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(232,207,203,0.12), rgba(123,79,158,0.08)); border: 2px solid rgba(123,79,158,0.18); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Laboratory Visit at Thumbay Hospital
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Thumbay Hospital, Ajman · Blood Bank, Histopathology &amp; Sample Processing Exposure
+        </p>
+
+        <div style="margin-bottom: var(--sp-xl);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">TEAM EVIDENCE</h4>
+          <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+            <img src="assets/lab-visit-team.jpg" alt="Thumbay laboratory team visit group photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+            <figcaption style="margin-top: 0.45rem; font-size: 0.8rem; color: var(--c-muted);">Documented group visit at Thumbay Hospital Laboratory Services.</figcaption>
+          </figure>
+        </div>
+
+        <div style="margin-bottom: var(--sp-xl);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">PHOTO EVIDENCE</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--sp-md);">
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-1.jpg" alt="Histopathology image review on monitor" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Histopathology slide interpretation</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-2.jpg" alt="Microscopy skill practice during laboratory visit" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Hands-on microscopy exposure</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-3.jpg" alt="Laboratory centrifuge and processed blood tubes" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Sample processing workflow</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-4.jpg" alt="Automated analyzer section in Thumbay laboratory" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Analyzer and hematology bench</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-5.jpg" alt="Hemoglobinopathy and hematology lab area signage" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Hematology lab unit tour</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-6.jpg" alt="Laboratory reagent refrigerator and storage quality control" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Reagent storage and QC setup</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-7.jpg" alt="Laboratory microscope station and practical setup" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Microscope workstation orientation</figcaption>
+            </figure>
+            <figure style="margin: 0; background: rgba(255, 235, 242, 0.72); border: 1px solid rgba(123,79,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+              <img src="assets/lab-photo-8.jpg" alt="Laboratory diagnostics and sample-analysis area" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+              <figcaption style="margin-top: 0.45rem; font-size: 0.78rem; color: var(--c-muted);">Diagnostic bench and workflow view</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">VISIT OVERVIEW</h4>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            During a structured visit to <strong>Thumbay Hospital's laboratory services</strong>, I rotated through the <strong>blood bank, histopathology unit, and central sample-processing area</strong>. The exposure highlighted how laboratory medicine is the invisible foundation of modern clinical practice—every diagnosis, every treatment plan, and every clinical decision depends on reliable diagnostic information produced by laboratory teams working behind the scenes.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            From specimen receipt through analysis to final reporting, I observed how quality assurance, standardisation, and communication workflows protect patients from diagnostic errors that could have serious clinical consequences. The histopathology demonstration was particularly illuminating—observing malignant cells under the microscope and understanding how tissue processing enables accurate disease characterisation transformed my appreciation of laboratory work from abstract knowledge to concrete clinical value.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text);">
+            This placement directly strengthens the <strong>Medical Expert</strong> competency because laboratory diagnostics are not separate from clinical medicine—they are integral to clinical reasoning, therapeutic decisions, and patient safety. Understanding the systems that produce reliable test results is as important as knowing how to interpret them.
+          </p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">B. SELF-REFLECTION (GIBBS REFLECTIVE CYCLE)</h4>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I attended a comprehensive laboratory visit at Thumbay Hospital where experienced staff walked me through each department. In the blood bank, I learned about transfusion protocols, crossmatching procedures, component therapy, and the critical safety checks that prevent transfusion reactions. In histopathology, I observed tissue preparation, staining protocols, and the examination of prepared slides for disease diagnosis. In central sample processing, I saw how specimens are tracked from ward collection through testing to reporting, and how pre-analytical variables (timing, tube type, temperature) affect result validity. Rather than seeing only the final printed result, I witnessed the entire ecosystem of people, protocols, and quality controls that produce dependable diagnostic information.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I entered the laboratory with curiosity but also with a degree of detachment—as a student, I encounter investigations mainly as printed results on electronic systems. The laboratory felt like it existed in a separate world. But watching technologists carefully handle each specimen, witnessing the precision required in staining protocols, and seeing histological images transform on the microscope screen created a profound shift in my perspective. I felt humbled by the expertise of laboratory staff and genuinely moved by the realisation that my future clinical decisions will entirely depend on the quality of work done by teams I may never meet. I left with a deepened sense of responsibility: requesting investigations carefully, interpreting results thoughtfully, and recognising that every abnormal value represents real work done by skilled professionals to uncover truth about a patient's condition.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              The visit was well structured and clinically relevant. Each laboratory area was explained in a way that linked technical work directly to patient outcomes, and the histopathology demonstration of malignant tissue was especially memorable. A limitation was that time did not allow us to follow one specimen completely from collection to reporting, which would have made the continuity of the process even clearer.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              This experience fundamentally reframed how I understand investigations. Before the visit, my perspective was outcome-focused: what does the number mean? Post-visit, I think process-oriented: Is the sample valid? Have all verification steps been completed? Could pre-analytical errors have affected this result? I became acutely aware of how pre-analytical variables—improper tube type, delayed transport, haemolysed sample, or mislabelling—can generate false results that lead to incorrect clinical decisions, sometimes with serious consequences. The blood bank section was particularly illuminating: standards exist in transfusion medicine precisely because errors are immediately life-threatening. Observing the rigorous double-checks, barcode verification, and strict protocols made clear that standardisation is not bureaucracy—it is the difference between safety and harm. The histopathology demonstration also exposed a learning gap: I lack systematic skill in correlating complex laboratory findings (abnormal coagulation panels, unusual blood films, multiple-system lab abnormalities) with dynamic clinical presentations. This reflection has clarified priorities for my ongoing learning.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Laboratory investigations should never be read in isolation. Their meaning emerges only when integrated thoughtfully with patient history, physical examination findings, and the overall clinical context. Being a Medical Expert means understanding not only what a result means, but also how reliable it is, whether it is affected by pre-analytical or analytical errors, how quickly it can be delivered in acute situations, and how effectively I can communicate with laboratory teams to ensure they understand my clinical question and can guide interpretation. Strong clinician–laboratory collaboration is essential to safe practice and improved patient outcomes.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Going forward, I will systematically revise common laboratory investigations with explicit clinical correlation—not just memorising normal ranges, but understanding why each parameter changes in disease and what limitations apply. I will actively engage in case-based discussions focused on integrating multiple abnormal results into coherent clinical narratives. During future clinical postings, I plan to spend time with laboratory staff to understand turnaround times, diagnostic limits, and the impact of specimen quality on results. I will build the habit of asking probing questions when I encounter unexpected results: "Could this reflect disease, timing of collection, or an issue in sample handling?" This reflective approach will help me integrate laboratory diagnostics into evidence-based clinical decision-making throughout my career.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(123, 79, 158, 0.08); border-left: 4px solid var(--c-purple); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-purple);">📎 Competency Alignment:</strong> This reflection strengthens Theme 1 (Medical Expert) through deeper understanding of laboratory diagnostics, quality assurance, diagnostic accuracy, and the integration of investigation results into safe clinical decision-making.
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: var(--sp-2xl) 0; border: none; border-top: 2px solid var(--c-border);" />
+
+      <!-- REFLECTION 3: CPR & AED Certification -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(232,207,203,0.12), rgba(27,138,158,0.08)); border: 2px solid rgba(27,138,158,0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: CPR &amp; AED Certification
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Dubai Heart Safe City Initiative · Basic Life Support Training
+        </p>
+
+        <div style="margin-bottom: var(--sp-md); padding: var(--sp-lg); background: white; border: 1px solid var(--c-border); border-radius: var(--r-md); text-align: center;">
+          <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-sm); font-weight: 600;">📜 Official Certification</p>
+          <a href="assets/certificate-cpr-aed.pdf" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--c-teal); color: white; border-radius: var(--r-sm); font-weight: 600; text-decoration: none; transition: all var(--t-fast);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download CPR & AED Certificate
+          </a>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">TRAINING OVERVIEW</h4>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            I completed my <strong>CPR (Cardiopulmonary Resuscitation) and AED (Automated External Defibrillator) certification</strong> through the <strong>Dubai Heart Safe City initiative</strong>, a comprehensive basic life support training program designed to equip healthcare students and professionals with emergency response skills.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            The training covered: <strong>chest compression technique and depth</strong>, <strong>airway management and rescue breathing</strong>, <strong>AED pad placement and defibrillation protocol</strong>, <strong>recognition of cardiac arrest and when to activate emergency services</strong>, and <strong>team-based resuscitation coordination</strong>. Hands-on simulation with manikins and AED trainers formed the core of the certification process, emphasizing procedural accuracy, confidence under pressure, and adherence to evidence-based protocols.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text);">
+            This certification represents a foundational procedural skill directly tied to the Medical Expert competency, providing tangible competence in emergency response that classroom learning alone cannot deliver.
+          </p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">B. SELF-REFLECTION (GIBBS REFLECTIVE CYCLE)</h4>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I completed CPR and AED certification through the Dubai Heart Safe City initiative, a structured basic life support training program. The training involved both theoretical instruction on cardiac arrest recognition, the chain of survival, and evidence-based resuscitation protocols, as well as hands-on simulation with manikins and AED trainers. I practiced chest compressions, airway management, rescue breathing, and AED pad placement under the supervision of certified instructors. The session concluded with a competency assessment where I successfully demonstrated the full resuscitation sequence. This was my first formal procedural training in emergency medicine and my first tangible experience of applying medical knowledge in a simulated life-saving context.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Emotionally, I felt a mixture of uncertainty at the start and confidence by the end. Initially, the physical demand of proper chest compressions and the pressure to perform the sequence correctly felt overwhelming. However, as I repeated the procedure with instructor feedback, muscle memory developed and my confidence grew. Holding the AED pads and delivering a simulated shock gave me a tangible sense of readiness and competence that theoretical study had not provided. I felt empowered — this was a skill I could genuinely use to save a life. There was also a sobering awareness of the responsibility: in a real cardiac arrest, execution must be immediate and accurate. This duality of empowerment and responsibility stayed with me throughout the training.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Evaluating the experience, the hands-on simulation was highly effective. Practicing on manikins allowed for repetition without patient risk, and real-time instructor feedback corrected my technique immediately. The structured protocol (check responsiveness, call for help, begin compressions, apply AED) was clear and evidence-based, making it easy to follow under simulated pressure. The certification gave me immediate procedural competence and a credential recognized across healthcare settings. Less positive: the simulated environment cannot fully replicate the emotional intensity and chaos of a real cardiac arrest. I also realized that while I know the protocol, maintaining composure in a true emergency will require additional mental preparation and potentially more advanced training (ACLS) in the future.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Through analysis, the effectiveness of this training lies in its alignment with evidence-based resuscitation science. The 2020 American Heart Association (AHA) and European Resuscitation Council (ERC) guidelines emphasize high-quality chest compressions (rate 100-120/min, depth 5-6 cm), minimizing interruptions, and early defibrillation — all central to the training I received. The simulation-based approach is supported by medical education research, which shows that procedural skills are best learned through deliberate practice with immediate feedback. My initial uncertainty reflected normal skill acquisition: competence develops through repetition, not innate ability. The confidence I gained by the end demonstrates the value of structured, hands-on training for procedural competencies. This experience also highlighted a key aspect of the Medical Expert competency: procedural skills are distinct from diagnostic knowledge and require separate, dedicated training to master.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              In conclusion, I learned that procedural competence — even in basic life support — is achievable at any stage of medical training and provides tangible readiness that theoretical knowledge alone cannot deliver. I should have sought this certification earlier in my medical education to build foundational emergency skills from the outset. I also recognize the need to refresh this training regularly: resuscitation guidelines evolve, and procedural skills decay without practice. This certification demonstrated that medical expertise includes not just diagnostic reasoning but also procedural precision, teamwork in emergencies, and the ability to perform under pressure. I wish I had asked more questions about the evidence base for specific protocol elements (e.g., why 30:2 compression-to-breath ratio, why minimizing interruptions matters) to deepen my understanding beyond the procedural steps.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              My action plan is to renew my CPR and AED certification annually to maintain procedural competence and stay current with evolving resuscitation guidelines. I will explore advanced life support training (ACLS) in my second or third year to build on this foundation and prepare for clinical rotations where I may encounter real cardiac emergencies. I will also volunteer for opportunities to practice BLS in supervised settings — such as health fairs, community first aid training, or simulation labs — to maintain muscle memory and build confidence under simulated pressure. I will review the latest AHA/ERC resuscitation guidelines independently to understand the evidence behind each protocol step, ensuring that my practice is not just procedural but also conceptually grounded. This certification is a starting point; my action plan is to build progressive competence in emergency medicine throughout my training.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(27, 138, 158, 0.08); border-left: 4px solid var(--c-teal); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-teal);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 1 (Medical Expert) through procedural skills development (CPR & AED), evidence-based practice (AHA/ERC guidelines), and commitment to building progressive competence in emergency medicine through structured training and regular skill maintenance.
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: var(--sp-2xl) 0; border: none; border-top: 2px solid var(--c-border);" />
+
+      <!-- REFLECTION 4: Peripheral IV Cannulation -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(232,207,203,0.12), rgba(27,138,158,0.08)); border: 2px solid rgba(27,138,158,0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Peripheral IV Cannulation
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Clinical Skills Training · Supervised by Dr. Sayed · Adapted and personalized from reference framework
+        </p>
+        <div style="margin-bottom: var(--sp-lg);">
+          <a href="https://annthomas082001.wixsite.com/drannthomas/copy-of-cpr-aed-certification-1" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; font-weight: 600; color: var(--c-teal); text-decoration: none; padding: 0.4rem 0.75rem; background: rgba(27,138,158,0.1); border: 1px solid rgba(27,138,158,0.25); border-radius: var(--r-full);">
+            🔗 Reference Framework (Ann Thomas)
+          </a>
+        </div>
+
+        <div style="margin-bottom: var(--sp-xl);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">PROCEDURAL EVIDENCE</h4>
+          <figure style="margin: 0; background: rgba(232, 244, 248, 0.72); border: 1px solid rgba(27,138,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
+            <img src="assets/lab-photo-2.jpg" alt="Clinical skills context for peripheral IV cannulation practice" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+            <figcaption style="margin-top: 0.45rem; font-size: 0.8rem; color: var(--c-muted);">Skills-lab style procedural context used to build IV cannulation confidence and aseptic discipline.</figcaption>
+          </figure>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">PURPOSE &amp; TRAINING OVERVIEW</h4>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            Peripheral intravenous cannulation is a foundational procedural skill in clinical practice. During structured training, I developed competence in <strong>aseptic technique, peripheral vein assessment, cannulation mechanics, and post-insertion management</strong>. The training emphasized the critical link between proper vascular access and safe therapeutic delivery.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text);">
+            This procedural exposure enabled me to integrate theoretical knowledge of venous anatomy with practical decision-making around site selection, approach angle, and complication prevention. IV access is foundational to clinical management, making mastery of this skill essential for patient-centred, safe care delivery in all clinical settings.
+          </p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">B. SELF-REFLECTION (GIBBS REFLECTIVE CYCLE)</h4>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              During clinical skills training under supervision, I practiced peripheral IV cannulation in a stepwise format: hand hygiene and aseptic setup, vein assessment, angle control during insertion, confirmation of flashback, cannula advancement, securing, and immediate post-procedure care. This was more than a technical exercise—it connected my classroom understanding of vascular anatomy and infection control to real procedural judgment in time-sensitive care scenarios.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I initially felt apprehensive about the procedural demands—maintaining composure while ensuring aseptic protocol, correct needle trajectory, and patient comfort simultaneously seemed challenging. Early attempts brought moments of doubt about my hand steadiness and insertion angle. With structured feedback and deliberate practice, my confidence grew and technical fluency improved. By later sessions, I felt more assured in my approach, recognizing that confidence comes from disciplined repetition rather than innate talent.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              The structured training model was highly effective, combining observation, hands-on simulation, and progressive introduction to real-world scenarios. Immediate feedback on technique allowed rapid correction of common errors. However, my learning curve highlights that procedural competence is not achieved in one session—successive exposure with varied patient presentations and vein characteristics remains necessary for developing reliability and speed.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              This experience showed me that successful cannulation depends on integrating micro-skills in sequence: vessel selection, insertion mechanics, sterile discipline, and patient communication. Repeated failed attempts are not just technical setbacks—they can delay treatment, increase discomfort, and elevate complication risk. Procedural competence therefore includes judgment, not only hand skill: when to re-attempt, when to escalate, and how to preserve patient trust throughout the process.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Peripheral IV cannulation is a foundational procedural skill that demands technical precision, adherence to aseptic protocol, anatomical understanding, and communication. Competence is built through deliberate practice, structured feedback, and progressive exposure to diverse clinical scenarios. This training clarified both my current strengths in technique and areas for continued development in first-pass success rates and efficiency.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I will continue supervised cannulation practice and track a simple skills log after each attempt (site chosen, attempt outcome, feedback, correction point). My target is progressive improvement in first-pass success without compromising asepsis or patient comfort. I will also rehearse communication scripts for explaining the procedure and obtaining consent so that technical performance and patient-centred care improve together.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(27, 138, 158, 0.08); border-left: 4px solid var(--c-teal); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-teal);">📎 Competency Alignment:</strong> This reflection strengthens Theme 1 (Medical Expert) by demonstrating procedural skill development in IV cannulation, adherence to aseptic safety standards, and commitment to continuous technical improvement through supervised practice.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-teal), var(--c-secondary)); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-teal); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — I · Medical Expert</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <!-- Evidence 1 -->
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital Clinical Observership Certificate" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-teal); background: rgba(27,138,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Certificate</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">March 2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">CKS Hospital Clinical Observership</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65; margin-bottom: var(--sp-sm);">7-day supervised observership in Cardiology, ICU, and Surgical Theatre at CKS Hospital, Jaipur under Dr. Prakash Chandwani.</p>
+              <a href="assets/certificates/cks-hospital-certificate.jpg" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--c-teal); text-decoration: none;">View Certificate →</a>
+            </div>
+          </div>
+
+          <!-- Evidence 2 -->
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/lab-photo-1.jpg" alt="Thumbay Hospital Laboratory Visit" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Lab Exposure</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Thumbay Hospital Laboratory Visit</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Rotated through Blood Bank, Histopathology, and Sample Processing. Observed diagnostic workflows, microscopy, and quality assurance protocols.</p>
+            </div>
+          </div>
+
+          <!-- Evidence 3 -->
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e8f4f8, #d0eaf2); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(27,138,158,0.5)" stroke-width="1.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c07a30; background: rgba(192,122,48,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Certification</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">CPR &amp; AED Certification</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65; margin-bottom: var(--sp-sm);">Dubai Heart Safe City initiative. Completed hands-on BLS training including chest compressions, AED pad placement, and airway management.</p>
+              <a href="assets/certificate-cpr-aed.pdf" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--c-teal); text-decoration: none;">Download Certificate →</a>
+            </div>
+          </div>
+
+          <!-- Evidence 4 -->
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/lab-photo-2.jpg" alt="Peripheral IV Cannulation Training" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-teal); background: rgba(27,138,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Clinical Skill</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Peripheral IV Cannulation</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Supervised procedural training covering aseptic technique, vein assessment, cannula insertion, and post-insertion dressing on simulation models.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- II · Patient Care -->
+  <section class="gibbs-section competency-section" id="comp-2" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--secondary">II · Patient Care</span>
+      <h2 class="gibbs-title">Patient Care Provider</h2>
+      <p class="gibbs-desc">Places patients at the centre of all care decisions, safeguards dignity, and advocates for equitable access to healthcare services across diverse populations.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🏥 Bedside Interaction — CKS Hospital</span>
+        <span class="gibbs-evidence-chip">🫀 Interventional Cath Lab Observation</span>
+        <span class="gibbs-evidence-chip">👥 Pre-Procedure Patient Consultation</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(185, 92, 92, 0.08), rgba(216, 167, 160, 0.08)); border: 2px solid rgba(185, 92, 92, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Patient-Centered Care Observation
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          CKS Hospital Clinical Observership · Pre-Procedure Cardiac Consultation
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            During the CKS Hospital observership, I observed a consultant cardiologist conduct a pre-procedure consultation with an elderly patient scheduled for cardiac catheterisation. The consultant spent significant time explaining the procedure in simple, accessible terms, repeatedly checked the patient's understanding using teach-back methods, and addressed the family's concerns with equal care and patience. It was the first time I witnessed truly patient-centered communication in a live clinical setting, and it profoundly shaped my understanding of what compassionate care looks like in practice.
+          </p>
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            I felt deeply moved by the gentleness of the approach. The patient's visible relief after the explanation highlighted how powerful simple human reassurance can be in moments of medical uncertainty. The patient's complete trust in the consultant left me with a profound sense of the responsibility that comes with being a physician, and I felt eager to develop the same communication skills, empathy, and ability to create a safe space for vulnerable patients.
+          </p>
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Evaluating the experience, the positive aspects included the consultant's deliberate use of lay language (avoiding medical jargon), sustained eye contact that conveyed presence and respect, and active listening techniques that made the patient feel heard. These behaviors were clearly learned through years of practice, not innate traits. The less positive aspect was that I had no opportunity to interact with the patient directly, which highlighted the distinction between witnessing care and actually providing it. Observation alone cannot develop the muscle memory of patient interaction.
+          </p>
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Through analysis, I understood that the consultant's effectiveness stemmed from deliberate training in communication skills, not just clinical expertise. In Dubai's multicultural context—where patients come from diverse linguistic, cultural, and health literacy backgrounds—clear, compassionate explanation is especially critical to patient safety and satisfaction. This reinforced that patient care extends far beyond clinical procedures; the emotional, informational, and relational dimensions are equally vital to healing. The patient's anxiety was reduced not by the procedure itself, but by feeling informed, respected, and cared for as a person.
+          </p>
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            In conclusion, I learned that patient-centered care requires intentional skill development in communication, empathy, and cultural sensitivity. I wish I had documented specific phrases and techniques the consultant used—such as how they paused to invite questions, how they acknowledged the patient's fear without dismissing it, and how they involved the family as partners in care. A structured reflection journal from day one of the observership would have captured these valuable observations. I also recognize the need to engage with patients in supervised community settings to build my own communication repertoire before entering full clinical rotations.
+          </p>
+          <h5 style="font-weight: 600; color: #B85C5C; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            My action plan is to keep a dedicated clinical observation journal recording patient interaction techniques I witness during future exposures, noting specific verbal and non-verbal behaviors that promote trust and understanding. I will volunteer in patient-facing community health roles (such as health screenings, patient education workshops, or support groups) to practice communication in low-stakes settings. I will also study evidence-based frameworks such as motivational interviewing, the teach-back method, and SPIKES protocol for delivering difficult news, so that I enter clinical rotations with deliberate communication tools already in my repertoire, rather than learning through trial and error at patients' expense.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(185, 92, 92, 0.08); border-left: 4px solid #B85C5C; border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: #B85C5C;">📎 Competency Alignment:</strong> This reflection demonstrates Theme 2 (Patient Care Provider) through observation of patient-centered communication, recognition of the importance of dignity and informed consent, and commitment to developing empathetic, culturally sensitive care practices.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, #B85C5C, #e8a0a0); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B85C5C; margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — II · Patient Care</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/certificates/cks-hospital-certificate.jpg" alt="CKS Hospital Observership" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #B85C5C; background: rgba(184,92,92,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Clinical Observership</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">March 2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Bedside Patient Care — CKS Hospital</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Observed patient-centred consultations, dignity in care, informed consent conversations, and compassionate communication in a real-world ward and ICU setting.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #fde8e8, #f8c8c8); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(184,92,92,0.45)" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #B85C5C; background: rgba(184,92,92,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Reflection</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Informed Consent &amp; Patient Dignity</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Structured Gibbs reflection on witnessing informed consent discussions, the ethical weight of patient autonomy, and cultural considerations in the UAE context.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- III · Communication -->
+  <section class="gibbs-section competency-section" id="comp-3" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(123,79,158,.12);color:var(--c-purple);border-color:rgba(123,79,158,.28);">III · Communication</span>
+      <h2 class="gibbs-title">Communication Skills</h2>
+      <p class="gibbs-desc">Builds meaningful, trusting relationships with patients, families, and healthcare teams through clear, respectful, and empathetic communication in every clinical encounter.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🗣️ Interprofessional Team Rounds</span>
+        <span class="gibbs-evidence-chip">📋 White Coat Ceremony Address</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(155, 127, 190, 0.08), rgba(123, 79, 158, 0.08)); border: 2px solid rgba(155, 127, 190, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Professional Communication &amp; Clinical Handovers
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          White Coat Ceremony 2024 · CKS Hospital Interprofessional Team Rounds
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            During my journey at GMU, I encountered two formative communication experiences: reciting the professional pledge at the <strong>White Coat Ceremony 2024</strong> and observing structured clinical handovers during my CKS Hospital observership, where physicians transferred patient information efficiently across roles using the SBAR framework (Situation, Background, Assessment, Recommendation).
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            At the ceremony, I felt nervous initially, then purposeful as I spoke the words that signified my entry into the medical profession. The handovers were humbling — the economy and precision of clinical communication inspired me and made me acutely conscious of the years of practice needed to achieve it.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Evaluating these experiences, the ceremony provided a memorable first experience of formal professional communication in front of peers, faculty, and family, establishing communication as a core professional identity. The handovers exposed a gap: I could only partially follow the clinical content, limiting my comprehension of why certain choices were made during the information transfer. My attentiveness and post-session notes were positives, demonstrating active engagement despite limited clinical knowledge at this stage.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Analyzing the experience, clinical communication is a practiced art, not an innate skill. The SBAR framework used in handovers is an evidence-based tool designed to reduce errors in information transfer during clinical transitions — a critical patient safety intervention supported by extensive healthcare communication research. My partial comprehension reflected my stage of training, not a failing of the communicators. The ceremony showed that professional public communication draws on poise, conviction, and clarity — qualities cultivatable independently of clinical knowledge through deliberate practice.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            In conclusion, I learned that effective communication encompasses both formal presentations (such as the White Coat pledge) and structured clinical information transfer (SBAR handovers). I should have studied the SBAR framework before the observership, as pre-learning the structure would have allowed me to follow discussions more meaningfully and ask focused questions. For future professional presentations, I will seek formal feedback from peers and mentors rather than relying solely on self-assessment.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            My action plan is to learn SBAR and SOAP frameworks during Year 1 and practice applying them in simulated case presentations and peer study groups. I will join a peer communication study group, volunteer for public speaking opportunities at GMU, and seek opportunities to observe and participate in structured clinical handovers during future placements. I will also study evidence-based communication frameworks such as motivational interviewing, teach-back methods, and SPIKES protocol for delivering difficult news, ensuring that my communication repertoire is built on evidence, not just intuition.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(155, 127, 190, 0.08); border-left: 4px solid #9B7FBE; border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: #7B4F9E;">📎 Competency Alignment:</strong> This reflection demonstrates Theme 3 (Communication Skills) through observation of structured clinical handovers using SBAR, formal professional communication at the White Coat Ceremony, and commitment to developing evidence-based communication frameworks for patient and interprofessional interactions.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-purple), #c8acd6); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-purple); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — III · Communication</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f0eaf8, #ddd0f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(123,79,158,0.45)" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Clinical Observation</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">March 2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">SBAR Clinical Handovers — CKS Hospital</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Observed structured Situation-Background-Assessment-Recommendation handovers during ward rounds and shift transitions, noting how clarity prevents clinical errors.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f0eaf8, #ddd0f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(123,79,158,0.45)" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Professional Event</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">White Coat Ceremony Pledge</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Delivered the professional pledge before faculty and peers — a formal exercise in public, professional communication marking entry into the medical profession.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f0eaf8, #ddd0f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(123,79,158,0.45)" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Teaching Role</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025–2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">PAL Supervisor — Peer Communication</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">As PAL Supervisor, practiced structured feedback, instructional communication, and mentoring conversations with junior tutors and students.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IV · Collaborator -->
+  <section class="gibbs-section competency-section" id="comp-4" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(196,136,42,.12);color:var(--c-gold);border-color:rgba(196,136,42,.28);">IV · Collaborator</span>
+      <h2 class="gibbs-title">Collaborator &amp; Innovator</h2>
+      <p class="gibbs-desc">Works effectively within interprofessional teams, demonstrates initiative and adaptability, and promotes shared responsibility to achieve optimal healthcare outcomes.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🤝 Multidisciplinary Team Observation</span>
+        <span class="gibbs-evidence-chip">🎓 GMU Group-Based Learning</span>
+        <span class="gibbs-evidence-chip">🌐 Electivio.space — Co-Founder</span>
+        <span class="gibbs-evidence-chip">💡 MedConf Regional Leader</span>
+      </div>
+
+      <!-- NEW REFLECTION: Leadership & Innovation (Electivio, PAL, MedHack) -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(196,136,42,0.08), rgba(27,138,158,0.08)); border: 2px solid rgba(196,136,42,0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Leadership & Innovation in Medical Education
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Electivio.space Co-Founder · MedConf Regional Leader for Middle East
+        </p>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">A. DESCRIPTION OF THE ACTIVITY</h4>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            During this semester, I co-founded and began developing <strong>Electivio</strong>, a digital platform designed to connect medical students across the UAE and wider Middle East with hospitals offering structured clinical observership and elective placements. The initiative arose from a gap I identified in my own medical education: the lack of a centralized, standardized system for students to access clinical electives, leaving the process fragmented and inequitable.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text); margin-bottom: var(--sp-md);">
+            Working with a small team of fellow students, I took a leadership role in shaping the platform's vision, coordinating team members, and initiating outreach to hospitals. I also applied for and was formally appointed as <strong>MedConf Regional Leader for the Middle East</strong>, where I am responsible for expanding the MedConf student network by recruiting ambassadors and building institutional partnerships.
+          </p>
+          <p style="line-height: 1.75; color: var(--c-text);">
+            Both activities took place throughout this semester and demonstrate proactivity and creativity, as they involved identifying gaps in healthcare education and taking collaborative, innovative steps to address them.
+          </p>
+        </div>
+
+        <div style="margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">B. SELF-REFLECTION (GIBBS REFLECTIVE CYCLE)</h4>
+        </div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg); margin-bottom: var(--sp-md);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              This semester, I co-founded Electivio with a small group of peers to build a platform connecting medical students with hospitals for clinical electives. I was also appointed MedConf Regional Leader for the Middle East, where I help expand the network's presence across the region. Both roles involved leading peers, communicating with external stakeholders, and coordinating across institutions.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              I felt energized by both opportunities. Taking ownership of a project based on a real frustration I experienced as a student was empowering. Although I felt uncertain at times, especially with platform development and hospital outreach, leading a team toward a shared vision gave me a strong sense of purpose beyond traditional coursework.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Positive aspects included the team's motivation, early traction with the Electivio concept, and formal recognition of my leadership role at MedConf. The main challenge was balancing these responsibilities with academic demands, which required prioritization and time management. Coordinating with team members who had different schedules also highlighted the need for structured communication and clear role delegation in collaborative projects.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Through the lens of Theme 4, both experiences connect strongly to collaboration, innovation, and leadership. Medical education research emphasizes that innovation in healthcare systems, including education infrastructure, is an important form of health leadership. Electivio addresses a gap that affects the quality of future clinicians' training and, indirectly, patient care. This experience showed me that healthcare leadership extends beyond clinical settings — it includes advocacy for systemic improvements that benefit medical education and, ultimately, patient outcomes.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              This experience taught me that innovation in healthcare is not limited to clinical practice or research. I strengthened my ability to lead without formal authority, manage team dynamics, and support a shared vision across dispersed teams. I also realized that seeking faculty mentorship earlier would have improved our progress and helped align the platform with academic and institutional standards, ensuring greater credibility and sustainable growth.
+            </p>
+          </div>
+          
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-gold); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Going forward, I will present Electivio to more faculty supervisors this semester to seek formal mentorship and feedback on platform development, governance, and scalability. For my MedConf role, I aim to recruit at least three regional student ambassadors and establish one institutional partnership before the end of the academic year. I will also continue developing my leadership and collaboration skills through peer advising, interprofessional activities at GMU, and participation in healthcare innovation forums where I can learn from experienced innovators and healthcare leaders.
+            </p>
+          </div>
+        </div>
+        
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(196,136,42,0.08); border-left: 4px solid var(--c-gold); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-gold);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 4 (Collaborator & Innovator) through co-founding Electivio, leading as MedConf Regional Leader, coordinating multidisciplinary teams, and driving innovation in medical education infrastructure that enhances healthcare system accessibility for future clinicians.
+          </p>
+        </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-gold), #f0c060); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-gold); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — IV · Collaborator &amp; Innovator</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/kashfounder.png" alt="Electivio founders screenshot" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-gold); background: rgba(196,136,42,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Startup Founded</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024–Present</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Electivio.space — Co-Founder</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65; margin-bottom: var(--sp-sm);">Founded a platform connecting medical students with global clinical elective opportunities, demonstrating interprofessional collaboration, innovation, and healthcare systems impact.</p>
+              <a href="https://electivio.space" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--c-gold); text-decoration: none;">Visit Electivio.space →</a>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #fdf6e0, #f5e4a0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(196,136,42,0.45)" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-gold); background: rgba(196,136,42,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Leadership Role</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">MedConf — Regional Leader</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Led regional awareness and event coordination for MedConf, fostering healthcare innovation culture and cross-institutional collaboration among medical students.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #fdf6e0, #f5e4a0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(196,136,42,0.45)" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-gold); background: rgba(196,136,42,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Teaching Role</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025–2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">PAL Supervisor — GMU</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Supervised peer-assisted learning tutors, ensured teaching commitments were met, and maintained communication between students and the learning team.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="margin: var(--sp-xl) 0; padding: var(--sp-lg); background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg);">
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-sm); font-weight: 600;">📎 Supporting Evidence</p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--sp-sm);">
+          <a href="https://electivio.space" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; background: var(--c-teal-light); color: var(--c-teal-dark); border-radius: var(--r-sm); font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all var(--t-fast);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Visit Electivio.space Platform
+          </a>
+          <span style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; background: var(--c-purple-light); color: var(--c-purple); border-radius: var(--r-sm); font-size: 0.82rem; font-weight: 600;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            MedConf Appointment Letter
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- V · Socially Accountable -->
+  <section class="gibbs-section competency-section" id="comp-5" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(26,122,94,.12);color:var(--c-emerald);border-color:rgba(26,122,94,.28);">V · Socially Accountable</span>
+      <h2 class="gibbs-title">Socially Accountable</h2>
+      <p class="gibbs-desc">Recognises medicine's responsibility to society and advocates for the health needs of local and global communities, particularly the underserved.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🌍 Multicultural Patient Exposure — Dubai</span>
+        <span class="gibbs-evidence-chip">📚 Global Health Seminars — GMU</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(26, 122, 94, 0.08), rgba(52, 168, 83, 0.08)); border: 2px solid rgba(26, 122, 94, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Social Accountability &amp; Multicultural Healthcare
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Multicultural Patient Exposure in the UAE · GMU Global Health Curriculum
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Growing up and studying in the UAE has consistently exposed me to one of the world's most ethnically diverse patient populations. During my CKS Hospital observership, I noticed patients communicating in Arabic, Urdu, Malayalam, Hindi, Tagalog, and English — often on the same ward, reflecting the UAE's unique demographic composition where expatriates comprise over 88% of the population. GMU's curriculum also addresses global health challenges including infectious disease burden, non-communicable disease trends, health equity, and the social determinants of health in seminars I attended throughout Year 1.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Emotionally, I felt a strong sense of responsibility and curiosity. The patient diversity reminded me that social accountability in medicine is present in every clinical interaction where a language barrier, cultural belief, or socioeconomic constraint shapes health outcomes. The seminars made me more informed about global health inequities — and more concerned about whether I was doing enough to actively address them beyond academic learning.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Evaluating the experience, the positive aspect is that early exposure to a multicultural environment is a significant educational asset, preparing me for practice in globally connected healthcare systems. The UAE's health system is built for diversity — interpreter services and culturally sensitive protocols are embedded in major hospitals, demonstrating institutional social accountability. Less positive: I have not yet channeled this awareness into active community engagement. I remain a learner of social accountability rather than a practitioner of it — a gap I am motivated to close through volunteer work and community health initiatives.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Through analysis, I recognize that social accountability is a posture, not just a skill — it must be cultivated from the very beginning of training. Medical education literature emphasizes that physicians have dual responsibilities: to individual patients and to the populations they serve. Translating awareness into action requires structural opportunity, which GMU provides through community outreach programs that I have not yet fully engaged with. The key insight is that socially accountable practice begins with recognizing health as a human right and medicine's role in reducing inequity.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            In conclusion, I learned that multicultural competence and social accountability are inseparable in modern medical practice. I should have engaged with GMU's community outreach activities earlier in first year — volunteering at health screening camps, blood donation drives, or patient education initiatives would have converted my conceptual understanding into lived practice. The observership exposure to language diversity highlighted the importance of cultural humility and the recognition that effective care requires understanding patients' social contexts, not just their clinical presentations.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-emerald); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            My action plan is to sign up for at least two community health initiatives through GMU next semester — such as diabetes screening awareness campaigns, health literacy programs for migrant workers, or cardiovascular risk assessment drives. I will pursue a deeper understanding of the UAE's National Health Agenda and Vision 2031, particularly initiatives targeting underserved populations. I will also explore opportunities to learn basic medical Arabic and Hindi/Urdu phrases to improve communication with non-English-speaking patients during future clinical placements. Ultimately, I aim to build a practice grounded in the principle that healthcare is a right, not a privilege, and that physicians have a professional duty to advocate for equitable access and outcomes.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(26, 122, 94, 0.08); border-left: 4px solid var(--c-emerald); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-emerald);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 5 (Socially Accountable) through recognition of healthcare's responsibility to diverse populations, understanding of health equity challenges in multicultural settings, and commitment to community engagement and advocacy for underserved groups.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-emerald), #7ecfb0); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-emerald); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — V · Socially Accountable</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/observo1.jpg" alt="Observership multicultural patient exposure" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-emerald); background: rgba(26,122,94,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Clinical Exposure</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025–2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Multicultural Patient Care — UAE</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Exposure to patients from 12+ nationalities in UAE clinical settings, developing cultural humility and awareness of language barriers in healthcare delivery.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e0f4ec, #b8e8d4); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(26,122,94,0.45)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-emerald); background: rgba(26,122,94,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Academic</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024–2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">GMU Global Health Seminars</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Attended seminars addressing global health burden, non-communicable disease trends, social determinants of health, and health equity frameworks in the UAE and MENA region.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VI · Self Enhancer -->
+  <section class="gibbs-section competency-section" id="comp-6" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--secondary">VI · Self &amp; Profession Enhancer</span>
+      <h2 class="gibbs-title">Self &amp; Profession Enhancer</h2>
+      <p class="gibbs-desc">Actively pursues personal and professional development through reflection, feedback, and continuous improvement — demonstrating commitment to lifelong learning.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">📓 Reflective Portfolio Practice</span>
+        <span class="gibbs-evidence-chip">🎓 GMU Professional Development Seminars</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(27, 138, 158, 0.08), rgba(123, 79, 158, 0.08)); border: 2px solid rgba(27, 138, 158, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Reflective Practice &amp; Portfolio Development
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          GMU E-Portfolio Development · Gibbs Reflective Cycle · Year 1 Professional Development
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Constructing this e-portfolio — including writing these Gibbs reflections — represents my most sustained engagement with the Self &amp; Profession Enhancer competency. In GMU's Year 1 professional development sessions, I was introduced to reflective practice as a formal tool and asked to maintain a learning diary, revisiting it periodically to identify patterns in my own development.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Initially, structured reflection felt artificial and somewhat forced. Over time, and through compiling this portfolio, I came to appreciate that the discomfort is productive — articulating what I have learned creates a concrete record of growth that informal, unstructured reflection cannot match.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Evaluating the experience, the Gibbs Cycle is genuinely useful — its six stages enforce completeness and prevent intellectual shortcutting by requiring me to move beyond description into analysis, evaluation, and actionable planning. This structured approach has strengthened my ability to extract meaningful learning from clinical and academic experiences. Less positive: my early reflections were surface-level, describing events rather than interrogating them critically, meaning several formative experiences (such as the White Coat Ceremony, first anatomy dissection, and orientation week) were under-captured and lack the depth they deserved.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Through analysis, I recognize that shallow early reflections are normal in developing reflective practice. Medical education literature notes that students progress from descriptive to critical reflection over time, with guided feedback and repeated practice accelerating the process. The depth of reflection ultimately depends on willingness to be honest about uncertainty, error, and gaps in understanding — a form of intellectual vulnerability that becomes easier with practice. This portfolio has taught me that reflective practice is not passive documentation but an active tool for professional growth, aligning with Donald Schön's concept of the "reflective practitioner" who learns systematically from experience.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            In conclusion, I learned that professional development requires deliberate, structured reflection — not just lived experience. I should have started this portfolio from my first week at GMU, capturing formative moments in real time rather than reconstructing them retrospectively. The act of writing reflections forces clarity of thought and makes implicit learning explicit, converting experiences into transferable insights. I also recognize that feedback from mentors and peers is essential to deepen reflective practice beyond self-assessment alone.
+          </p>
+          <h5 style="font-weight: 600; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            My action plan is to maintain a digital reflection log updated after each significant clinical contact, academic milestone, or formative experience, rather than waiting for formal portfolio deadlines. I will share selected reflective entries with my academic supervisor to receive structured feedback on the depth and quality of my analysis. I will review my reflection log termly to identify recurring themes, strengths, and areas for growth. This portfolio will be updated at the end of each academic year with new evidence, revised reflections, and progressive documentation of my journey toward becoming a reflective, lifelong learner committed to continuous professional development.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(27, 138, 158, 0.08); border-left: 4px solid var(--c-teal); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-teal);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 6 (Self & Profession Enhancer) through structured use of the Gibbs Reflective Cycle, commitment to maintaining a reflective portfolio, and recognition of reflective practice as a tool for continuous professional development and lifelong learning.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-teal), var(--c-secondary)); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-teal); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — VI · Self &amp; Profession Enhancer</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e8f4f8, #d0eaf2); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(27,138,158,0.45)" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-teal); background: rgba(27,138,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Reflective Portfolio</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">Ongoing</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">This White Coat Journal</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Built and maintained a structured reflective e-portfolio using the Gibbs Reflective Cycle across 9 competency domains, demonstrating commitment to continuous self-evaluation.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e8f4f8, #d0eaf2); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(27,138,158,0.45)" stroke-width="1.2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-teal); background: rgba(27,138,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Academic Growth</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024–2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">GMU Professional Development Seminars</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Engaged in faculty-led sessions on feedback, goal-setting, and professional growth frameworks — actively applying learning to improve clinical performance.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VII · Health Systems -->
+  <section class="gibbs-section competency-section" id="comp-7" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(92,122,184,.12);color:#5C7AB8;border-color:rgba(92,122,184,.28);">VII · Health Systems</span>
+      <h2 class="gibbs-title">Health Systems Proponent</h2>
+      <p class="gibbs-desc">Champions quality improvement, resource stewardship, and evidence-based policy to improve patient care delivery within and across healthcare systems.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🏛️ UAE Health System Orientation</span>
+        <span class="gibbs-evidence-chip">📊 Hospital Administration Observation</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(92, 122, 184, 0.08), rgba(27, 138, 158, 0.08)); border: 2px solid rgba(92, 122, 184, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Healthcare Systems &amp; Resource Allocation
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          CKS Hospital Administration Observation · UAE Health System Orientation · Dubai Health Authority Framework
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            During my CKS Hospital observership, I became aware of how the hospital navigated resource allocation between the catheterisation lab and general wards, balancing urgent cardiac interventions with routine ward care. The consultant cardiologist explained the Dubai Health Authority's regulatory framework, and I observed firsthand how insurance authorisations affected the speed of treatment decisions — a reality that directly shapes clinical workflows in the UAE's hybrid public-private healthcare model. GMU's orientation also introduced the UAE's Vision 2031 health objectives, which emphasize accessible, high-quality healthcare and sustainable health systems.
+          </p>
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Emotionally, I felt surprised by how directly administrative and systemic factors shaped bedside clinical decisions. A physician's autonomy always operates within institutional, regulatory, and economic constraints — a reality not fully captured in classroom learning. This sharpened my sense that becoming an effective physician requires understanding the system, not just the medicine, and that quality care depends on systems that support clinicians and protect patients.
+          </p>
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Evaluating the experience, the positive aspect was seeing real insurance delays and resource allocation decisions made tangible the abstract concept of "health systems." Observing how limited ICU beds, equipment availability, and staffing ratios influenced patient placement decisions revealed the operational complexity of hospitals. The limitation was brevity — a few days is insufficient to understand the full systemic picture. I also lacked background knowledge to ask informed questions about quality improvement frameworks, patient safety protocols, or performance metrics that hospitals use to evaluate care delivery.
+          </p>
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Through analysis, I recognize that healthcare systems are complex adaptive systems, shaped by policy, economics, culture, and technology. The UAE's hybrid public-private insurance model creates specific pressures that differ from universal healthcare models (like the UK's NHS) or predominantly private systems (like the US), directly shaping clinical workflows and access patterns. My task is to build sufficient health systems literacy to engage intelligently with policy, resource allocation, and quality improvement when I enter clinical training. Understanding systems is not peripheral to clinical practice — it is foundational to delivering equitable, high-quality care.
+          </p>
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            In conclusion, I learned that healthcare delivery is always mediated by systems, and that clinical effectiveness depends on systemic efficiency, equity, and quality governance. I should have reviewed the Dubai Health Authority regulatory framework and UAE National Health Strategy before the observership. A brief policy overview would have allowed more substantive questions and more meaningful connections between hospital behaviors and their systemic drivers, such as how insurance reimbursement models affect treatment choices or how DHA accreditation standards shape hospital quality practices.
+          </p>
+          <h5 style="font-weight: 600; color: #5C7AB8; margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            My action plan is to read one health policy document or quality improvement case study per semester to build systems literacy progressively. I will engage with any GMU electives addressing health systems, patient safety, or healthcare economics, and seek to understand the quality improvement frameworks (such as Plan-Do-Study-Act cycles, root cause analysis, or Six Sigma) used at every hospital I visit during future placements. I will also study the UAE's National Health Agenda and Vision 2031 to understand the policy context shaping the healthcare system I will eventually practice in. Ultimately, I aim to become a physician who not only delivers excellent individual care but also contributes to systemic improvements that benefit populations.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(92, 122, 184, 0.08); border-left: 4px solid #5C7AB8; border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: #5C7AB8;">📎 Competency Alignment:</strong> This reflection demonstrates Theme 7 (Health Systems Proponent) through observation of resource allocation, understanding of insurance-driven workflows, recognition of regulatory frameworks (DHA, UAE Vision 2031), and commitment to developing health systems literacy for quality improvement and equitable care delivery.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, #5C7AB8, #9ab0d8); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5C7AB8; margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — VII · Health Systems Proponent</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/lab-photo-5.jpg" alt="Hospital workflow and health systems" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5C7AB8; background: rgba(92,122,184,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Systems Observation</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">March 2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Hospital Resource Allocation — CKS</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Observed how ICU beds, cath lab access, and staffing ratios were managed in a private hospital, and how insurance authorisation shaped clinical decision timelines.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e8eef8, #c8d8f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(92,122,184,0.45)" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5C7AB8; background: rgba(92,122,184,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Policy Awareness</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">UAE Health Strategy &amp; DHA Framework</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Engaged with GMU orientation content on UAE Vision 2031, Dubai Health Authority accreditation standards, and national health priorities shaping clinical practice.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIII · Professionalism -->
+  <section class="gibbs-section competency-section" id="comp-8" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(22,37,58,.1);color:var(--c-navy);border-color:rgba(22,37,58,.25);">VIII · Professionalism</span>
+      <h2 class="gibbs-title">Professionalism</h2>
+      <p class="gibbs-desc">Upholds integrity, accountability, and ethical practice in all professional interactions — demonstrating respect and empathy with patients, colleagues, and the wider medical community.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🥼 White Coat Ceremony — GMU 2024</span>
+        <span class="gibbs-evidence-chip">📜 Professional Pledge</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(22, 37, 58, 0.08), rgba(27, 138, 158, 0.08)); border: 2px solid rgba(22, 37, 58, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: The White Coat Ceremony &amp; Professional Identity Formation
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          GMU White Coat Ceremony 2024 · Professional Pledge · Entering Medical Training
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg);">
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Description</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              The GMU White Coat Ceremony of 2024 was the most symbolically significant event of my medical education to date. Standing before faculty, family, and peers to receive my white coat and recite the professional pledge made the abstract concept of medical professionalism suddenly concrete — an explicit articulation of the ethical contract between a physician-in-training and society. The ceremony marked my formal entry into the medical profession, and the act of donning the white coat transformed my identity from a university student into a medical student with defined professional responsibilities.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Feelings</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Emotionally, I felt proud and sobered simultaneously. The white coat felt heavier than I had imagined — not physically, but symbolically. It represented the trust that patients, colleagues, and society will place in me as I progress through training and into practice. The experience grounded my motivation in something more durable than ambition: a sense of duty to uphold the values of integrity, compassion, accountability, and excellence that define the medical profession.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Evaluation</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Evaluating the experience, the ceremony effectively established professionalism as a core identity from the very beginning of medical training. The formal, ritualistic nature of the event — receiving the coat from faculty, reciting the pledge in unison, witnessing peers make the same commitment — created a shared professional identity and a sense of belonging to a tradition that extends across generations of physicians. A constructive critique: such ceremonies can feel like a conclusion rather than a beginning — the challenge is sustaining commitment in the ordinary, less ceremonial moments of daily study, clinical interaction, and ethical decision-making.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              Through analysis, I recognize that medical professionalism encompasses altruism, accountability, excellence, duty, integrity, and respect for others. Research on professional identity formation suggests that it is a long-term iterative process, with formal ceremonies serving as anchor points that mark transitions and reinforce commitment. The sustained expression of professionalism comes through consistent small choices in everyday interactions — how I speak to patients, how I collaborate with peers, how I respond to feedback, and how I manage ethical dilemmas. The white coat is a symbol, but professionalism is a practice.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conclusion</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              In conclusion, I learned that professionalism is not an abstract ideal but a lived commitment that must be enacted daily. The ceremony provided a powerful moment of reflection and commitment, but the real work lies ahead in embodying these values consistently. I wish I had written a private letter to myself articulating what professionalism means to me personally — a more durable reminder than the shared pledge alone. I intend to do this retrospectively and revisit it at the end of each academic year to assess whether my actions align with my stated values.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-navy); margin-bottom: var(--sp-sm); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Plan</h5>
+            <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+              My action plan is to write a personal professional values statement and attach it to this portfolio as a living document that I revisit annually. I will engage deeply with GMU ethics modules and professionalism seminars, approaching them not as requirements but as opportunities to refine my understanding of ethical practice. I will seek role models among senior students and clinicians whose conduct I wish to emulate, observing how they navigate difficult situations with integrity and compassion. I will also commit to self-assessment and peer feedback on my professionalism, recognizing that blind spots are inevitable and that growth requires honest reflection and accountability. The white coat is a privilege, and I am committed to earning it every day through my actions.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(22, 37, 58, 0.08); border-left: 4px solid var(--c-navy); border-radius: var(--r-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-navy);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 8 (Professionalism) through participation in the White Coat Ceremony, recitation of the professional pledge, understanding of professional identity formation, and commitment to upholding integrity, accountability, and ethical practice throughout medical training and beyond.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-navy), #4a6080); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-navy); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — VIII · Professionalism</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/kashish.jpg" alt="Kashish Devnani — Professional Medical Portfolio" style="width: 100%; height: 200px; object-fit: cover; object-position: top; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-navy); background: rgba(22,33,58,0.08); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Professional Identity</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">White Coat Ceremony — GMU 2024</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Received the white coat and recited the professional pledge, marking formal entry into the medical profession and commitment to the values of integrity, compassion, and accountability.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e8edf5, #c8d4e8); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(22,33,58,0.35)" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-navy); background: rgba(22,33,58,0.08); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Ethics &amp; Conduct</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">Ongoing</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Professional Conduct in Clinical Settings</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Demonstrated respectful, ethical behaviour throughout the CKS Hospital observership — adhering to dress code, confidentiality, and appropriate conduct with patients and clinical staff.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IX · Evidence Based Practitioner -->
+  <section class="gibbs-section competency-section" id="comp-9" style="display: none;">
+    <div class="container">
+      <span class="gibbs-badge gibbs-badge--primary" style="background:rgba(123,79,158,.12);color:var(--c-purple);border-color:rgba(123,79,158,.28);">IX · Evidence Based</span>
+      <h2 class="gibbs-title">Evidence Based Practitioner &amp; Lifelong Scholar</h2>
+      <p class="gibbs-desc">Engages in lifelong learning through critical evaluation of research, translates scientific findings into clinical decision-making, and actively participates in scholarly activities to advance medical knowledge.</p>
+      <div class="gibbs-evidence-bar">
+        <span class="gibbs-evidence-chip">🎓 4th Fakeeh Annual Conference</span>
+        <span class="gibbs-evidence-chip">💄 Beauty World UAE — Aesthetic Medicine</span>
+        <span class="gibbs-evidence-chip">🎙️ "If I Were You" Alumni Event</span>
+        <span class="gibbs-evidence-chip">📝 LinkedIn Newsletter — Surgical Technologies</span>
+        <span class="gibbs-evidence-chip">📊 97% Attendance · 100% Class Test Score</span>
+        <span class="gibbs-evidence-chip">🩺 Patient Education — Knee Osteoarthritis</span>
+      </div>
+
+      <!-- SINGLE-CARD COMPREHENSIVE REFLECTION -->
+      <div style="margin: var(--sp-2xl) 0; padding: var(--sp-xl); background: linear-gradient(135deg, rgba(155, 127, 190, 0.08), rgba(123, 79, 158, 0.08)); border: 2px solid rgba(155, 127, 190, 0.2); border-radius: var(--r-xl);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-text); margin-bottom: var(--sp-md);">
+          Personal Reflection: Scholarly Engagement &amp; Evidence-Based Learning
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--c-muted); margin-bottom: var(--sp-lg); font-weight: 600; letter-spacing: 0.05em;">
+          Academic Year 2025-2026 · Conferences, Peer Learning, Clinical Application
+        </p>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg); margin-bottom: var(--sp-lg);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-md); font-size: 1.1rem; letter-spacing: 0.03em; border-bottom: 2px solid rgba(155, 127, 190, 0.2); padding-bottom: var(--sp-sm);">Personal Reflection</h4>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            During this semester, I actively sought opportunities to expand my academic growth beyond the classroom by engaging in conferences, peer learning events, and self-directed scholarly activities. One of the key experiences was attending the <strong>4th Fakeeh Annual Conference</strong>, where I gained insight into emerging clinical challenges in the UAE and listened to discussions led by physicians applying evidence-based approaches in real patient scenarios. I also attended <strong>Beauty World UAE</strong>, where I explored advancements in aesthetic and dermatological technologies, an area that aligns with my long-term interest in surgical and cosmetic medicine. 
+          </p>
+          <p style="line-height: 1.8; color: var(--c-text); margin-bottom: var(--sp-md); font-size: 0.95rem;">
+            Alongside this, I participated in the <strong>"If I Were You" alumni event</strong>, where senior students shared strategies on clinical reasoning, research involvement, and building a reflective learning mindset. These experiences collectively strengthened my understanding of how evidence guides clinical and academic decision making.
+          </p>
+          <p style="line-height: 1.8; color: var(--c-text); font-size: 0.95rem;">
+            Emotionally, these events made me feel inspired and more connected to the medical community. As someone with <strong>97% attendance and strong academic performance, including a 100% class test score</strong>, I felt motivated to extend the discipline I already apply in class toward professional development outside the curriculum. I also felt encouraged when I educated my mother-in-law about <strong>knee osteoarthritis management</strong>, drawing directly from the immunology module and providing evidence-based interventions, such as strengthening exercises, weight management, diclofenac gel, and a structured progression plan into a 1-page educational resource. Seeing her improvement in mobility made me appreciate how academic knowledge can translate into real-life impact.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.7); padding: var(--sp-lg); border-radius: var(--r-lg); margin-bottom: var(--sp-md);">
+          <h4 style="font-weight: 700; color: var(--c-purple); margin-bottom: var(--sp-md); font-size: 1.1rem; letter-spacing: 0.03em; border-bottom: 2px solid rgba(155, 127, 190, 0.2); padding-bottom: var(--sp-sm);">Self-Reflection (Gibbs Reflective Cycle)</h4>
+          
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 1 · Description</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              Throughout this semester, I attended three major external learning events: the 4th Fakeeh Annual Conference (clinical medicine), Beauty World UAE (aesthetic and dermatological technologies), and the "If I Were You" GMU alumni event (peer mentorship on clinical reasoning and research). I also maintained 97% class attendance, achieved 100% on a class test, developed a LinkedIn newsletter on emerging surgical technologies, and created a 1-page evidence-based patient education resource for my mother-in-law's knee osteoarthritis management. These activities spanned both formal academic settings and self-directed scholarly engagement.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 2 · Feelings</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              Emotionally, these events made me feel inspired and more connected to the medical community. As someone with consistent academic discipline (97% attendance, 100% test scores), I felt motivated to extend the same rigor toward professional development outside the curriculum. The conferences energized me intellectually, while the patient education experience gave me a profound sense of practical fulfillment — seeing my mother-in-law's improved mobility validated that classroom knowledge can create tangible impact. I also felt encouraged by the alumni sharing their journeys, which made the path ahead feel more achievable and grounded.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 3 · Evaluation</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              Evaluating these experiences, the most positive aspect was realizing how exposure to diverse learning environments deepens my understanding of medicine beyond textbooks. Attending conferences showed me how evidence-based approaches are applied in real-world clinical scenarios, while creating the patient education resource demonstrated that I can already apply classroom knowledge to improve health outcomes. However, I recognized that I initially hesitated to ask questions during the conference sessions, which limited my engagement compared to what I could have achieved. This hesitancy reflected uncertainty about whether my questions were appropriate in a professional setting, which I now see as a self-imposed barrier rather than an actual limitation.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 4 · Analysis</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              Through analysis, I understood the value of integrating research, clinical evidence, and peer mentorship to become a lifelong learner. My LinkedIn newsletter, where I share emerging surgical technologies, helped me connect academic concepts with global medical advancements, reinforcing that evidence-based practice is not just about reading research but about communicating it effectively to broader audiences. The patient education experience revealed that translating evidence into accessible, actionable guidance is a distinct skill — one that requires understanding both the science and the patient's context (in this case, my mother-in-law's mobility limitations, daily routine, and access to resources). My hesitation to engage during conferences reflected a common early-stage professional behavior: uncertainty about one's role and perceived hierarchy. However, conferences are designed for learning, and thoughtful questions are valued, not discouraged.
+            </p>
+          </div>
+
+          <div style="margin-bottom: var(--sp-lg);">
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 5 · Conclusion</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              In conclusion, these experiences taught me that continuous learning requires discipline, curiosity, and active participation in scholarly discussions. I also learned the importance of applying classroom knowledge to real-life situations, which not only reinforces learning but also makes medicine feel tangible and rewarding. I should have asked at least one clarifying question during each conference session to deepen my understanding and demonstrate active engagement. For future scholarly activities, I will prepare specific questions beforehand to build confidence and maximize learning. I also recognize that my strong academic habits (attendance, test performance) create a solid foundation, but growth also requires stepping beyond the classroom into conferences, research, and patient interactions.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-weight: 600; color: var(--c-purple); margin-bottom: var(--sp-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Stage 6 · Action Plan</h5>
+            <p style="line-height: 1.75; color: var(--c-text); font-size: 0.92rem;">
+              My action plan is to continue attending conferences regularly, engage more actively by preparing and asking at least two questions per session, and expand my LinkedIn newsletter with more research-based content that translates complex surgical technologies into accessible summaries. I will maintain the strong academic habits that supported my growth this semester (attendance, preparation, active class participation). I will also seek additional opportunities to create patient education materials, using evidence-based frameworks, to build my ability to translate medical knowledge for diverse audiences. Finally, I will explore student research opportunities at GMU to contribute to the evidence base myself, moving from consumer of evidence to active participant in its creation.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--sp-lg); padding: var(--sp-md); background: rgba(155, 127, 190, 0.08); border-left: 4px solid var(--c-purple); border-radius: var(--sp-sm);">
+          <p style="font-size: 0.85rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+            <strong style="color: var(--c-purple);">📎 Competency Alignment:</strong> This reflection demonstrates Theme 9 (Evidence-Based Practitioner & Scholar) through active engagement with conferences, scholarly communication via newsletter, application of evidence-based principles in patient education, and commitment to lifelong learning supported by strong academic performance.
+          </p>
+        </div>
+      </div>
+
+      <!-- ══ EVIDENCE PORTFOLIO ══ -->
+      <div style="margin: var(--sp-2xl) 0;">
+        <div style="display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-lg);">
+          <div style="width: 4px; height: 40px; background: linear-gradient(180deg, var(--c-purple), #c8acd6); border-radius: 4px;"></div>
+          <div>
+            <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-purple); margin-bottom: 0.2rem;">Evidence Portfolio</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--c-text); margin: 0;">Documented Evidence — IX · Evidence Based Practitioner</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-lg);">
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <img src="assets/observo2.jpg" alt="Medical conference and scholarly engagement" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Conference</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2025</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Medical Conference Attendance</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Attended medical conferences engaging with current research, innovations in robotics and surgery, and translating findings into a peer LinkedIn newsletter for wider dissemination.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f0eaf8, #ddd0f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(123,79,158,0.45)" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Scholarly Communication</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">Ongoing</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">LinkedIn Medical Newsletter</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Authored accessible summaries of current surgical and medical research for a student and professional audience, practising evidence translation and science communication.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f0eaf8, #ddd0f0); display: flex; align-items: center; justify-content: center;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(123,79,158,0.45)" stroke-width="1.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div style="padding: var(--sp-md);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
+                <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-purple); background: rgba(123,79,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Academic</span>
+                <span style="font-size: 0.72rem; color: var(--c-muted);">2024–2026</span>
+              </div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--c-text); margin-bottom: var(--sp-xs);">Evidence-Based Patient Education</h4>
+              <p style="font-size: 0.85rem; color: var(--c-muted); line-height: 1.65;">Applied EBM principles in clinical settings to deliver accurate, guideline-aligned patient education — bridging best available evidence with patient-understandable communication.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════
+       CTA BANNER
+       ════════════════════════════════════════════════════ -->
+  <section class="comp-cta">
+    <div class="container">
+      <div class="comp-cta__inner fade-up">
+        <p class="comp-cta__eyebrow">Reflective Practice</p>
+        <h2 class="comp-cta__title">Explore My Complete Portfolio</h2>
+        <p class="comp-cta__body">
+          View comprehensive reflections across all nine competency domains, demonstrating growth through clinical experiences, academic achievements, and professional development.
+        </p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="about.html" class="btn btn-primary">
+            About My Journey
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://electivio.space" target="_blank" rel="noopener" class="btn btn-secondary">Visit Electivio.space</a>
+          <a href="assets/cv-kashish-devnani.pdf" class="btn btn-ghost" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">The White Coat Journal</p>
+          <p class="footer__tagline">A Medical Portfolio by Kashish Devnani</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html"        class="footer__link">Home</a>
+          <a href="about.html"        class="footer__link">About</a>
+          <a href="competencies.html" class="footer__link">Competencies</a>
+        </nav>
+        <p class="footer__copy">© 2026 Kashish Devnani · The White Coat Journal · Gulf Medical University</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="ai-chat-widget">
+    <div class="ai-chat__bubble" title="Ask Kashish's portfolio assistant">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1" fill="#fff" stroke="none"/><circle cx="12" cy="10" r="1" fill="#fff" stroke="none"/><circle cx="15" cy="10" r="1" fill="#fff" stroke="none"/></svg>
+    </div>
+    <span class="ai-chat__label">Ask about Kashish ✨</span>
+    <div class="ai-chat__panel">
+      <div class="ai-chat__header">
+        <div class="ai-chat__avatar">👩‍⚕️</div>
+        <div class="ai-chat__header-text">
+          <span class="ai-chat__header-name">Portfolio Assistant</span>
+          <span class="ai-chat__header-status">Online · Kashish's Journal</span>
+        </div>
+        <button class="ai-chat__close" aria-label="Close chat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="ai-chat__messages"></div>
+      <div class="ai-chat__suggestions">
+        <span class="ai-suggest-chip" onclick="document.querySelector('.ai-chat__input').value='Explain her competencies';document.querySelector('.ai-chat__send').click()">📋 All 9</span>
+        <span class="ai-suggest-chip" onclick="document.querySelector('.ai-chat__input').value='What is her GMU education?';document.querySelector('.ai-chat__send').click()">🏫 GMU</span>
+      </div>
+      <div class="ai-chat__footer">
+        <input class="ai-chat__input" type="text" placeholder="Ask anything…" maxlength="200" />
+        <button class="ai-chat__send" aria-label="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/enhance.js"></script>
+  <script>
+    // Competency tile click functionality - toggle visibility
+    document.querySelectorAll('.comp-tile').forEach(tile => {
+      tile.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the target competency ID from data-target attribute
+        const targetId = this.getAttribute('data-target');
+        
+        if (!targetId) return;
+        
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+        
+        // Check if this section is already open
+        const isOpen = targetSection.style.display === 'block';
+        
+        // Close all competency sections
+        document.querySelectorAll('.competency-section').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // If section was closed, open it and scroll to it
+        if (!isOpen) {
+          targetSection.style.display = 'block';
+          setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        } else {
+          // If it was open, scroll back to tiles grid
+          document.getElementById('competencies').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+      
+      // Keyboard accessibility
+      tile.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          tile.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/enhance.css" />
+  <link rel="stylesheet" href="css/competencies.css" />
   <link rel="stylesheet" href="css/ai-chat.css" />
-  <style>
+  <style>/* legacy — kept empty, styles now in css/competencies.css */
     /* ══════════════════════════════════════════════════
       COMPETENCIES PAGE
        ══════════════════════════════════════════════════ */
@@ -312,15 +313,7 @@
       line-height: 1.8;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 640px) {
-      .pillars-grid { grid-template-columns: 1fr; }
-      .modal__content { border-radius: var(--r-lg); }
-    }
+    /* ── all styles moved to css/competencies.css ── */
   </style>
 </head>
 <body>
@@ -332,7 +325,6 @@
   </div>
   <div id="scroll-progress"></div>
 
-  <!-- ── NAVIGATION ───────────────────────────────────── -->
   <nav class="nav" id="main-nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__brand">The White Coat <span>Journal</span></a>
@@ -349,14 +341,14 @@
   </nav>
 
   <!-- ════════════════════════════════════════════════════
-       HERO SECTION
+       HERO
        ════════════════════════════════════════════════════ -->
-  <section class="hero">
+  <section class="comp-hero">
     <div class="container">
-      <div class="hero__inner fade-up">
-        <p class="hero__eyebrow">Core Competencies</p>
-        <h1 class="hero__title">Core <em>competencies</em>.</h1>
-        <p class="hero__sub">
+      <div class="fade-up" style="max-width: 720px;">
+        <p class="comp-hero__eyebrow">Core Competencies</p>
+        <h1 class="comp-hero__title">Core <em>competencies.</em></h1>
+        <p class="comp-hero__sub">
           The framework I return to as I grow into the physician I want to become. Click any competency to explore the experiences shaping it.
         </p>
       </div>
@@ -366,230 +358,114 @@
   <!-- ════════════════════════════════════════════════════
        COMPETENCY GRID
        ════════════════════════════════════════════════════ -->
-  <section class="section" id="competencies" style="padding-top: var(--sp-2xl);">
+  <section class="section" style="padding-top: var(--sp-2xl);">
     <div class="container">
-      <div class="pillars-grid">
+      <div class="comp-grid fade-up">
 
-        <!-- 01 · Medical Expert -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">01 · Medical Expert</p>
-          <h3 class="pillar-card__title">Medical Expert</h3>
-          <p class="pillar-card__desc">Applies medical knowledge and clinical skills with precision and professional judgment.</p>
-          <div class="pillar-card__evidence">
-            <div class="evidence-item" data-reflection="comp-1" data-title="CPR & AED Certification" data-desc="Successfully completed CPR & AED certification, gaining foundational life support competencies." style="background-image: linear-gradient(135deg, rgba(27,138,158,0.22), rgba(123,79,158,0.18)), url('assets/certificate-cpr-aed.png');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Certification</div>
-                <div class="evidence-item__title">CPR & AED</div>
-                <div class="evidence-item__desc">Life support fundamentals</div>
-              </div>
-            </div>
-            <div class="evidence-item" data-reflection="comp-1" data-title="IV Cannulation" data-desc="Practiced peripheral IV cannulation under structured supervision, developing procedural competence." style="background-image: linear-gradient(135deg, rgba(184,92,92,0.28), rgba(200,110,80,0.24)), url('assets/iv-cannulation.jpg');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Procedural Skill</div>
-                <div class="evidence-item__title">IV Cannulation</div>
-                <div class="evidence-item__desc">Vascular access technique</div>
-              </div>
-            </div>
-            <div class="evidence-item" data-reflection="comp-1" data-title="Thumbay Lab Visit" data-desc="Structured lab visit at Thumbay Hospital strengthening diagnostic reasoning." style="background-image: linear-gradient(135deg, rgba(26,122,94,0.28), rgba(100,150,120,0.22)), url('assets/lab-visit-thumbay.jpg');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Clinical Exposure</div>
-                <div class="evidence-item__title">Thumbay Lab</div>
-                <div class="evidence-item__desc">Diagnostic laboratory visit</div>
-              </div>
-            </div>
+        <!-- 01 Medical Expert -->
+        <a href="competencies/medical-expert/index.html" class="comp-card comp-card--has-entries">
+          <div class="comp-card__top">
+            <span class="comp-card__num">01</span>
+            <span class="comp-card__badge">3 entries</span>
           </div>
-        </div>
+          <h3 class="comp-card__title">Medical Expert</h3>
+          <p class="comp-card__desc">Demonstrates a strong foundation of clinical knowledge, diagnostic reasoning, and technical skills essential for safe and effective patient care. Integrates scientific principles with compassionate clinical judgment in all healthcare settings.</p>
+          <span class="comp-card__cta">Explore
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
 
-        <!-- 02 · Evidence-Based Practitioner & Scholar -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">02 · Evidence-Based Practitioner &amp; Scholar</p>
-          <h3 class="pillar-card__title">Evidence-Based Practitioner &amp; Scholar</h3>
-        </div>
-
-        <!-- 03 · Patient Care Provider & Health Advocate -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">03 · Patient Care Provider &amp; Health Advocate</p>
-          <h3 class="pillar-card__title">Patient Care Provider &amp; Health Advocate</h3>
-          <p class="pillar-card__desc">Places patients at the center of care, ensuring their safety, dignity, and well-being while advocating for equitable healthcare access.</p>
-          <div class="pillar-card__evidence">
-            <div class="evidence-item" data-reflection="comp-3" data-title="CKS Hospital Certificate" data-desc="Certificate documenting my clinical observership at CKS Hospital in Jaipur under consultant supervision." style="background-image: linear-gradient(135deg, rgba(180,100,80,0.18), rgba(200,120,100,0.18)), url('assets/certificates/cks-hospital-certificate.jpg');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Certificate</div>
-                <div class="evidence-item__title">CKS Hospital</div>
-                <div class="evidence-item__desc">Observership certificate</div>
-              </div>
-            </div>
-            <div class="evidence-item" data-reflection="comp-3" data-title="CKS Observership — Ward & ICU" data-desc="Clinical exposure across ward rounds and ICU environments at CKS Hospital." style="background-image: linear-gradient(135deg, rgba(180,100,80,0.24), rgba(200,120,100,0.18)), url('assets/observo1.jpg');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Clinical Exposure</div>
-                <div class="evidence-item__title">CKS Observership 1</div>
-                <div class="evidence-item__desc">Ward rounds and ICU learning</div>
-              </div>
-            </div>
-            <div class="evidence-item" data-reflection="comp-3" data-title="CKS Observership — Theatre & Teamwork" data-desc="Surgical theatre observation and patient-centred team communication during clinical exposure." style="background-image: linear-gradient(135deg, rgba(180,100,80,0.24), rgba(200,120,100,0.18)), url('assets/observo2.jpg');">
-              <div class="evidence-item__overlay"></div>
-              <div class="evidence-item__content">
-                <div class="evidence-item__label">Clinical Exposure</div>
-                <div class="evidence-item__title">CKS Observership 2</div>
-                <div class="evidence-item__desc">Theatre observation and teamwork</div>
-              </div>
-            </div>
+        <!-- 02 Evidence-Based Practitioner & Scholar -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">02</span>
           </div>
+          <h3 class="comp-card__title">Evidence-Based Practitioner &amp; Scholar</h3>
+          <p class="comp-card__desc">Engages in lifelong learning through critical appraisal of research and evidence. Applies scientific findings to clinical decision-making and contributes to advancing medical knowledge through inquiry and reflection.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 04 · Communicator -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">04 · Communicator</p>
-          <h3 class="pillar-card__title">Communicator</h3>
+        <!-- 03 Patient Care Provider & Health Advocate -->
+        <a href="competencies/patient-care/index.html" class="comp-card comp-card--has-entries">
+          <div class="comp-card__top">
+            <span class="comp-card__num">03</span>
+            <span class="comp-card__badge">3 entries</span>
+          </div>
+          <h3 class="comp-card__title">Patient Care Provider &amp; Health Advocate</h3>
+          <p class="comp-card__desc">Places patients at the center of care, ensuring their safety, dignity, and well-being. Advocates for equitable access to healthcare and supports initiatives that enhance public health outcomes.</p>
+          <span class="comp-card__cta">Explore
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- 04 Communicator -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">04</span>
+          </div>
+          <h3 class="comp-card__title">Communicator</h3>
+          <p class="comp-card__desc">Builds effective relationships with patients, families, and healthcare professionals through clear, empathetic, and respectful communication. Ensures understanding and trust in every clinical interaction.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 05 · Collaborator, Innovator & Leader -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">05 · Collaborator, Innovator &amp; Leader</p>
-          <h3 class="pillar-card__title">Collaborator, Innovator &amp; Leader</h3>
+        <!-- 05 Collaborator, Innovator & Leader -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">05</span>
+          </div>
+          <h3 class="comp-card__title">Collaborator, Innovator &amp; Leader</h3>
+          <p class="comp-card__desc">Works effectively within interprofessional teams, demonstrating leadership, initiative, and innovation. Promotes teamwork, adaptability, and shared responsibility to achieve optimal healthcare outcomes.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 06 · Professional -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">06 · Professional</p>
-          <h3 class="pillar-card__title">Professional</h3>
+        <!-- 06 Professional -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">06</span>
+          </div>
+          <h3 class="comp-card__title">Professional</h3>
+          <p class="comp-card__desc">Exemplifies integrity, accountability, and ethical conduct in all aspects of medical practice. Maintains professionalism, empathy, and respect for patients, colleagues, and the profession.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 07 · Health System Proponent -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">07 · Health System Proponent</p>
-          <h3 class="pillar-card__title">Health System Proponent</h3>
+        <!-- 07 Health System Proponent -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">07</span>
+          </div>
+          <h3 class="comp-card__title">Health System Proponent</h3>
+          <p class="comp-card__desc">Understands and supports the functioning of healthcare systems, contributing to improvements in quality, efficiency, and sustainability. Engages in advocacy and collaboration to strengthen health services.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 08 · Self & Profession Enhancer -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">08 · Self &amp; Profession Enhancer</p>
-          <h3 class="pillar-card__title">Self &amp; Profession Enhancer</h3>
+        <!-- 08 Self & Profession Enhancer -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">08</span>
+          </div>
+          <h3 class="comp-card__title">Self &amp; Profession Enhancer</h3>
+          <p class="comp-card__desc">Actively seeks opportunities for personal and professional growth through reflection, feedback, and continuous improvement. Demonstrates commitment to lifelong learning and professional excellence.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-        <!-- 09 · Socially Accountable -->
-        <div class="pillar-card">
-          <p class="pillar-card__num">09 · Socially Accountable</p>
-          <h3 class="pillar-card__title">Socially Accountable</h3>
+        <!-- 09 Socially Accountable -->
+        <div class="comp-card comp-card--empty">
+          <div class="comp-card__top">
+            <span class="comp-card__num">09</span>
+          </div>
+          <h3 class="comp-card__title">Socially Accountable</h3>
+          <p class="comp-card__desc">Recognises the responsibility of medicine to society by addressing public health challenges, promoting social justice, and contributing to the well-being of local and global communities.</p>
+          <span class="comp-card__cta" style="color: var(--c-muted); font-style: italic; font-weight: 400;">Entries coming soon</span>
         </div>
 
-      </div><!-- /pillars-grid -->
+      </div><!-- /comp-grid -->
 
-      <!-- Closing Note -->
-      <div style="margin-top: var(--sp-2xl); padding: var(--sp-lg) var(--sp-xl); background: rgba(27, 138, 158, 0.04); border: 1px solid rgba(27, 138, 158, 0.15); border-radius: var(--r-lg); text-align: center;">
-        <p style="font-size: 0.95rem; color: var(--c-text); line-height: 1.7; margin: 0;">
-          More experiences are being added as I gain them through clinical rotations and beyond. Each reflection deepens my understanding of these competencies and my evolving identity as a physician.
-        </p>
-      </div>
-
+      <p style="text-align: center; font-size: 0.9rem; color: var(--c-muted); margin-top: var(--sp-lg);">
+        More experiences are added as I gain them through rotations and beyond.
+      </p>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════════════
-       REFLECTION MODAL
-       ════════════════════════════════════════════════════ -->
-  <div class="modal" id="reflection-modal">
-    <div class="modal__content">
-      <button class="modal__close" aria-label="Close modal">×</button>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════════════════════
-       REFLECTION CONTENT (Hidden, loaded into modal)
-       ════════════════════════════════════════════════════ -->
-
-  <!-- COMP-1: Medical Expert Reflections -->
-  <template id="comp-1-template">
-    <div class="modal__header">
-      <h2 class="modal__title">Medical Expert</h2>
-      <p class="modal__subtitle">Building foundational clinical competencies through structured learning and procedural practice.</p>
-    </div>
-    <div class="modal__body">
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">CPR & AED Certification</h3>
-        <div class="reflection-section__content">
-          <p>Successfully completed CPR & AED certification through accredited training. This foundational certification equipped me with life support protocols and emergency response competencies essential for any clinician. The training emphasized chest compression technique, airway management, and defibrillation—skills I will need throughout my medical career.</p>
-          <div style="margin-top: var(--sp-md); display: grid; gap: var(--sp-md);">
-            <a href="assets/certificate-cpr-aed.pdf" target="_blank" style="display:inline-flex; align-items:center; justify-content:center; width:fit-content; padding:0.65rem 1rem; background: var(--c-text); color:#fff; border-radius: var(--r-full); font-size:0.85rem; font-weight:600;">Open CPR &amp; AED certificate ↗</a>
-            <img src="assets/certificate-cpr-aed.png" alt="CPR and AED certificate preview" style="width:100%; border-radius: var(--r-md); border: 1px solid var(--c-border); box-shadow: var(--sh-card);" />
-          </div>
-        </div>
-      </div>
-
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">IV Cannulation Training</h3>
-        <div class="reflection-section__content">
-          <p>Practiced peripheral IV cannulation under structured supervision at a clinical training facility. This procedural skill demands technical precision, aseptic technique, anatomical knowledge, and patient communication. Through deliberate practice and feedback, I developed muscle memory and improved first-pass success rate. I recognize that continued practice in supervised clinical settings will further refine this competency.</p>
-        </div>
-      </div>
-
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">Thumbay Laboratory Visit</h3>
-        <div class="reflection-section__content">
-          <p>Attended a structured laboratory visit at Thumbay Hospital to strengthen diagnostic reasoning and understand point-of-care testing. Observing laboratory workflows, quality control procedures, and diagnostic algorithms enhanced my understanding of how clinical decision-making integrates with laboratory science. This experience bridged theoretical knowledge with practical application in a real clinical environment.</p>
-        </div>
-      </div>
-
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">Action Plan</h3>
-        <div class="reflection-section__content">
-          <p><strong>Immediate:</strong> Renew CPR & AED certification annually. Seek supervised opportunities to practice IV cannulation in clinical settings. Volunteer for simulation lab sessions.</p>
-          <p><strong>Medium-term:</strong> Pursue ACLS training in second or third year. Build proficiency through progressive clinical exposure. Document procedural competencies systematically.</p>
-          <p><strong>Long-term:</strong> Maintain procedural competence through deliberate practice. Stay current with evolving clinical guidelines and protocols.</p>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <!-- COMP-3: Patient Care Provider & Health Advocate Reflections -->
-  <template id="comp-3-template">
-    <div class="modal__header">
-      <h2 class="modal__title">Patient Care Provider &amp; Health Advocate</h2>
-      <p class="modal__subtitle">Delivering compassionate, patient-centered care through clinical observation, reflection, and advocacy for patient wellbeing.</p>
-    </div>
-    <div class="modal__body">
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">CKS Hospital Observership — Jaipur, India</h3>
-        <div class="reflection-section__content">
-          <p><strong>Duration:</strong> March 2026 | <strong>Supervisor:</strong> Dr. Prakash Chandwani, Consultant Cardiologist</p>
-          <p>Completed a comprehensive clinical observership at CKS Hospital in Jaipur under the supervision of Dr. Prakash Chandwani. This immersive experience spanned cardiology ward rounds, ICU rotations, and surgical theatre observations—exposing me to the full continuum of patient care from initial admission through critical care management and operative interventions.</p>
-          <p><strong>Key Observations:</strong></p>
-          <ul style="margin: var(--sp-md) 0; padding-left: var(--sp-lg); color: var(--c-text); line-height: 1.8;">
-            <li>Bedside consultation: Patient assessment, history-taking, physical examination, and clinical reasoning</li>
-            <li>Informed consent processes: How consultants communicate risk, obtain consent, and involve families</li>
-            <li>Compassionate communication: Techniques for delivering difficult news, managing patient anxiety, and building trust</li>
-            <li>ICU workflows: Monitoring, vital sign interpretation, rapid response, and team coordination</li>
-            <li>Surgical principles: Operative technique, safety protocols, team dynamics in theatre</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">Reflection on Patient Care Competency</h3>
-        <div class="reflection-section__content">
-          <p>This observership deepened my understanding that patient care is more than technical competence—it requires presence, empathy, and communication. I observed how Dr. Chandwani balanced authoritative clinical decision-making with patient autonomy, explained complex concepts in accessible language, and acknowledged patient fears without dismissing them.</p>
-          <p>I also recognized my own hesitation to engage as a pre-clinical student, reflecting uncertainty about my role in the clinical team. Future interactions will involve seeking permission to participate in supervised, low-stakes activities—patient education, chart review, structured interviews—to build confidence and competence progressively.</p>
-        </div>
-      </div>
-
-      <div class="reflection-section">
-        <h3 class="reflection-section__title">Action Plan</h3>
-        <div class="reflection-section__content">
-          <p><strong>Immediate:</strong> Document communication techniques observed during rounds. Study evidence-based frameworks (SPIKES protocol for difficult conversations, teach-back method for health literacy).</p>
-          <p><strong>Clinical rotations:</strong> Volunteer in patient-facing roles (health screenings, patient education workshops). Practice communication under supervision. Seek feedback from attending physicians and nurses.</p>
-          <p><strong>Long-term:</strong> Integrate compassionate communication as a core professional identity. Continuously reflect on patient interactions. Remain learner-centered and patient-focused.</p>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <!-- Footer and scripts -->
   <footer class="footer">
     <div class="container" style="text-align: center; padding: var(--sp-2xl) 0;">
       <p style="font-size: 0.9rem; color: var(--c-muted); margin-bottom: var(--sp-md);">
@@ -601,47 +477,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/enhance.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Modal functionality for evidence items
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('reflection-modal');
-      const modalBody = document.getElementById('modal-body');
-      const modalClose = document.querySelector('.modal__close');
-      const evidenceItems = document.querySelectorAll('.evidence-item');
-
-      // Open modal
-      evidenceItems.forEach(item => {
-        item.addEventListener('click', function() {
-          const reflectionId = this.dataset.reflection;
-          const template = document.getElementById(reflectionId + '-template');
-          
-          if (template) {
-            modalBody.innerHTML = template.innerHTML;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-          }
-        });
-      });
-
-      // Close modal
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-
-      modalClose.addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal();
-      });
-
-      // Close on Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
-      });
-    });
-  </script>
 </body>
 </html>
