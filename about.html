@@ -60,14 +60,36 @@
     <div class="container">
       <div class="grid-2" style="align-items: start; gap: var(--sp-2xl);">
 
-        <!-- Photo -->
-        <div class="fade-left">
-          <img
-            src="assets/white-coat-ceremony.jpg"
-            alt="Kashish Devnani — White Coat Ceremony, Gulf Medical University 2025"
-            loading="eager"
-            style="width:100%;max-width:500px;border-radius:var(--r-lg);box-shadow:0 8px 24px rgba(0,0,0,0.12);display:block;"
-          />
+        <!-- Photo grid -->
+        <div class="about-photo-grid fade-left">
+          <!-- Main tall slot — White Coat portrait, prominent -->
+          <div class="about-photo-grid__main" style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+            <img
+              src="assets/white-coat-ceremony.jpg"
+              alt="Kashish Devnani — White Coat Ceremony, Gulf Medical University 2025"
+              loading="eager"
+              style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''"
+            />
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,37,58,0.55) 0%,transparent 45%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <p style="font-family:var(--font-serif);font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.2rem;">White Coat Ceremony</p>
+              <p style="font-size:0.72rem;color:rgba(255,255,255,0.72);font-weight:500;">Gulf Medical University · 2025</p>
+            </div>
+          </div>
+          <!-- Side slot — lab microscope -->
+          <div class="about-photo-grid__side" style="overflow:hidden;position:relative;">
+            <img
+              src="assets/lab-microscope.jpg"
+              alt="Biomedical Research — Laboratory Work"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+            />
+            <div style="position:absolute;bottom:var(--sp-sm);left:var(--sp-sm);right:var(--sp-sm);">
+              <p style="font-family:var(--font-serif);font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.1rem;">Biomedical Research</p>
+              <p style="font-size:0.65rem;color:rgba(255,255,255,0.8);font-weight:500;">Laboratory & Microscopy</p>
+            </div>
+          </div>
         </div>
         <style>
           @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
