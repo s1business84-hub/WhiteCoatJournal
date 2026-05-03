@@ -18,26 +18,11 @@
 
     /* ── Hero ───────────────────────────────────────── */
     .comp-hero {
-      background: var(--c-navy);
+      background: #f8f5f3;
       padding: calc(var(--nav-h) + var(--sp-2xl)) 0 var(--sp-2xl);
       position: relative;
       overflow: hidden;
-    }
-    .comp-hero::before {
-      content: '';
-      position: absolute;
-      top: -140px; right: -140px;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(27,138,158,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .comp-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(123,79,158,0.12) 0%, transparent 70%);
-      pointer-events: none;
+      border-bottom: 1px solid var(--c-border);
     }
     .comp-hero__inner { position: relative; z-index: 1; max-width: 760px; }
     .comp-hero__eyebrow {
@@ -48,33 +33,33 @@
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--c-teal);
+      color: var(--c-muted);
       margin-bottom: var(--sp-sm);
     }
     .comp-hero__eyebrow::before {
       content: '';
       display: block;
       width: 28px; height: 1.5px;
-      background: var(--c-teal);
+      background: var(--c-muted);
     }
     .comp-hero__title {
       font-family: var(--font-serif);
       font-size: clamp(2.8rem, 6vw, 5rem);
       font-weight: 700;
       line-height: 1.06;
-      color: #fff;
+      color: var(--c-text);
       margin-bottom: var(--sp-md);
     }
     .comp-hero__title em { font-style: italic; color: var(--c-secondary); }
     .comp-hero__sub {
       font-size: 1.05rem;
-      color: rgba(255,255,255,0.5);
+      color: var(--c-muted);
       line-height: 1.8;
       max-width: 580px;
     }
 
     /* Stats strip */
-    .comp-stats { background: var(--c-navy-soft); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .comp-stats { display: none; }
     .comp-stats__inner { display: flex; align-items: stretch; flex-wrap: wrap; }
     .comp-stat {
       flex: 1 1 200px;
@@ -90,100 +75,63 @@
     .comp-stat__value small { font-size: 0.78rem; font-family: var(--font-sans); font-weight: 400; color: rgba(255,255,255,0.38); display: block; margin-top: 0.15rem; }
 
     /* Intro */
-    .comp-intro { text-align: center; padding: var(--sp-2xl) 0 var(--sp-lg); }
-    .comp-intro__eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-teal); margin-bottom: var(--sp-sm); }
-    .comp-intro__title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; color: var(--c-text); margin-bottom: 0.5rem; }
+    .comp-intro { text-align: left; padding: var(--sp-2xl) 0 var(--sp-lg); }
+    .comp-intro__eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: var(--sp-sm); }
+    .comp-intro__title { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--c-text); margin-bottom: 0.4rem; }
     .comp-intro__title em { font-style: italic; color: var(--c-secondary); }
-    .comp-intro__line { width: 48px; height: 2px; background: linear-gradient(90deg, var(--c-teal), var(--c-purple)); border-radius: 2px; margin: var(--sp-sm) auto; }
-    .comp-intro__body { font-size: 0.95rem; color: var(--c-muted); line-height: 1.75; max-width: 560px; margin: 0 auto; }
+    .comp-intro__line { display: none; }
+    .comp-intro__body { font-size: 1rem; color: var(--c-muted); line-height: 1.75; max-width: 720px; margin: 0; }
 
     /* Elegant tiled grid */
     .comp-elegant-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--c-border);
-      border: 1.5px solid var(--c-border);
-      border-radius: var(--r-xl);
-      overflow: hidden;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--sp-lg);
       margin-bottom: var(--sp-2xl);
     }
     .comp-tile {
-      background: var(--c-card);
-      padding: var(--sp-lg) var(--sp-md);
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
       position: relative;
-      transition: background var(--t-base);
+      transition: box-shadow var(--t-base), transform var(--t-base), border-color var(--t-base);
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      overflow: hidden;
-      cursor: default;
+      cursor: pointer;
       text-decoration: none;
     }
-    .comp-tile:hover { background: #fff; z-index: 1; }
-    .comp-tile::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--tile-accent, var(--c-teal));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--t-base);
-    }
-    .comp-tile:hover::before { transform: scaleX(1); }
-    .comp-tile__num { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; color: var(--tile-accent, var(--c-teal)); opacity: 0.55; text-transform: uppercase; }
-    .comp-tile__icon {
-      width: 44px; height: 44px;
-      background: var(--c-bg);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
+    .comp-tile:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); transform: translateY(-3px); border-color: rgba(0,0,0,0.08); }
+    .comp-tile__num {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--tile-accent, var(--c-teal));
-      transition: var(--t-base);
-      flex-shrink: 0;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--c-muted);
+      text-transform: uppercase;
+      opacity: 1;
     }
-    .comp-tile:hover .comp-tile__icon { background: var(--tile-accent, var(--c-teal)); color: #fff; border-color: transparent; }
-    .comp-tile__title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--c-text); line-height: 1.25; }
-    .comp-tile__desc { font-size: 0.84rem; color: var(--c-muted); line-height: 1.7; flex: 1; }
+    .comp-tile__entries {
+      font-weight: 600;
+      color: var(--c-muted);
+    }
+    .comp-tile__icon { display: none; }
+    .comp-tile__evidence { display: none; }
+    .comp-tile__title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--c-text); line-height: 1.25; }
+    .comp-tile__desc { font-size: 0.92rem; color: var(--c-muted); line-height: 1.7; flex: 1; }
     .comp-tile__arrow {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      font-size: 0.76rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--tile-accent, var(--c-teal));
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: opacity var(--t-base), transform var(--t-base);
+      color: var(--c-text);
+      opacity: 1;
+      transform: none;
       margin-top: auto;
-    }
-    .comp-tile:hover .comp-tile__arrow { opacity: 1; transform: translateX(0); }
-
-    /* Featured tile */
-    .comp-tile--featured { background: var(--c-navy); cursor: pointer; grid-row: span 2; }
-    .comp-tile--featured:hover { background: var(--c-navy-soft); }
-    .comp-tile--featured::before { background: var(--c-teal); }
-    .comp-tile--featured .comp-tile__num { color: var(--c-teal); opacity: 1; }
-    .comp-tile--featured .comp-tile__icon { background: rgba(27,138,158,0.15); border-color: rgba(27,138,158,0.3); color: var(--c-teal); width: 56px; height: 56px; }
-    .comp-tile--featured:hover .comp-tile__icon { background: var(--c-teal); color: #fff; border-color: transparent; }
-    .comp-tile--featured .comp-tile__title { color: #fff; font-size: 1.3rem; }
-    .comp-tile--featured .comp-tile__desc { color: rgba(255,255,255,0.52); }
-    .comp-tile--featured .comp-tile__arrow { color: var(--c-teal); }
-    .comp-tile__evidence {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(27,138,158,0.12);
-      border: 1px solid rgba(27,138,158,0.25);
-      border-radius: var(--r-full);
-      padding: 0.35rem 0.85rem;
-      font-size: 0.71rem;
-      font-weight: 600;
-      color: var(--c-teal);
-      width: fit-content;
     }
 
     /* CTA */
@@ -196,7 +144,6 @@
 
     @media (max-width: 900px) {
       .comp-elegant-grid { grid-template-columns: repeat(2, 1fr); }
-      .comp-tile--featured { grid-row: span 1; }
     }
     @media (max-width: 580px) {
       .comp-elegant-grid { grid-template-columns: 1fr; }
@@ -207,16 +154,7 @@
     .comp-tile { cursor: pointer; }
 
     /* ── Sticky Quick-Nav ───────────────────── */
-    .comp-quicknav {
-      position: sticky;
-      top: var(--nav-h);
-      z-index: 90;
-      background: rgba(255,247,245,0.96);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--c-border);
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
+    .comp-quicknav { display: none; }
     .comp-quicknav::-webkit-scrollbar { display: none; }
     .comp-quicknav__inner {
       display: flex;
@@ -376,10 +314,10 @@
   <section class="comp-hero">
     <div class="container">
       <div class="comp-hero__inner fade-up">
-        <p class="comp-hero__eyebrow">GMU e-Portfolio Framework</p>
-        <h1 class="comp-hero__title">Core<br><em>Competencies</em></h1>
+        <p class="comp-hero__eyebrow">Core Competencies</p>
+        <h1 class="comp-hero__title">Nine pillars of<br><em>practice</em>.</h1>
         <p class="comp-hero__sub">
-          Nine integrated domains that define a physician's professional identity — from clinical mastery and patient-centred care to lifelong learning, ethical leadership, and social accountability.
+          The framework I return to as I grow into the physician I want to become. Click any competency to explore the experiences shaping it.
         </p>
       </div>
     </div>
@@ -433,11 +371,10 @@
     <div class="container">
 
       <div class="comp-intro fade-up">
-        <p class="comp-intro__eyebrow">All Nine Domains</p>
-        <h2 class="comp-intro__title">The <em>Competency</em> Framework</h2>
-        <div class="comp-intro__line"></div>
+        <p class="comp-intro__eyebrow">Core Competencies</p>
+        <h2 class="comp-intro__title">Nine pillars of <em>practice</em>.</h2>
         <p class="comp-intro__body">
-          Aligned with the GMU medical education framework, these competencies demonstrate integrated development across clinical, ethical, and professional domains.
+          The framework I return to as I grow into the physician I want to become. Click any competency to explore the experiences shaping it.
         </p>
       </div>
 
@@ -552,6 +489,13 @@
         </div>
 
       </div><!-- /comp-elegant-grid -->
+
+      <!-- Closing Note -->
+      <div style="margin-top: var(--sp-2xl); padding: var(--sp-lg) var(--sp-xl); background: rgba(27, 138, 158, 0.04); border: 1px solid rgba(27, 138, 158, 0.15); border-radius: var(--r-lg); text-align: center;">
+        <p style="font-size: 0.95rem; color: var(--c-text); line-height: 1.7; margin: 0;">
+          More experiences are being added as I gain them through clinical rotations and beyond. Each reflection deepens my understanding of these nine pillars and my evolving identity as a physician.
+        </p>
+      </div>
 
     </div>
   </section>
@@ -883,7 +827,7 @@
         <div style="margin-bottom: var(--sp-xl);">
           <h4 style="font-weight: 700; color: var(--c-teal); margin-bottom: var(--sp-sm); font-size: 0.95rem; letter-spacing: 0.05em;">PROCEDURAL EVIDENCE</h4>
           <figure style="margin: 0; background: rgba(232, 244, 248, 0.72); border: 1px solid rgba(27,138,158,0.2); border-radius: var(--r-md); padding: 0.6rem;">
-            <img src="assets/iv-cannulation.jpg" alt="Clinical skills context for peripheral IV cannulation practice" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
+            <img src="assets/lab-photo-2.jpg" alt="Clinical skills context for peripheral IV cannulation practice" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--r-sm);" loading="lazy" />
             <figcaption style="margin-top: 0.45rem; font-size: 0.8rem; color: var(--c-muted);">Skills-lab style procedural context used to build IV cannulation confidence and aseptic discipline.</figcaption>
           </figure>
         </div>
@@ -1009,7 +953,7 @@
 
           <!-- Evidence 4 -->
           <div style="background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow var(--t-base);" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
-            <img src="assets/iv-cannulation.jpg" alt="Peripheral IV Cannulation Training" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
+            <img src="assets/lab-photo-2.jpg" alt="Peripheral IV Cannulation Training" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy" />
             <div style="padding: var(--sp-md);">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-xs);">
                 <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-teal); background: rgba(27,138,158,0.1); padding: 0.25rem 0.6rem; border-radius: var(--r-full);">Clinical Skill</span>
