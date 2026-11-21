@@ -923,15 +923,20 @@
   }
 }
 .media-collage--2 {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  gap: 4px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+  align-items: start;
+  gap: var(--sp-md);
   background: #fff;
   border-radius: var(--r-lg);
   overflow: hidden;
 }
 .media-collage--2 .media-collage__item {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3 / 4;
+  background: #f8f5f3;
+}
+.media-collage--2 .media-collage__item img {
+  object-fit: contain;
 }
 .timeline-media-grid {
   display: grid;
