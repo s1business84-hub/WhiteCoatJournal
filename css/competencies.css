@@ -855,9 +855,9 @@
 .samss-photo-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 800px;
+  max-width: 760px;
   margin: 0 auto;
-  gap: var(--sp-sm);
+  gap: var(--sp-xs);
 }
 .samss-photo {
   min-width: 0;
@@ -881,7 +881,7 @@
 }
 .samss-photo figcaption,
 .samss-video figcaption {
-  padding: var(--sp-xs) var(--sp-sm);
+  padding: var(--sp-xs);
   color: var(--c-muted);
   font-size: 0.78rem;
   line-height: 1.4;
