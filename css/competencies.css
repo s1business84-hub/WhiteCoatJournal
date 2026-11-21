@@ -854,8 +854,8 @@
 }
 .samss-photo-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--sp-md);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-sm);
 }
 .samss-photo {
   min-width: 0;
@@ -868,7 +868,7 @@
 .samss-photo a {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   background: #f8f5f3;
 }
 .samss-photo:first-child {
