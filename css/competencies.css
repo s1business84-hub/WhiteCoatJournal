@@ -855,6 +855,8 @@
 .samss-photo-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
   gap: var(--sp-sm);
 }
 .samss-photo {
@@ -906,6 +908,7 @@
   }
   .samss-photo-gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
   }
 }
 .media-collage--2 {
