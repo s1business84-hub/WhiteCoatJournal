@@ -516,6 +516,11 @@
   object-fit: cover;
   display: block;
 }
+.reflection-card__img--natural {
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
 .reflection-card__img-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
